@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif']}}}</script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif']}}}}</script>
     <style>
         *{font-family:'Inter',sans-serif;font-feature-settings:"cv02","cv03","cv04","cv11"}
         body{background:#050505;color:#fff}
@@ -23,18 +23,67 @@
         ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#050505}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
         .nav-blur{backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
         @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-        .marquee-track{animation:marquee 25s linear infinite}.marquee-track:hover{animation-play-state:paused}
         .grid-bg{background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
-        .client-logo{transition:all .3s ease}.client-logo:hover{border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.03)}
+        .client-logo{transition:all .3s ease}.client-logo:hover{border-color:rgba(0,0,0,.12);background:#FFFFFF}
         .role-item{position:relative;padding-left:20px}.role-item::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:rgba(239,68,68,.4);border:1px solid rgba(239,68,68,.6)}
         .wa-btn{background:#25D366;color:#fff;cursor:pointer}.wa-btn:hover{background:#20BD5A}
         .ai-tool-card{border:1px solid rgba(239,68,68,.1);transition:all .3s ease}
         .ai-tool-card:hover{border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.03);transform:translateY(-2px)}
+        .spin-slow{animation:spinSlow 90s linear infinite}
+        @keyframes spinSlow{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+        .grain{position:fixed;inset:-120px;z-index:90;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");animation:grainShift 1.2s steps(6) infinite}
+        @keyframes grainShift{0%{transform:translate(0,0)}20%{transform:translate(-40px,30px)}40%{transform:translate(30px,-50px)}60%{transform:translate(-50px,-20px)}80%{transform:translate(40px,40px)}100%{transform:translate(0,0)}}
+        .rec-dot{width:8px;height:8px;border-radius:9999px;background:#ef4444;box-shadow:0 0 10px rgba(239,68,68,.9);animation:blink 1.4s steps(2,start) infinite;flex-shrink:0}
+        @keyframes blink{50%{opacity:.15}}
+        .rotor-cursor{display:inline-block;width:.55em;height:1em;background:rgba(239,68,68,.8);margin-left:3px;vertical-align:-2px;animation:blink 1s steps(2,start) infinite}
+        .eq{display:inline-flex;align-items:flex-end;gap:2px;height:12px}
+        .eq i{width:2px;height:4px;background:#22c55e;border-radius:1px;animation:eq 1s ease-in-out infinite}
+        .eq i:nth-child(2){animation-delay:.15s;animation-duration:.8s}.eq i:nth-child(3){animation-delay:.3s;animation-duration:.65s}.eq i:nth-child(4){animation-delay:.45s;animation-duration:.9s}
+        @keyframes eq{0%,100%{height:4px}50%{height:12px}}
+        .nav-link{position:relative}
+        .nav-link::after{content:'';position:absolute;left:0;bottom:-6px;width:100%;height:1px;background:#ef4444;transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.16,1,.3,1)}
+        .nav-link:hover::after{transform:scaleX(1)}
+        .vf{position:absolute;width:22px;height:22px;border:2px solid rgba(255,255,255,.55);z-index:20;pointer-events:none}
+        .vf.tl{top:12px;left:12px;border-right:0;border-bottom:0}.vf.tr{top:12px;right:12px;border-left:0;border-bottom:0}.vf.bl{bottom:12px;left:12px;border-right:0;border-top:0}.vf.br{bottom:12px;right:12px;border-left:0;border-top:0}
+        .tl-playhead{position:absolute;left:50%;transform:translateX(-50%);width:9px;height:9px;margin-top:-4px;border-radius:9999px;background:#ef4444;box-shadow:0 0 14px 3px rgba(239,68,68,.55);transition:top .12s linear,opacity .4s ease}
+        .sheen{position:relative;overflow:hidden}
+        .sheen::after{content:'';position:absolute;top:-60%;left:-80%;width:45%;height:220%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .7s ease;pointer-events:none}
+        .sheen:hover::after{left:135%}
+        .sheen-dark::after{background:linear-gradient(105deg,transparent,rgba(0,0,0,.1),transparent)}
+        .proj-card{transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s ease,box-shadow .35s ease}
+        .proj-card:hover{transform:translateY(-5px);box-shadow:0 24px 48px -20px rgba(239,68,68,.25)}
+        .proj-card .aspect-video{position:relative}
+        .proj-card .aspect-video::after{content:'';position:absolute;inset:0;background:rgba(5,5,5,.45);opacity:0;transition:opacity .3s ease;pointer-events:none;z-index:1}
+        .proj-card:hover .aspect-video::after{opacity:1}
+        .play-ico{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.7);width:58px;height:58px;border-radius:9999px;background:rgba(239,68,68,.92);display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s cubic-bezier(.16,1,.3,1);z-index:2;pointer-events:none;box-shadow:0 0 30px rgba(239,68,68,.5)}
+        .proj-card:hover .play-ico{opacity:1;transform:translate(-50%,-50%) scale(1)}
+        .client-logo{opacity:0;transform:translateY(14px) scale(.97)}
+        .client-logo.in{opacity:1;transform:translateY(0) scale(1)}
+        .client-logo.in:hover{transform:translateY(-3px);border-color:rgba(0,0,0,.12);background:#FFFFFF}
+        .client-logo img{transition:transform .3s ease}
+        .client-logo:hover img{transform:scale(1.08)}
+        .wa-btn:active{transform:scale(.96)}
+        @keyframes iconFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-2.5px)}}
+        @keyframes iconWiggle{0%{transform:rotate(0) scale(1)}30%{transform:rotate(-9deg) scale(1.15)}60%{transform:rotate(7deg) scale(1.18)}100%{transform:rotate(0) scale(1)}}
+        .ico-idle{display:inline-block;animation:iconFloat var(--idur,3s) ease-in-out infinite;animation-delay:var(--idel,0s)}
+        .ai-tool-card:hover .iconify,.cap-card:hover .iconify,.interest-card:hover .iconify,.contact-card:hover .iconify,.skill-item:hover .iconify,.role-item:hover .iconify,.group:hover .iconify,footer a:hover .iconify{animation:iconWiggle .55s ease}
+        .glow-card{position:relative;isolation:isolate}
+        .glow-card::before{content:'';position:absolute;inset:-3px;border-radius:inherit;z-index:-1;background:linear-gradient(120deg,#ef4444,#f97316,#ec4899,#8b5cf6,#ef4444);background-size:300% 300%;filter:blur(22px);opacity:0;transition:opacity .45s ease}
+        .glow-card:hover::before{opacity:.4;animation:glowShift 4s linear infinite}
+        @keyframes glowShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+        .count-num{opacity:0;transform:translateY(12px) scale(.85);transition:opacity .5s ease,transform .6s cubic-bezier(.16,1,.3,1)}
+        .count-num.counting{opacity:1;transform:none}
+        #particles{z-index:0}
+        .particle{position:absolute;bottom:-12px;border-radius:9999px;pointer-events:none;opacity:0;animation:floatUp linear infinite;will-change:transform}
+        @keyframes floatUp{0%{transform:translate(0,0);opacity:0}8%{opacity:var(--o,.4)}85%{opacity:var(--o,.4)}100%{transform:translate(var(--dx,0px),-105vh);opacity:0}}
+        @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.client-logo{opacity:1!important;transform:none!important}.grain{display:none}.count-num{opacity:1!important;transform:none!important}#particles{display:none}}
     </style>
 </head>
 <body class="antialiased overflow-x-hidden">
 
 <div class="ambient-glow"></div>
+<div class="grain"></div>
+<div id="playhead-bar" class="fixed top-0 left-0 h-[2px] bg-red-500 z-[80] shadow-[0_0_10px_rgba(239,68,68,.9)]" style="width:0%"></div>
 
 <!-- NAV -->
 <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-[#050505]/70 border-b border-white/[0.06]">
@@ -44,13 +93,13 @@
             <span class="text-sm font-semibold tracking-tight">SUBHAM GUIN</span>
         </a>
         <div class="hidden md:flex items-center gap-8">
-            <a href="#about" class="text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">About</a>
-            <a href="#ai" class="text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">AI</a>
-            <a href="#clients" class="text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">Clients</a>
-            <a href="#work" class="text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">Experience</a>
-            <a href="#projects" class="text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">Projects</a>
-            <a href="#skills" class="text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">Skills</a>
-            <a href="#" class="wa-trigger text-xs font-semibold wa-btn px-4 py-2 rounded-full transition-all duration-150 tracking-wide flex items-center gap-1.5" role="button"><span class="iconify" data-icon="mdi:whatsapp" data-width="14"></span>Hire Me</a>
+            <a href="#about" class="nav-link text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">About</a>
+            <a href="#ai" class="nav-link text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">AI</a>
+            <a href="#clients" class="nav-link text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">Clients</a>
+            <a href="#work" class="nav-link text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">Experience</a>
+            <a href="#projects" class="nav-link text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">Projects</a>
+            <a href="#skills" class="nav-link text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">Skills</a>
+            <a href="#" class="wa-trigger sheen text-xs font-semibold wa-btn px-4 py-2 rounded-full transition-all duration-150 tracking-wide flex items-center gap-1.5" role="button"><span class="iconify" data-icon="mdi:whatsapp" data-width="14"></span>Hire Me</a>
         </div>
         <button id="mobileMenuBtn" class="md:hidden text-white"><span class="iconify" data-icon="mdi:menu" data-width="24"></span></button>
     </div>
@@ -67,50 +116,26 @@
 
 <!-- HERO -->
 <section class="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 md:pt-48 md:pb-32 px-6 grid-bg">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/[0.03] rounded-full pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/[0.03] border-dashed rounded-full pointer-events-none spin-slow"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-white/[0.05] rounded-full pointer-events-none"></div>
+    <div class="absolute top-24 left-6 md:top-28 md:left-10 z-10 flex items-center gap-2"><span class="rec-dot"></span><span class="text-[10px] font-mono tracking-[.2em] text-red-400/80">REC</span></div>
+    <div class="absolute top-24 right-6 md:top-28 md:right-10 z-10"><span id="timecode" class="text-[10px] font-mono tracking-[.2em] text-slate-500">TC 00:00:00:00</span></div>
+    <div id="particles" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
     <div class="relative z-10 text-center max-w-4xl mx-auto">
-        <div class="reveal inline-flex items-center gap-2 border border-white/[0.1] rounded-full px-4 py-1.5 mb-8"><span class="w-2 h-2 bg-red-500 rounded-full relative"><span class="absolute inset-0 bg-red-500 rounded-full animate-ping"></span></span><span class="text-xs font-medium text-slate-300 tracking-wide">Available for freelance work</span></div>
+        <div class="reveal inline-flex items-center gap-2 border border-white/[0.1] rounded-full px-4 py-1.5 mb-8"><span class="w-2 h-2 bg-green-500 rounded-full relative"><span class="absolute inset-0 bg-green-500 rounded-full animate-ping"></span></span><span class="eq"><i></i><i></i><i></i><i></i></span><span class="text-xs font-medium text-slate-300 tracking-wide">Available for freelance work</span></div>
         <h1 class="reveal delay-100 text-5xl md:text-7xl font-bold tracking-tighter leading-[1] gradient-text mb-6">Subham Guin</h1>
         <p class="reveal delay-200 text-base md:text-lg font-light text-slate-300 tracking-wide mb-2">Video Editor & Motion Graphics Designer</p>
-        <p class="reveal delay-300 text-xs md:text-sm font-light text-red-400/80 tracking-wider uppercase mb-4">AI-Assisted Creative • Films • Ads • Short-Form Content</p>
+        <p class="reveal delay-300 text-xs md:text-sm font-light text-red-400/80 tracking-wider uppercase mb-4">AI-Assisted Creative • <span id="rotor">Films</span><span class="rotor-cursor"></span></p>
         <p class="reveal delay-300 text-sm font-light text-slate-500 max-w-xl mx-auto leading-relaxed mb-10">Merging traditional filmmaking craft with generative AI to produce high-impact visual content at scale. From ideation to execution — faster, smarter, bolder.</p>
-        <div class="reveal delay-400"><a href="#projects" class="group inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full text-sm font-semibold hover:bg-slate-200 transition-all duration-150">View My Work<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="16"></span></a></div>
+        <div class="reveal delay-400"><a href="#projects" class="sheen sheen-dark group inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full text-sm font-semibold hover:bg-slate-200 transition-all duration-150">View My Work<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="16"></span></a></div>
     </div>
-    <div class="reveal delay-500 absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"><span class="text-[10px] uppercase tracking-widest text-slate-600">Scroll</span><div class="w-px h-8 bg-gradient-to-b from-slate-600 to-transparent"></div></div>
 </section>
-
-<!-- MARQUEE -->
-<div class="border-y border-white/[0.06] py-4 overflow-hidden">
-    <div class="marquee-track flex items-center gap-8 whitespace-nowrap" style="width:max-content">
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">Higgsfield</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">ChatGPT</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">Claude</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">Seedance</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">Kling</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">Flux</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">Comfy UI</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">Premiere Pro</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">After Effects</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">DaVinci Resolve</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">Higgsfield</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">ChatGPT</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">Claude</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">Seedance</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">Kling</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">Flux</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">Comfy UI</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">Premiere Pro</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">After Effects</span><span class="text-red-500/40">✦</span>
-        <span class="text-xs uppercase tracking-[.3em] text-slate-600">DaVinci Resolve</span><span class="text-red-500/40">✦</span>
-    </div>
-</div>
 
 <!-- ABOUT -->
 <section id="about" class="py-24 md:py-32 px-6">
     <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div class="reveal"><div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-[#0A0A0A] border border-white/[0.06]"><img src="https://picsum.photos/seed/subham-editor-portrait/600/750.jpg" alt="Subham Guin" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"><div class="absolute top-0 left-0 w-8 h-full film-strip opacity-30"></div><div class="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-red-500/20 to-transparent"></div></div></div>
+            <div class="reveal"><div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-[#0A0A0A] border border-white/[0.06]"><img src="https://picsum.photos/seed/subham-editor-portrait/600/750.jpg" alt="Subham Guin" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-700"><span class="vf tl"></span><span class="vf tr"></span><span class="vf bl"></span><span class="vf br"></span><span class="absolute top-4 right-5 flex items-center gap-1.5 z-10"><span class="rec-dot"></span><span class="text-[9px] font-mono tracking-[.2em] text-white/70">REC</span></span><span class="absolute bottom-4 left-5 text-[9px] font-mono tracking-[.2em] text-white/60 z-10">4K • 24FPS</span><div class="absolute top-0 left-0 w-8 h-full film-strip opacity-30"></div><div class="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-red-500/20 to-transparent"></div></div></div>
             <div>
                 <div class="reveal"><span class="text-xs font-mono text-red-500 tracking-wider uppercase mb-4 block">// About Me</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight leading-tight gradient-text mb-6">Where filmmaking meets AI</h2></div>
                 <div class="reveal delay-100">
@@ -119,8 +144,8 @@
                     <p class="text-slate-400 font-light leading-relaxed mb-8">Currently at <span class="text-white font-normal">Meraaquii D&C</span>, I lead video editing and motion graphics while driving AI adoption across the production pipeline for major Indian brands.</p>
                 </div>
                 <div class="reveal delay-200 grid grid-cols-3 gap-4">
-                    <div class="border border-white/[0.06] rounded-xl p-4 text-center"><div class="text-2xl md:text-3xl font-bold text-white mb-1">6+</div><div class="text-[10px] uppercase tracking-widest text-slate-500">Years Exp.</div></div>
-                    <div class="border border-white/[0.06] rounded-xl p-4 text-center"><div class="text-2xl md:text-3xl font-bold text-white mb-1">10+</div><div class="text-[10px] uppercase tracking-widest text-slate-500">Brands</div></div>
+                    <div class="border border-white/[0.06] rounded-xl p-4 text-center"><div class="count-num text-2xl md:text-3xl font-bold text-white mb-1" data-count="6">0+</div><div class="text-[10px] uppercase tracking-widest text-slate-500">Years Exp.</div></div>
+                    <div class="border border-white/[0.06] rounded-xl p-4 text-center"><div class="count-num text-2xl md:text-3xl font-bold text-white mb-1" data-count="10">0+</div><div class="text-[10px] uppercase tracking-widest text-slate-500">Brands</div></div>
                     <div class="border border-red-500/20 rounded-xl p-4 text-center bg-red-500/[0.03]"><div class="text-2xl md:text-3xl font-bold text-red-400 mb-1">AI</div><div class="text-[10px] uppercase tracking-widest text-red-400/60">Assisted</div></div>
                 </div>
             </div>
@@ -138,9 +163,9 @@
             <p class="text-slate-500 font-light max-w-2xl mx-auto">I use AI to create complete video ads — same person, same product, same place in every shot — in a fraction of traditional time and cost.</p>
         </div>
         <div class="reveal delay-100 grid md:grid-cols-3 gap-6 mb-16">
-            <div class="border border-red-500/20 rounded-2xl p-8 bg-red-500/[0.02] hover:border-red-500/40 transition-colors duration-300"><span class="iconify text-red-400 mb-4 block" data-icon="mdi:movie-filter-outline" data-width="32"></span><h3 class="text-lg font-medium text-white mb-3">AI Video Ads</h3><p class="text-sm text-slate-500 font-light leading-relaxed">I create full video ads using AI — from writing the script with ChatGPT to generating visuals with Flux, Seedance, and Kling, then polishing everything in Premiere Pro.</p></div>
-            <div class="border border-red-500/20 rounded-2xl p-8 bg-red-500/[0.02] hover:border-red-500/40 transition-colors duration-300"><span class="iconify text-red-400 mb-4 block" data-icon="mdi:account-check-outline" data-width="32"></span><h3 class="text-lg font-medium text-white mb-3">Consistent Look</h3><p class="text-sm text-slate-500 font-light leading-relaxed">The same person, product, and location stays consistent across every frame — something that used to require expensive shoots, now done with AI and Comfy UI.</p></div>
-            <div class="border border-red-500/20 rounded-2xl p-8 bg-red-500/[0.02] hover:border-red-500/40 transition-colors duration-300"><span class="iconify text-red-400 mb-4 block" data-icon="mdi:lightning-bolt-outline" data-width="32"></span><h3 class="text-lg font-medium text-white mb-3">10x Faster</h3><p class="text-sm text-slate-500 font-light leading-relaxed">What used to take a full production crew days now takes me hours. I use custom GPTs, Claude skills, and Higgsfield to automate repetitive creative work.</p></div>
+            <div class="glow-card border border-red-500/20 rounded-2xl p-8 bg-red-500/[0.02] hover:border-red-500/40 transition-colors duration-300"><span class="iconify text-red-400 mb-4 block" data-icon="mdi:movie-filter-outline" data-width="32"></span><h3 class="text-lg font-medium text-white mb-3">AI Video Ads</h3><p class="text-sm text-slate-500 font-light leading-relaxed">I create full video ads using AI — from writing the script with ChatGPT to generating visuals with Flux, Seedance, and Kling, then polishing everything in Premiere Pro.</p></div>
+            <div class="glow-card border border-red-500/20 rounded-2xl p-8 bg-red-500/[0.02] hover:border-red-500/40 transition-colors duration-300"><span class="iconify text-red-400 mb-4 block" data-icon="mdi:account-check-outline" data-width="32"></span><h3 class="text-lg font-medium text-white mb-3">Consistent Look</h3><p class="text-sm text-slate-500 font-light leading-relaxed">The same person, product, and location stays consistent across every frame — something that used to require expensive shoots, now done with AI and Comfy UI.</p></div>
+            <div class="glow-card border border-red-500/20 rounded-2xl p-8 bg-red-500/[0.02] hover:border-red-500/40 transition-colors duration-300"><span class="iconify text-red-400 mb-4 block" data-icon="mdi:lightning-bolt-outline" data-width="32"></span><h3 class="text-lg font-medium text-white mb-3">10x Faster</h3><p class="text-sm text-slate-500 font-light leading-relaxed">What used to take a full production crew days now takes me hours. I use custom GPTs, Claude skills, and Higgsfield to automate repetitive creative work.</p></div>
         </div>
         <div class="reveal delay-200">
             <h3 class="text-sm font-medium text-slate-300 uppercase tracking-wider mb-8 text-center">AI Tools I Use</h3>
@@ -168,32 +193,35 @@
             <h2 class="text-2xl md:text-4xl font-semibold tracking-tight gradient-text">Brands I've Worked With</h2>
         </div>
         <div class="reveal delay-100 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A0A]">
-                <img src="logo/ei-samay.png" alt="Ei Samay" class="max-h-8 w-auto object-contain p-2">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/ei-samay.png" alt="Ei Samay" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A0A]">
-                <img src="logo/frontier-the-one.png" alt="Frontier The One" class="max-h-8 w-auto object-contain p-2">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/frontier-the-one.png" alt="Frontier The One" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A0A]">
-                <img src="logo/nambiar.png" alt="Nambiar Builders" class="max-h-8 w-auto object-contain p-2">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/nambiar.png" alt="Nambiar Builders" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A0A]">
-                <img src="logo/srijan.png" alt="Srijan" class="max-h-8 w-auto object-contain p-2">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/srijan.png" alt="Srijan" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A0A]">
-                <img src="logo/haldia-petro.png" alt="Haldia Petro Chemicals" class="max-h-8 w-auto object-contain p-2">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/haldia-petro.png" alt="Haldia Petro Chemicals" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A0A]">
-                <img src="logo/bumchum.png" alt="Bumchum" class="max-h-8 w-auto object-contain p-2">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/Bumchum-logo.png" alt="Bumchum" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A0A]">
-                <img src="logo/himalaya-darpan.png" alt="Himalaya Darpan" class="max-h-8 w-auto object-contain p-2">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/himalaya-darpan.png" alt="Himalaya Darpan" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A0A]">
-                <img src="logo/boroplus.png" alt="Boroplus" class="max-h-8 w-auto object-contain p-2">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/boroplus.png" alt="Boroplus" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A0A]">
-                <img src="logo/bright.png" alt="Bright" class="max-h-8 w-auto object-contain p-2">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/bright.png" alt="Bright" class="max-h-14 w-auto object-contain">
+            </div>
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/euro.png" alt="Euro" class="max-h-14 w-auto object-contain">
             </div>
         </div>
     </div>
@@ -205,7 +233,7 @@
     <div class="relative z-10 max-w-7xl mx-auto">
         <div class="reveal text-center mb-16 md:mb-20"><span class="text-xs font-mono text-red-500 tracking-wider uppercase mb-4 block">// Experience</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight gradient-text">Work Experience</h2></div>
         <div class="max-w-3xl mx-auto relative">
-            <div class="absolute left-4 md:left-8 top-0 bottom-0 w-px timeline-line"></div>
+            <div class="absolute left-4 md:left-8 top-0 bottom-0 w-px timeline-line"><span class="tl-playhead"></span></div>
             <div class="reveal relative pl-12 md:pl-20 pb-16">
                 <div class="absolute left-2.5 md:left-6.5 top-1.5 w-3 h-3 rounded-full bg-red-500 border-2 border-[#080808] shadow-[0_0_15px_rgba(239,68,68,.3)]"></div>
                 <div class="border border-white/[0.06] rounded-2xl p-6 md:p-8 bg-[#0A0A0A] hover:border-white/[0.12] transition-colors duration-300">
@@ -249,21 +277,21 @@
     <div class="max-w-7xl mx-auto">
         <div class="reveal text-center mb-16 md:mb-20"><span class="text-xs font-mono text-red-500 tracking-wider uppercase mb-4 block">// Selected Work</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight gradient-text mb-4">Featured Projects</h2><p class="text-slate-500 font-light max-w-lg mx-auto">AI-powered ads, motion graphics, and brand content for leading Indian brands.</p></div>
         <div class="grid md:grid-cols-2 gap-6">
-            <div class="reveal rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-300">
-                <div class="aspect-video"><iframe src="https://www.youtube.com/embed/XXXXXXXXXXX1?rel=0&modestbranding=1" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+            <div class="proj-card reveal rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
+                <div class="aspect-video"><div class="play-ico"><span class="iconify text-white" data-icon="mdi:play" data-width="28"></span></div><iframe src="https://www.youtube.com/embed/XXXXXXXXXXX1?rel=0" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="AI Ad with Consistent Character" loading="lazy"></iframe></div>
                 <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">AI Ad</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">AI Ad with Consistent Character</h3><p class="text-sm text-slate-500 font-light">Complete ad created with AI — same person and product in every shot.</p></div>
             </div>
-            <div class="reveal delay-100 rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-300">
-                <div class="aspect-video"><iframe src="https://www.youtube.com/embed/XXXXXXXXXXX2?rel=0&modestbranding=1" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+            <div class="proj-card reveal delay-100 rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
+                <div class="aspect-video"><div class="play-ico"><span class="iconify text-white" data-icon="mdi:play" data-width="28"></span></div><iframe src="https://www.youtube.com/embed/XXXXXXXXXXX2?rel=0" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Motion Graphics Showreel 2024" loading="lazy"></iframe></div>
                 <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Motion Graphics</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Motion Graphics Showreel 2024</h3><p class="text-sm text-slate-500 font-light">Kinetic typography, logo animations, and AI-enhanced motion pieces.</p></div>
             </div>
-            <div class="reveal rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-300">
-                <div class="aspect-video"><iframe src="https://www.youtube.com/embed/XXXXXXXXXXX3?rel=0&modestbranding=1" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+            <div class="proj-card reveal rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
+                <div class="aspect-video"><div class="play-ico"><span class="iconify text-white" data-icon="mdi:play" data-width="28"></span></div><iframe src="https://www.youtube.com/embed/XXXXXXXXXXX3?rel=0" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="AI-Powered Social Content" loading="lazy"></iframe></div>
                 <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">AI + Short-Form</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">AI-Powered Social Content</h3><p class="text-sm text-slate-500 font-light">Reels and Shorts generated with AI, finished with professional editing.</p></div>
             </div>
-            <div class="reveal delay-100 rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-300">
-                <div class="aspect-video"><iframe src="https://www.youtube.com/embed/XXXXXXXXXXX4?rel=0&modestbranding=1" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-                <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Commercial</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Brand Commercial Campaign</h3><p class="text-sm text-slate-500 font-light">Full editing, motion graphics, color grading, and AI-enhanced VFX.</p></div>
+            <div class="proj-card reveal delay-100 rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
+                <div class="aspect-video"><div class="play-ico"><span class="iconify text-white" data-icon="mdi:play" data-width="28"></span></div><iframe src="https://www.youtube.com/embed/jgqa_JoBoeI?rel=0" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Logo Animations" loading="lazy"></iframe></div>
+                <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Commercial</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Logo Animations</h3><p class="text-sm text-slate-500 font-light">Animated Logos.</p></div>
             </div>
         </div>
         <div class="reveal text-center mt-12"><a href="https://www.youtube.com/@KINOKS" target="_blank" class="group inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-300 border-b border-white/[0.1] hover:border-white/[0.3] pb-1">See more on YouTube<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="14"></span></a></div>
@@ -287,12 +315,12 @@
             <div class="reveal delay-200">
                 <h3 class="text-sm font-medium text-slate-300 uppercase tracking-wider mb-6">Core Capabilities</h3>
                 <div class="grid grid-cols-2 gap-3">
-                    <div class="border border-red-500/20 rounded-xl p-4 hover:border-red-500/40 hover:bg-red-500/[0.03] transition-all duration-300 bg-red-500/[0.01]"><span class="iconify text-red-400 mb-3 block" data-icon="mdi:robot-outline" data-width="22"></span><span class="text-sm text-white font-medium block">AI-Powered Content</span><span class="text-xs text-slate-500 mt-1 block">AI Ads • Idea to Video</span></div>
-                    <div class="border border-red-500/20 rounded-xl p-4 hover:border-red-500/40 hover:bg-red-500/[0.03] transition-all duration-300 bg-red-500/[0.01]"><span class="iconify text-red-400 mb-3 block" data-icon="mdi:account-check-outline" data-width="22"></span><span class="text-sm text-white font-medium block">AI Consistency</span><span class="text-xs text-slate-500 mt-1 block">Character • Product • Place</span></div>
-                    <div class="border border-white/[0.06] rounded-xl p-4 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-500 mb-3 block" data-icon="mdi:movie-edit-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Video Editing</span><span class="text-xs text-slate-600 mt-1 block">Narrative & Commercial</span></div>
-                    <div class="border border-white/[0.06] rounded-xl p-4 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-500 mb-3 block" data-icon="mdi:animation-play-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Motion Graphics</span><span class="text-xs text-slate-600 mt-1 block">2D & 3D Animation</span></div>
-                    <div class="border border-white/[0.06] rounded-xl p-4 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-500 mb-3 block" data-icon="mdi:palette-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Color Grading</span><span class="text-xs text-slate-600 mt-1 block">Cinematic Look</span></div>
-                    <div class="border border-white/[0.06] rounded-xl p-4 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-500 mb-3 block" data-icon="mdi:camera-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Camera Work</span><span class="text-xs text-slate-600 mt-1 block">Film & Music Videos</span></div>
+                    <div class="cap-card border border-red-500/20 rounded-xl p-4 hover:border-red-500/40 hover:bg-red-500/[0.03] transition-all duration-300 bg-red-500/[0.01]"><span class="iconify text-red-400 mb-3 block" data-icon="mdi:robot-outline" data-width="22"></span><span class="text-sm text-white font-medium block">AI-Powered Content</span><span class="text-xs text-slate-500 mt-1 block">AI Ads • Idea to Video</span></div>
+                    <div class="cap-card border border-red-500/20 rounded-xl p-4 hover:border-red-500/40 hover:bg-red-500/[0.03] transition-all duration-300 bg-red-500/[0.01]"><span class="iconify text-red-400 mb-3 block" data-icon="mdi:account-check-outline" data-width="22"></span><span class="text-sm text-white font-medium block">AI Consistency</span><span class="text-xs text-slate-500 mt-1 block">Character • Product • Place</span></div>
+                    <div class="cap-card border border-white/[0.06] rounded-xl p-4 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-500 mb-3 block" data-icon="mdi:movie-edit-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Video Editing</span><span class="text-xs text-slate-600 mt-1 block">Narrative & Commercial</span></div>
+                    <div class="cap-card border border-white/[0.06] rounded-xl p-4 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-500 mb-3 block" data-icon="mdi:animation-play-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Motion Graphics</span><span class="text-xs text-slate-600 mt-1 block">2D & 3D Animation</span></div>
+                    <div class="cap-card border border-white/[0.06] rounded-xl p-4 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-500 mb-3 block" data-icon="mdi:palette-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Color Grading</span><span class="text-xs text-slate-600 mt-1 block">Cinematic Look</span></div>
+                    <div class="cap-card border border-white/[0.06] rounded-xl p-4 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-500 mb-3 block" data-icon="mdi:camera-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Camera Work</span><span class="text-xs text-slate-600 mt-1 block">Film & Music Videos</span></div>
                 </div>
                 <div class="mt-8"><h3 class="text-sm font-medium text-slate-300 uppercase tracking-wider mb-4">Languages</h3><div class="flex flex-wrap gap-3"><span class="text-xs border border-white/[0.1] rounded-full px-4 py-1.5 text-slate-400">English</span><span class="text-xs border border-white/[0.1] rounded-full px-4 py-1.5 text-slate-400">Bengali</span><span class="text-xs border border-white/[0.1] rounded-full px-4 py-1.5 text-slate-400">Hindi</span></div></div>
             </div>
@@ -306,9 +334,9 @@
     <div class="relative z-10 max-w-7xl mx-auto">
         <div class="reveal text-center mb-12"><span class="text-xs font-mono text-red-500 tracking-wider uppercase mb-4 block">// Beyond Work</span><h2 class="text-2xl md:text-3xl font-semibold tracking-tight gradient-text">When I'm Not Editing</h2></div>
         <div class="reveal delay-100 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            <div class="text-center border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] transition-colors duration-300"><span class="iconify text-red-400 mx-auto mb-3" data-icon="mdi:camera-outline" data-width="28"></span><h4 class="text-sm font-medium text-white mb-1">Still Photography</h4><p class="text-xs text-slate-500">Capturing moments & frames</p></div>
-            <div class="text-center border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] transition-colors duration-300"><span class="iconify text-red-400 mx-auto mb-3" data-icon="mdi:book-open-page-variant-outline" data-width="28"></span><h4 class="text-sm font-medium text-white mb-1">Reading</h4><p class="text-xs text-slate-500">Books, stories & knowledge</p></div>
-            <div class="text-center border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] transition-colors duration-300"><span class="iconify text-red-400 mx-auto mb-3" data-icon="mdi:gamepad-variant-outline" data-width="28"></span><h4 class="text-sm font-medium text-white mb-1">Gaming</h4><p class="text-xs text-slate-500">Interactive storytelling</p></div>
+            <div class="interest-card text-center border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] transition-colors duration-300"><span class="iconify text-red-400 mx-auto mb-3" data-icon="mdi:camera-outline" data-width="28"></span><h4 class="text-sm font-medium text-white mb-1">Still Photography</h4><p class="text-xs text-slate-500">Capturing moments & frames</p></div>
+            <div class="interest-card text-center border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] transition-colors duration-300"><span class="iconify text-red-400 mx-auto mb-3" data-icon="mdi:book-open-page-variant-outline" data-width="28"></span><h4 class="text-sm font-medium text-white mb-1">Reading</h4><p class="text-xs text-slate-500">Books, stories & knowledge</p></div>
+            <div class="interest-card text-center border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] transition-colors duration-300"><span class="iconify text-red-400 mx-auto mb-3" data-icon="mdi:gamepad-variant-outline" data-width="28"></span><h4 class="text-sm font-medium text-white mb-1">Gaming</h4><p class="text-xs text-slate-500">Interactive storytelling</p></div>
         </div>
     </div>
 </section>
@@ -319,12 +347,12 @@
     <div class="relative z-10 max-w-4xl mx-auto text-center">
         <div class="reveal"><span class="text-xs font-mono text-red-500 tracking-wider uppercase mb-4 block">// Get In Touch</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight gradient-text mb-6">Let's Create Something Amazing</h2><p class="text-slate-400 font-light leading-relaxed mb-10 max-w-lg mx-auto">Have a project in mind? Need AI-powered video content? I'd love to hear about your vision.</p></div>
         <div class="reveal delay-100 grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            <a href="#" class="wa-trigger group border-2 border-[#25D366]/30 rounded-2xl p-6 hover:border-[#25D366]/60 hover:bg-[#25D366]/[0.05] transition-all duration-300 relative overflow-hidden" role="button"><div class="absolute top-0 right-0 w-16 h-16 bg-[#25D366]/10 blur-2xl rounded-full pointer-events-none"></div><span class="iconify text-[#25D366] mx-auto mb-3 block relative" data-icon="mdi:whatsapp" data-width="28"></span><span class="text-xs text-[#25D366]/70 block mb-1 relative">WhatsApp</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors relative">Chat with me</span></a>
-            <a href="mailto:guinsubham@gmail.com" class="group border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-400 mx-auto mb-3 block" data-icon="mdi:email-outline" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Email</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors break-all">guinsubham@gmail.com</span></a>
-            <a href="https://www.linkedin.com/in/subham-guin-160b9b242" target="_blank" class="group border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-400 mx-auto mb-3 block" data-icon="mdi:linkedin" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">LinkedIn</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">Message me</span></a>
-            <a href="https://instagram.com/subhamguin" target="_blank" class="group border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-400 mx-auto mb-3 block" data-icon="mdi:instagram" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Instagram</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">@subhamguin</span></a>
+            <a href="#" class="wa-trigger contact-card group border-2 border-[#25D366]/30 rounded-2xl p-6 hover:border-[#25D366]/60 hover:bg-[#25D366]/[0.05] transition-all duration-300 relative overflow-hidden" role="button"><div class="absolute top-0 right-0 w-16 h-16 bg-[#25D366]/10 blur-2xl rounded-full pointer-events-none"></div><span class="iconify text-[#25D366] mx-auto mb-3 block relative" data-icon="mdi:whatsapp" data-width="28"></span><span class="text-xs text-[#25D366]/70 block mb-1 relative">WhatsApp</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors relative">Chat with me</span></a>
+            <a href="mailto:guinsubham@gmail.com" class="contact-card group border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-400 mx-auto mb-3 block" data-icon="mdi:email-outline" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Email</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors break-all">guinsubham@gmail.com</span></a>
+            <a href="https://www.linkedin.com/in/subham-guin-160b9b242" target="_blank" class="contact-card group border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-400 mx-auto mb-3 block" data-icon="mdi:linkedin" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">LinkedIn</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">Message me</span></a>
+            <a href="https://instagram.com/subhamguin" target="_blank" class="contact-card group border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-400 mx-auto mb-3 block" data-icon="mdi:instagram" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Instagram</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">@subhamguin</span></a>
         </div>
-        <div class="reveal delay-200"><a href="#" class="wa-trigger group inline-flex items-center gap-2 wa-btn px-8 py-4 rounded-full text-sm font-semibold transition-all duration-150 shadow-[0_0_30px_rgba(37,211,102,.2)] hover:shadow-[0_0_40px_rgba(37,211,102,.3)]" role="button"><span class="iconify" data-icon="mdi:whatsapp" data-width="18"></span>Chat on WhatsApp<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="16"></span></a></div>
+        <div class="reveal delay-200"><a href="#" class="wa-trigger sheen group inline-flex items-center gap-2 wa-btn px-8 py-4 rounded-full text-sm font-semibold transition-all duration-150 shadow-[0_0_30px_rgba(37,211,102,.2)] hover:shadow-[0_0_40px_rgba(37,211,102,.3)]" role="button"><span class="iconify" data-icon="mdi:whatsapp" data-width="18"></span>Chat on WhatsApp<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="16"></span></a></div>
     </div>
 </section>
 
@@ -360,8 +388,100 @@
     document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var h=this.getAttribute('href');if(h==='#')return;e.preventDefault();var t=document.querySelector(h);if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
 })();
 </script>
+<script>
+(function(){
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var tc=document.getElementById('timecode');
+    if(tc&&!reduce){
+        var t0=Date.now();
+        (function upd(){
+            var e=(Date.now()-t0)/1000,p=function(v){return (v<10?'0':'')+v};
+            tc.textContent='TC '+p(Math.floor(e/3600))+':'+p(Math.floor(e/60)%60)+':'+p(Math.floor(e)%60)+':'+p(Math.floor(e*24)%24);
+            setTimeout(upd,1000/24);
+        })();
+    }
+    var rotor=document.getElementById('rotor');
+    if(rotor&&!reduce){
+        var words=['Films','Ads','Short-Form Content','Motion Graphics','AI Ads'],wi=0,ci=words[0].length,del=true;
+        (function tick(){
+            var w=words[wi];
+            if(del){ci--;rotor.textContent=w.slice(0,ci);if(ci===0){del=false;wi=(wi+1)%words.length;setTimeout(tick,350);return}setTimeout(tick,35)}
+            else{ci++;rotor.textContent=w.slice(0,ci);if(ci===w.length){del=true;setTimeout(tick,1700);return}setTimeout(tick,70)}
+        })();
+    }
+    var logos=document.querySelectorAll('.client-logo');
+    if(logos.length){
+        var show=function(){logos.forEach(function(el,i){setTimeout(function(){el.classList.add('in')},i*70)})};
+        if('IntersectionObserver' in window){
+            var cg=document.querySelector('#clients .grid');
+            if(cg){var o=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){show();o.disconnect()}})},{threshold:.12});o.observe(cg)}
+            else{show()}
+        }else{show()}
+    }
+    document.querySelectorAll('.iconify').forEach(function(el,i){
+        el.classList.add('ico-idle');
+        el.style.setProperty('--idel',((i%7)*0.22).toFixed(2)+'s');
+        el.style.setProperty('--idur',(2.6+(i%5)*0.3).toFixed(2)+'s');
+    });
+    var tlLine=document.querySelector('.timeline-line'),tlDot=document.querySelector('.tl-playhead');
+    if(tlLine&&tlDot){
+        var mv=function(){
+            var r=tlLine.getBoundingClientRect();
+            var p=(window.innerHeight*0.55-r.top)/r.height;
+            p=Math.max(0,Math.min(1,p));
+            tlDot.style.top=(p*100).toFixed(2)+'%';
+            tlDot.style.opacity=(p<=0.01||p>=0.99)?'0':'1';
+        };
+        window.addEventListener('scroll',mv,{passive:true});
+        window.addEventListener('resize',mv);
+        mv();
+    }
+    var bars=document.querySelectorAll('[data-count]');
+    if(bars.length){
+        var runCount=function(el){
+            var n=+el.getAttribute('data-count'),s=null;
+            el.classList.add('counting');
+            (function st(ts){
+                if(s===null)s=ts;
+                var pr=Math.min((ts-s)/1400,1);
+                var ez=pr<0.5?4*pr*pr*pr:1-Math.pow(-2*pr+2,3)/2;
+                el.textContent=Math.round(n*ez)+'+';
+                if(pr<1)requestAnimationFrame(st);
+            })(performance.now());
+        };
+        if('IntersectionObserver' in window&&!reduce){
+            var co=new IntersectionObserver(function(en){
+                en.forEach(function(e){if(e.isIntersecting){runCount(e.target);co.unobserve(e.target)}});
+            },{threshold:.6});
+            bars.forEach(function(b){co.observe(b)});
+        }else{bars.forEach(function(b){runCount(b)})}
+    }
+    var pWrap=document.getElementById('particles');
+    if(pWrap&&!reduce){
+        for(var i=0;i<18;i++){
+            var s=document.createElement('span');
+            var sz=(2+Math.random()*3).toFixed(1);
+            s.className='particle';
+            s.style.width=sz+'px';
+            s.style.height=sz+'px';
+            s.style.left=(Math.random()*100).toFixed(2)+'%';
+            s.style.setProperty('--o',(0.15+Math.random()*0.4).toFixed(2));
+            s.style.setProperty('--dx',Math.round(Math.random()*120-60)+'px');
+            s.style.animationDuration=(9+Math.random()*11).toFixed(1)+'s';
+            s.style.animationDelay=(-Math.random()*18).toFixed(1)+'s';
+            s.style.background=i%3===0?'rgba(255,255,255,.7)':(i%3===1?'#ef4444':'rgba(239,68,68,.45)');
+            pWrap.appendChild(s);
+        }
+    }
+    var pb=document.getElementById('playhead-bar');
+    if(pb){
+        var up=function(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight||1);pb.style.width=(p*100).toFixed(2)+'%'};
+        window.addEventListener('scroll',up,{passive:true});
+        window.addEventListener('resize',up);
+        up();
+    }
+})();
+</script>
 </body>
 </html>
 </html>
-
-**To deploy — just save as `index.html` and upload to GitHub Pages as previously described.** Replace the 4 YouTube video IDs (`XXXXXXXXXXX1`–`XXXXXXXXXXX4`) with your real video IDs.
