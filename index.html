@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif']}}}}</script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif']}}}</script>
     <style>
         *{font-family:'Inter',sans-serif;font-feature-settings:"cv02","cv03","cv04","cv11"}
         body{background:#050505;color:#fff}
@@ -22,11 +22,10 @@
         .skill-bar-fill{width:0;transition:width 1.5s cubic-bezier(.16,1,.3,1)}
         ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#050505}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
         .nav-blur{backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
-        .project-card:hover .project-overlay{opacity:1}.project-card:hover .project-image{transform:scale(1.05)}.project-card:hover .project-tag{transform:translateY(0);opacity:1}
         @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
         .marquee-track{animation:marquee 25s linear infinite}.marquee-track:hover{animation-play-state:paused}
         .grid-bg{background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
-        .client-logo{transition:all .3s ease}.client-logo:hover{color:#fff;border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.03)}
+        .client-logo{transition:all .3s ease}.client-logo:hover{border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.03)}
         .role-item{position:relative;padding-left:20px}.role-item::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:rgba(239,68,68,.4);border:1px solid rgba(239,68,68,.6)}
         .wa-btn{background:#25D366;color:#fff;cursor:pointer}.wa-btn:hover{background:#20BD5A}
         .ai-tool-card{border:1px solid rgba(239,68,68,.1);transition:all .3s ease}
@@ -146,16 +145,16 @@
         <div class="reveal delay-200">
             <h3 class="text-sm font-medium text-slate-300 uppercase tracking-wider mb-8 text-center">AI Tools I Use</h3>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
-                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:robot-happy-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">ChatGPT</span><span class="text-[10px] text-slate-600">Ideation & Scripts</span></div>
-                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:brain" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Claude</span><span class="text-[10px] text-slate-600">Analysis & Skills</span></div>
-                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:video-vintage" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Higgsfield</span><span class="text-[10px] text-slate-600">AI Video Ads</span></div>
-                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:creation" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Seedance</span><span class="text-[10px] text-slate-600">AI Video Gen</span></div>
-                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:movie-star-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Kling</span><span class="text-[10px] text-slate-600">AI Video Gen</span></div>
-                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:flash-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Flux</span><span class="text-[10px] text-slate-600">Image Generation</span></div>
-                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:graph-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Comfy UI</span><span class="text-[10px] text-slate-600">Custom Pipelines</span></div>
-                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:cog-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Custom GPTs</span><span class="text-[10px] text-slate-600">Build & Deploy</span></div>
-                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:puzzle-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Claude Skills</span><span class="text-[10px] text-slate-600">Create & Use</span></div>
-                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:waveform" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">ElevenLabs</span><span class="text-[10px] text-slate-600">AI Voice & Audio</span></div>
+                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:robot-happy-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">ChatGPT</span><span class="text-[10px] text-slate-600">Ideation & Scripts</span></div>
+                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:brain" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Claude</span><span class="text-[10px] text-slate-600">Analysis & Skills</span></div>
+                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:video-vintage" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Higgsfield</span><span class="text-[10px] text-slate-600">AI Video Ads</span></div>
+                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:creation" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Seedance</span><span class="text-[10px] text-slate-600">AI Video Gen</span></div>
+                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:movie-star-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Kling</span><span class="text-[10px] text-slate-600">AI Video Gen</span></div>
+                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:flash-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Flux</span><span class="text-[10px] text-slate-600">Image Generation</span></div>
+                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:graph-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Comfy UI</span><span class="text-[10px] text-slate-600">Custom Pipelines</span></div>
+                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:cog-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Custom GPTs</span><span class="text-[10px] text-slate-600">Build & Deploy</span></div>
+                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:puzzle-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Claude Skills</span><span class="text-[10px] text-slate-600">Create & Use</span></div>
+                <div class="ai-tool-card rounded-xl p-5 text-center bg-[#0A0A0A0A]"><span class="iconify text-red-400 mx-auto mb-2 block" data-icon="mdi:waveform" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">ElevenLabs</span><span class="text-[10px] text-slate-600">AI Voice & Audio</span></div>
             </div>
         </div>
     </div>
@@ -166,16 +165,33 @@
     <div class="max-w-7xl mx-auto">
         <div class="reveal text-center mb-12 md:mb-16"><span class="text-xs font-mono text-red-500 tracking-wider uppercase mb-4 block">// Trusted By</span><h2 class="text-2xl md:text-4xl font-semibold tracking-tight gradient-text">Brands I've Worked With</h2></div>
         <div class="reveal delay-100 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center text-center"><span class="text-sm font-medium text-slate-500 tracking-wide">Ei Samay</span></div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center text-center"><span class="text-sm font-medium text-slate-500 tracking-wide">Frontier The One</span></div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center text-center"><span class="text-sm font-medium text-slate-500 tracking-wide">Nambiar</span></div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center text-center"><span class="text-sm font-medium text-slate-500 tracking-wide">Srijan</span></div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center text-center"><span class="text-sm font-medium text-slate-500 tracking-wide">Haldia Petro</span></div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center text-center"><span class="text-sm font-medium text-slate-500 tracking-wide">Euro</span></div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center text-center"><span class="text-sm font-medium text-slate-500 tracking-wide">Bumchum</span></div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center text-center"><span class="text-sm font-medium text-slate-500 tracking-wide">Himalaya Darpan</span></div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center text-center"><span class="text-sm font-medium text-slate-500 tracking-wide">Boroplus</span></div>
-            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center text-center"><span class="text-sm font-medium text-slate-500 tracking-wide">Bright</span></div>
+            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A]">
+                <img src="https://drive.google.com/uc?export=view&id=1SEcAKakN8rea-ZP6DDPge8kje1rFjXP0" alt="Ei Samay" class="max-h-8 w-auto object-contain p-2">
+            </div>
+            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A]">
+                <img src="https://drive.google.com/uc?export=view&id=1uyxWfCqQzQHB2GcU9z0O2y443FP4_RAk" alt="Frontier The One" class="max-h-8 w-auto object-contain p-2">
+            </div>
+            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A]">
+                <img src="https://drive.google.com/uc?export=view&id=1YjIgIPztjKU1Pejud9ZJFEanEL_hHAij" alt="Nambiar" class="max-h-8 w-auto object-contain p-2">
+            </div>
+            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A]">
+                <img src="https://drive.google.com/uc?export=view&id=1br-k03r4os_roO6zrZQ64p3kzO2t-VN5" alt="Srijan" class="max-h-8 w-auto object-contain p-2">
+            </div>
+            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A]">
+                <img src="https://drive.google.com/uc?export=view&id=1HhUBMiTIqrf0PhLL1UlZzrffj0VAXWBN" alt="Haldia Petro Chemicals" class="max-h-8 w-auto object-contain p-2">
+            </div>
+            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A]">
+                <img src="https://drive.google.com/uc?export=view&id=15jRZPLRB3Vpk1J7cn5T_ho8efqcV1F2K" alt="Bumchum" class="max-h-8 w-auto object-contain p-2">
+            </div>
+            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A]">
+                <img src="https://drive.google.com/uc?export=view&id=1tdo-BRsrYNna05wuiqFS-iaF5bH14dvw" alt="Himalaya Darpan" class="max-h-8 w-auto object-contain p-2">
+            </div>
+            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A]">
+                <img src="https://drive.google.com/uc?export=view&id=1z_SpApJuOKc7hfw0wa4iqWkr7ksyvW2U" alt="Boroplus" class="max-h-8 w-auto object-contain p-2">
+            </div>
+            <div class="client-logo border border-white/[0.06] rounded-xl p-5 flex items-center justify-center h-20 bg-[#0A0A0A0A]">
+                <img src="https://drive.google.com/uc?export=view&id=1fTwOQbH-ckaRvQ7Zek8Wgz47uKf6oyGp" alt="Bright" class="max-h-8 w-auto object-contain p-2">
+            </div>
         </div>
     </div>
 </section>
@@ -230,25 +246,21 @@
     <div class="max-w-7xl mx-auto">
         <div class="reveal text-center mb-16 md:mb-20"><span class="text-xs font-mono text-red-500 tracking-wider uppercase mb-4 block">// Selected Work</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight gradient-text mb-4">Featured Projects</h2><p class="text-slate-500 font-light max-w-lg mx-auto">AI-powered ads, motion graphics, and brand content for leading Indian brands.</p></div>
         <div class="grid md:grid-cols-2 gap-6">
-            <!-- Replace XXXXXXXXXX1 with your real YouTube video ID -->
             <div class="reveal rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-300">
                 <div class="aspect-video"><iframe src="https://www.youtube.com/embed/XXXXXXXXXXX1?rel=0&modestbranding=1" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-                <div class="p-6 bg-[#0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">AI Ad</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">AI Ad with Consistent Character</h3><p class="text-sm text-slate-500 font-light">Complete ad created with AI — same person and product in every shot.</p></div>
+                <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">AI Ad</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">AI Ad with Consistent Character</h3><p class="text-sm text-slate-500 font-light">Complete ad created with AI — same person and product in every shot.</p></div>
             </div>
-            <!-- Replace XXXXXXXXXX2 -->
             <div class="reveal delay-100 rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-300">
                 <div class="aspect-video"><iframe src="https://www.youtube.com/embed/XXXXXXXXXXX2?rel=0&modestbranding=1" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-                <div class="p-6 bg-[#0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Motion Graphics</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Motion Graphics Showreel 2024</h3><p class="text-sm text-slate-500 font-light">Kinetic typography, logo animations, and AI-enhanced motion pieces.</p></div>
+                <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Motion Graphics</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Motion Graphics Showreel 2024</h3><p class="text-sm text-slate-500 font-light">Kinetic typography, logo animations, and AI-enhanced motion pieces.</p></div>
             </div>
-            <!-- Replace XXXXXXXXXX3 -->
             <div class="reveal rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-300">
                 <div class="aspect-video"><iframe src="https://www.youtube.com/embed/XXXXXXXXXXX3?rel=0&modestbranding=1" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-                <div class="p-6 bg-[#0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">AI + Short-Form</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">AI-Powered Social Content</h3><p class="text-sm text-slate-500 font-light">Reels and Shorts generated with AI, finished with professional editing.</p></div>
+                <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">AI + Short-Form</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">AI-Powered Social Content</h3><p class="text-sm text-slate-500 font-light">Reels and Shorts generated with AI, finished with professional editing.</p></div>
             </div>
-            <!-- Replace XXXXXXXXXX4 -->
             <div class="reveal delay-100 rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-300">
-                <div class="aspect-video"><iframe src="https://www.youtube.com/playlist?list=PLNw6M8IJ-HNo&modestbranding=1" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
-                <div class="p-6 bg-[#0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Logo Animations</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Various Brand Logo Animations</h3><p class="text-sm text-slate-500 font-light">Handmade. Keyframe by keyframe.</p></div>
+                <div class="aspect-video"><iframe src="https://www.youtube.com/embed/XXXXXXXXXXX4?rel=0&modestbranding=1" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+                <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Commercial</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Brand Commercial Campaign</h3><p class="text-sm text-slate-500 font-light">Full editing, motion graphics, color grading, and AI-enhanced VFX.</p></div>
             </div>
         </div>
         <div class="reveal text-center mt-12"><a href="https://www.youtube.com/@KINOKS" target="_blank" class="group inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-300 border-b border-white/[0.1] hover:border-white/[0.3] pb-1">See more on YouTube<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="14"></span></a></div>
@@ -307,7 +319,7 @@
             <a href="#" class="wa-trigger group border-2 border-[#25D366]/30 rounded-2xl p-6 hover:border-[#25D366]/60 hover:bg-[#25D366]/[0.05] transition-all duration-300 relative overflow-hidden" role="button"><div class="absolute top-0 right-0 w-16 h-16 bg-[#25D366]/10 blur-2xl rounded-full pointer-events-none"></div><span class="iconify text-[#25D366] mx-auto mb-3 block relative" data-icon="mdi:whatsapp" data-width="28"></span><span class="text-xs text-[#25D366]/70 block mb-1 relative">WhatsApp</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors relative">Chat with me</span></a>
             <a href="mailto:guinsubham@gmail.com" class="group border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-400 mx-auto mb-3 block" data-icon="mdi:email-outline" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Email</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors break-all">guinsubham@gmail.com</span></a>
             <a href="https://www.linkedin.com/in/subham-guin-160b9b242" target="_blank" class="group border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-400 mx-auto mb-3 block" data-icon="mdi:linkedin" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">LinkedIn</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">Message me</span></a>
-            <a href="https://www.instagram.com/subham_guin/" target="_blank" class="group border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-400 mx-auto mb-3 block" data-icon="mdi:instagram" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Instagram</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">@subhamguin</span></a>
+            <a href="https://instagram.com/subhamguin" target="_blank" class="group border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-400 mx-auto mb-3 block" data-icon="mdi:instagram" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Instagram</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">@subhamguin</span></a>
         </div>
         <div class="reveal delay-200"><a href="#" class="wa-trigger group inline-flex items-center gap-2 wa-btn px-8 py-4 rounded-full text-sm font-semibold transition-all duration-150 shadow-[0_0_30px_rgba(37,211,102,.2)] hover:shadow-[0_0_40px_rgba(37,211,102,.3)]" role="button"><span class="iconify" data-icon="mdi:whatsapp" data-width="18"></span>Chat on WhatsApp<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="16"></span></a></div>
     </div>
@@ -321,7 +333,7 @@
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-2"><span class="iconify text-red-500" data-icon="mdi:movie-open-outline" data-width="18"></span><span class="text-xs text-slate-500">© 2025 Subham Guin. All rights reserved.</span></div>
         <div class="flex items-center gap-6">
-            <a href="https://www.instagram.com/subham_guin/" target="_blank" class="text-slate-500 hover:text-white transition-colors duration-300" aria-label="Instagram"><span class="iconify" data-icon="mdi:instagram" data-width="18"></span></a>
+            <a href="https://instagram.com/subhamguin" target="_blank" class="text-slate-500 hover:text-white transition-colors duration-300" aria-label="Instagram"><span class="iconify" data-icon="mdi:instagram" data-width="18"></span></a>
             <a href="https://www.linkedin.com/in/subham-guin-160b9b242" target="_blank" class="text-slate-500 hover:text-white transition-colors duration-300" aria-label="LinkedIn"><span class="iconify" data-icon="mdi:linkedin" data-width="18"></span></a>
             <a href="https://www.youtube.com/@KINOKS" target="_blank" class="text-slate-500 hover:text-white transition-colors duration-300" aria-label="YouTube"><span class="iconify" data-icon="mdi:youtube" data-width="18"></span></a>
         </div>
@@ -347,3 +359,6 @@
 </script>
 </body>
 </html>
+</html>
+
+**To deploy — just save as `index.html` and upload to GitHub Pages as previously described.** Replace the 4 YouTube video IDs (`XXXXXXXXXXX1`–`XXXXXXXXXXX4`) with your real video IDs.
