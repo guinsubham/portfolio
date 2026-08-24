@@ -85,6 +85,7 @@
         .particle{position:absolute;bottom:-12px;border-radius:9999px;pointer-events:none;opacity:0;animation:floatUp linear infinite;will-change:transform}
         @keyframes floatUp{0%{transform:translate(0,0);opacity:0}8%{opacity:var(--o,.4)}85%{opacity:var(--o,.4)}100%{transform:translate(var(--dx,0px),-105vh);opacity:0}}
         @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.client-logo{opacity:1!important;transform:none!important}.grain{display:none}.count-num{opacity:1!important;transform:none!important}#particles{display:none}}
+        @media (max-width:768px){.grain{display:none}.spin-slow{animation:none}}
     </style>
 </head>
 <body class="antialiased overflow-x-hidden">
@@ -201,34 +202,34 @@
             <h2 class="text-2xl md:text-4xl font-semibold tracking-tight gradient-text">Brands I've Worked With</h2>
         </div>
         <div class="reveal delay-100 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
-            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
                 <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/ei-samay.png" alt="Ei Samay" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
                 <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/frontier-the-one.png" alt="Frontier The One" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
                 <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/nambiar.png" alt="Nambiar Builders" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
                 <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/srijan.png" alt="Srijan" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
                 <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/haldia-petro.png" alt="Haldia Petro Chemicals" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
                 <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/Bumchum-logo.png" alt="Bumchum" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
                 <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/himalaya-darpan.png" alt="Himalaya Darpan" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
                 <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/boroplus.png" alt="Boroplus" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
                 <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/bright.png" alt="Bright" class="max-h-14 w-auto object-contain">
             </div>
-            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-24 bg-[#F7F7F7]">
+            <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
                 <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/euro.png" alt="Euro" class="max-h-14 w-auto object-contain">
             </div>
         </div>
@@ -243,7 +244,7 @@
         <div class="max-w-3xl mx-auto relative">
             <div class="absolute left-4 md:left-8 top-0 bottom-0 w-px timeline-line"><span class="tl-playhead"></span></div>
             <div class="reveal relative pl-12 md:pl-20 pb-16">
-                <div class="absolute left-2.5 md:left-6.5 top-1.5 w-3 h-3 rounded-full bg-red-500 border-2 border-[#080808] shadow-[0_0_15px_rgba(239,68,68,.3)]"></div>
+                <div class="absolute left-2.5 md:left-[1.65rem] top-1.5 w-3 h-3 rounded-full bg-red-500 border-2 border-[#080808] shadow-[0_0_15px_rgba(239,68,68,.3)]"></div>
                 <div class="border border-white/[0.06] rounded-2xl p-6 md:p-8 bg-[#0A0A0A] hover:border-white/[0.12] transition-colors duration-300">
                     <div class="flex flex-wrap items-center gap-3 mb-4"><span class="text-xs font-mono text-red-400 bg-red-500/10 px-3 py-1 rounded-full">2022 — Present</span><span class="text-[10px] uppercase tracking-widest text-green-400 bg-green-500/10 px-2 py-0.5 rounded-full">Current</span></div>
                     <h3 class="text-xl font-medium tracking-tight text-white mb-1">Video Editor & Motion Graphics Designer</h3>
@@ -253,7 +254,7 @@
                 </div>
             </div>
             <div class="reveal delay-100 relative pl-12 md:pl-20 pb-16">
-                <div class="absolute left-2.5 md:left-6.5 top-1.5 w-3 h-3 rounded-full bg-slate-600 border-2 border-[#080808]"></div>
+                <div class="absolute left-2.5 md:left-[1.65rem] top-1.5 w-3 h-3 rounded-full bg-slate-600 border-2 border-[#080808]"></div>
                 <div class="border border-white/[0.06] rounded-2xl p-6 md:p-8 bg-[#0A0A0A] hover:border-white/[0.12] transition-colors duration-300">
                     <div class="flex flex-wrap items-center gap-3 mb-6"><span class="text-xs font-mono text-slate-400 bg-white/[0.05] px-3 py-1 rounded-full">2018 — 2022</span></div>
                     <h3 class="text-xl font-medium tracking-tight text-white mb-1">Film & Production — Multiple Roles</h3>
@@ -267,7 +268,7 @@
                 </div>
             </div>
             <div class="reveal delay-200 relative pl-12 md:pl-20">
-                <div class="absolute left-2.5 md:left-6.5 top-1.5 w-3 h-3 rounded-full bg-slate-700 border-2 border-[#080808]"></div>
+                <div class="absolute left-2.5 md:left-[1.65rem] top-1.5 w-3 h-3 rounded-full bg-slate-700 border-2 border-[#080808]"></div>
                 <div class="border border-white/[0.06] rounded-2xl p-6 md:p-8 bg-[#0A0A0A] hover:border-white/[0.12] transition-colors duration-300">
                     <div class="flex flex-wrap items-center gap-3 mb-4"><span class="text-xs font-mono text-slate-400 bg-white/[0.05] px-3 py-1 rounded-full">2016 — 2018</span></div>
                     <h3 class="text-xl font-medium tracking-tight text-white mb-1">Layout Designer</h3>
@@ -354,11 +355,11 @@
     <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-900/10 blur-[120px] opacity-40 mix-blend-screen pointer-events-none"></div>
     <div class="relative z-10 max-w-4xl mx-auto text-center">
         <div class="reveal"><span class="text-xs font-mono text-red-500 tracking-wider uppercase mb-4 block">// Get In Touch</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight gradient-text mb-6">Let's Create Something Amazing</h2><p class="text-slate-400 font-light leading-relaxed mb-10 max-w-lg mx-auto">Have a project in mind? Need AI-powered video content? I'd love to hear about your vision.</p></div>
-        <div class="reveal delay-100 grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div class="reveal delay-100 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             <a href="#" class="wa-trigger contact-card group border-2 border-[#25D366]/30 rounded-2xl p-6 hover:border-[#25D366]/60 hover:bg-[#25D366]/[0.05] transition-all duration-300 relative overflow-hidden" role="button"><div class="absolute top-0 right-0 w-16 h-16 bg-[#25D366]/10 blur-2xl rounded-full pointer-events-none"></div><span class="iconify text-[#25D366] mx-auto mb-3 block relative" data-icon="mdi:whatsapp" data-width="28"></span><span class="text-xs text-[#25D366]/70 block mb-1 relative">WhatsApp</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors relative">Chat with me</span></a>
             <a href="mailto:guinsubham@gmail.com" class="contact-card group border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-400 mx-auto mb-3 block" data-icon="mdi:email-outline" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Email</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors break-all">guinsubham@gmail.com</span></a>
             <a href="https://www.linkedin.com/in/subham-guin-160b9b242" target="_blank" class="contact-card group border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-400 mx-auto mb-3 block" data-icon="mdi:linkedin" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">LinkedIn</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">Message me</span></a>
-            <a href="https://instagram.com/subhamguin" target="_blank" class="contact-card group border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-400 mx-auto mb-3 block" data-icon="mdi:instagram" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Instagram</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">@subhamguin</span></a>
+            <a href="https://www.instagram.com/subham_guin/" target="_blank" class="contact-card group border border-white/[0.06] rounded-2xl p-6 hover:border-white/[0.12] hover:bg-white/[0.02] transition-all duration-300"><span class="iconify text-red-400 mx-auto mb-3 block" data-icon="mdi:instagram" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Instagram</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">@subham_guin</span></a>
         </div>
         <div class="reveal delay-200"><a href="#" class="wa-trigger sheen group inline-flex items-center gap-2 wa-btn px-8 py-4 rounded-full text-sm font-semibold transition-all duration-150 shadow-[0_0_30px_rgba(37,211,102,.2)] hover:shadow-[0_0_40px_rgba(37,211,102,.3)]" role="button"><span class="iconify" data-icon="mdi:whatsapp" data-width="18"></span>Chat on WhatsApp<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="16"></span></a></div>
     </div>
@@ -372,7 +373,7 @@
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-2"><span class="iconify text-red-500" data-icon="mdi:movie-open-outline" data-width="18"></span><span class="text-xs text-slate-500">© 2025 Subham Guin. All rights reserved.</span></div>
         <div class="flex items-center gap-6">
-            <a href="https://instagram.com/subhamguin" target="_blank" class="text-slate-500 hover:text-white transition-colors duration-300" aria-label="Instagram"><span class="iconify" data-icon="mdi:instagram" data-width="18"></span></a>
+            <a href="https://www.instagram.com/subham_guin/" target="_blank" class="text-slate-500 hover:text-white transition-colors duration-300" aria-label="Instagram"><span class="iconify" data-icon="mdi:instagram" data-width="18"></span></a>
             <a href="https://www.linkedin.com/in/subham-guin-160b9b242" target="_blank" class="text-slate-500 hover:text-white transition-colors duration-300" aria-label="LinkedIn"><span class="iconify" data-icon="mdi:linkedin" data-width="18"></span></a>
             <a href="https://www.youtube.com/@KINOKS" target="_blank" class="text-slate-500 hover:text-white transition-colors duration-300" aria-label="YouTube"><span class="iconify" data-icon="mdi:youtube" data-width="18"></span></a>
         </div>
@@ -466,7 +467,8 @@
     }
     var pWrap=document.getElementById('particles');
     if(pWrap&&!reduce){
-        for(var i=0;i<18;i++){
+        var N=window.innerWidth<768?9:18;
+        for(var i=0;i<N;i++){
             var s=document.createElement('span');
             var sz=(2+Math.random()*3).toFixed(1);
             s.className='particle';
