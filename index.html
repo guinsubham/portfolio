@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif'],syne:['Syne','sans-serif']},colors:{accent:'#f59e0b','accent-dim':'#92400e'}}}}</script>
     <style>
-        *{font-family:'Inter',sans-serif;font-feature-settings:"cv02","cv03","cv04","cv11"}
-        body{background:#050505;color:#fff}
+        *{font-family:'Inter',sans-serif;font-feature-settings:"cv02","cv03","cv04","cv11";cursor:none!important}
+        body{background:#050505;color:#fff;cursor:none!important}
         ::selection{background:rgba(239,68,68,.3);color:#fecaca}
         .reveal{opacity:0;transform:translateY(30px) scale(.98);transition:all .8s cubic-bezier(.16,1,.3,1);filter:blur(10px)}
         .reveal.active{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
@@ -69,9 +69,6 @@
         .yt-nav-btn{background:transparent;border:0;color:#fff;cursor:pointer;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1;padding:0;border-radius:9999px;transition:background .2s ease,color .2s ease}
         .yt-nav-btn:hover{background:rgba(239,68,68,.85)}
         .yt-nav-count{font-size:10px;font-family:monospace;color:rgba(255,255,255,.85);min-width:32px;text-align:center;letter-spacing:.02em}
-        .thumb-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;color:#fff;text-align:center;padding:0 1.5rem;background-image:radial-gradient(circle at 30% 20%,rgba(255,255,255,.08),transparent 55%),repeating-linear-gradient(115deg,rgba(255,255,255,.03) 0 2px,transparent 2px 26px)}
-        .thumb-fallback-tag{font-size:.65rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(239,68,68,.85)}
-        .thumb-fallback-title{font-size:.95rem;font-weight:500;letter-spacing:.01em;color:rgba(255,255,255,.92);max-width:240px;line-height:1.4}
         .thumb-ai{background-color:#3a0d0d;background-image:linear-gradient(135deg,#4a0f0f 0%,#1a0505 100%),radial-gradient(circle at 30% 20%,rgba(255,255,255,.08),transparent 55%)}
         .thumb-motion{background-color:#331a3d;background-image:linear-gradient(135deg,#42204f 0%,#160a1a 100%),radial-gradient(circle at 30% 20%,rgba(255,255,255,.08),transparent 55%)}
         .thumb-arch{background-color:#1c2b33;background-image:linear-gradient(135deg,#233b46 0%,#0a1216 100%),radial-gradient(circle at 30% 20%,rgba(255,255,255,.08),transparent 55%)}
@@ -153,7 +150,7 @@
         .cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(239,68,68,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s cubic-bezier(.16,1,.3,1),height .3s cubic-bezier(.16,1,.3,1),border-color .3s ease,background .3s ease}
         .cursor-ring.hovering{width:52px;height:52px;border-color:#f59e0b;background:rgba(245,158,11,.06)}
         .cursor-dot.hovering{width:12px;height:12px;background:#f59e0b}
-        @media (pointer:coarse){.cursor-dot,.cursor-ring{display:none!important}}
+        @media (pointer:coarse){.cursor-dot,.cursor-ring{display:none!important}*{cursor:auto!important}}
         /* ── Hero editorial layout ── */
         .hero-editorial{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;max-width:7xl;margin:0 auto;padding:0 1.5rem}
         @media(min-width:768px){.hero-editorial{grid-template-columns:1fr 1fr;gap:4rem}}
@@ -174,6 +171,15 @@
         /* ── Section wave divider ── */
         .wave-divider{position:relative;height:80px;margin:-40px 0;pointer-events:none;z-index:2}
         .wave-divider svg{position:absolute;bottom:0;width:100%}
+        /* ── Cloudinary hover ── */
+        .cloudinary-hover-wrap{cursor:pointer}
+        .cld-video{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover;opacity:0;transition:opacity .4s ease;z-index:1}
+        .cloudinary-hover-wrap.playing .cld-video{opacity:1}
+        .cloudinary-hover-wrap.playing .poster-img{opacity:0!important}
+        .cloudinary-hover-wrap.playing{cursor:default}
+        .cloudinary-hover-wrap.playing:hover .play-ico .ico-play{display:none}
+        .cloudinary-hover-wrap.playing:hover .play-ico .ico-pause{display:inline-flex}
+        .cloudinary-hover-iframe{position:absolute;inset:0;border:0}
     </style>
 </head>
 <body class="antialiased overflow-x-hidden">
@@ -233,6 +239,8 @@
         <div class="reveal delay-200 hero-visual hidden md:flex">
             <div class="hero-gradient-orb"></div>
             <div class="hero-film-frame">
+                <div class="hero-card-glow absolute w-32 h-32 rounded-full pointer-events-none z-20 opacity-0 transition-opacity duration-300" style="background:radial-gradient(circle,rgba(239,68,68,.4) 0%,rgba(245,158,11,.2) 40%,transparent 70%);filter:blur(30px);transform:translate(-50%,-50%)"></div>
+                <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-[.15]"><source src="https://res.cloudinary.com/dxb4equz/video/upload/v1788465976/Element_1261166258_-_Cosmos.mp4" type="video/mp4"></video>
                 <div class="absolute inset-0 flex flex-col justify-end p-8 z-10">
                     <div class="space-y-4">
                         <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center"><span class="iconify text-red-400" data-icon="mdi:filmstrip" data-width="16"></span></div><div class="flex-1"><div class="h-1.5 bg-white/[0.06] rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-red-500 to-amber-500 rounded-full" style="width:92%"></div></div></div><span class="text-[10px] text-slate-500 font-mono">92%</span></div>
@@ -246,7 +254,7 @@
                     </div>
                 </div>
                 <div class="absolute top-4 left-4 right-4 z-10 flex items-center justify-between">
-                    <span class="text-[9px] font-mono tracking-[.2em] text-white/40">EDIT_REEL_2025</span>
+                    <span></span>
                     <span class="flex items-center gap-1.5"><span class="rec-dot" style="width:5px;height:5px"></span><span class="text-[8px] font-mono tracking-[.2em] text-white/40">REC</span></span>
                 </div>
                 <div class="absolute top-0 left-0 w-6 h-full film-strip opacity-20"></div>
@@ -264,7 +272,7 @@
 <section id="about" class="py-24 md:py-32 px-6 mesh-bg mesh-amber">
     <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div class="reveal"><div class="relative rounded-2xl overflow-hidden aspect-[4/5] border border-white/[0.06] gradient-border" style="background:linear-gradient(135deg,#1a0808,#0a0505,#050a0a,#080510)"><div class="absolute inset-0 flex flex-col justify-center items-center gap-4 p-8"><div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-red-500/30 to-amber-500/20 flex items-center justify-center border border-white/[0.08]"><span class="iconify text-red-400" data-icon="mdi:video-outline" data-width="36"></span></div><div class="text-center"><span class="text-xs font-mono text-amber-500/70 tracking-wider uppercase">Editing Suite</span><p class="text-[10px] text-slate-600 mt-1">Since 2016</p></div><div class="flex gap-3 mt-4"><div class="w-10 h-10 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center"><span class="iconify text-slate-500" data-icon="simple-icons:adobepremierepro" data-width="18"></span></div><div class="w-10 h-10 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center"><span class="iconify text-slate-500" data-icon="simple-icons:adobeaftereffects" data-width="18"></span></div><div class="w-10 h-10 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center"><span class="iconify text-slate-500" data-icon="mdi:palette-outline" data-width="18"></span></div></div></div><span class="vf tl"></span><span class="vf tr"></span><span class="vf bl"></span><span class="vf br"></span><span class="absolute top-4 right-5 flex items-center gap-1.5 z-10"><span class="rec-dot"></span><span class="text-[9px] font-mono tracking-[.2em] text-white/70">REC</span></span><span class="absolute bottom-4 left-5 text-[9px] font-mono tracking-[.2em] text-white/60 z-10">4K — 24FPS</span><div class="absolute top-0 left-0 w-8 h-full film-strip opacity-30"></div><div class="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-red-500/20 to-transparent"></div><div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent"></div></div></div>
+            <div class="reveal"><div class="relative rounded-2xl overflow-hidden aspect-[4/5] border border-white/[0.06] gradient-border" style="background:linear-gradient(135deg,#1a0808,#0a0505,#050a0a,#080510)"><img src="https://res.cloudinary.com/dxb4equz/image/upload/v1788464295/SG_photo.jpg" alt="Subham Guin" class="absolute inset-0 w-full h-full object-cover" loading="lazy"><span class="vf tl"></span><span class="vf tr"></span><span class="vf bl"></span><span class="vf br"></span><span class="absolute top-4 right-5 flex items-center gap-1.5 z-10"><span class="rec-dot"></span><span class="text-[9px] font-mono tracking-[.2em] text-white/70">REC</span></span><span class="absolute bottom-4 left-5 text-[9px] font-mono tracking-[.2em] text-white/60 z-10">4K — 24FPS</span><div class="absolute top-0 left-0 w-8 h-full film-strip opacity-30"></div><div class="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-red-500/20 to-transparent"></div><div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent"></div></div></div>
             <div>
                 <div class="reveal"><span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-4 block font-syne">// About Me</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight leading-tight mb-6 font-syne"><span class="gradient-text">Where filmmaking</span><br><span class="text-white">meets <span class="accent-text">AI</span></span></h2></div>
                 <div class="reveal delay-100">
@@ -419,25 +427,35 @@
         <div class="reveal text-center mb-16 md:mb-20"><span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-4 block font-syne">// Selected Work</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight mb-4 font-syne"><span class="gradient-text">Featured</span> Projects</h2><p class="text-slate-500 font-light max-w-lg mx-auto">AI-powered ads, motion graphics, and brand content for leading Indian brands.</p></div>
         <div class="grid md:grid-cols-2 gap-6">
             <div class="proj-card reveal rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
-                <div class="aspect-video yt-facade" data-list="UUzvjoC1FusDpYackztiusPQ" data-title="AI Ad with Consistent Character"><div class="thumb-fallback thumb-ai"><span class="thumb-fallback-tag">AI Ad</span><span class="thumb-fallback-title">AI Ad with Consistent Character</span></div><div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="16"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="16"></span></div></div>
+                <div class="aspect-video relative cloudinary-hover-wrap thumb-ai" data-cld-pid="Primarc_Aahana_Cf_Hq">
+                    <video id="cld-ai-ad" playsinline preload="none" muted class="cld-video" poster="https://res.cloudinary.com/dxb4equz/image/upload/Primarc_Aahana_Cf_Hq_poster.jpg"><source src="https://res.cloudinary.com/dxb4equz/video/upload/f_auto,q_auto/Primarc_Aahana_Cf_Hq.mp4" type="video/mp4"></video>
+                    <img src="https://res.cloudinary.com/dxb4equz/image/upload/Primarc_Aahana_Cf_Hq_poster.jpg" alt="AI Ad with Consistent Character" class="poster-img absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy">
+                </div>
                 <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">AI Ad</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">AI Ad with Consistent Character</h3><p class="text-sm text-slate-500 font-light">Complete ad created with AI — same person and product in every shot.</p></div>
             </div>
             <div class="proj-card reveal delay-100 rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
-                <div class="aspect-video yt-facade" data-embed="https://mega.nz/embed/s3xXTQBb#2uBdzL3OboErU7ySfr_nsQh9zh7u4fEVOqqnGuC07mI" data-title="Motion Graphics work"><div class="thumb-fallback thumb-motion"><span class="thumb-fallback-tag">Motion Graphics</span><span class="thumb-fallback-title">Motion Graphics work</span></div><div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="16"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="16"></span></div></div>
+                <div class="aspect-video yt-facade thumb-motion" data-embed="https://mega.nz/embed/s3xXTQBb#2uBdzL3OboErU7ySfr_nsQh9zh7u4fEVOqqnGuC07mI" data-title="Motion Graphics work" alt="Motion Graphics work"><div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="16"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="16"></span></div></div>
                 <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Motion Graphics</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Motion Graphics work</h3><p class="text-sm text-slate-500 font-light">Kinetic typography, logo animations, and AI-enhanced motion pieces.</p></div>
             </div>
             <div class="proj-card reveal rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
-                <div class="aspect-video yt-facade" data-list="UUzvjoC1FusDpYackztiusPQ" data-title="Architectural walkthrough Edit Showreel" data-embed="https://mega.nz/embed/xnJgGDhb#O1WbM95UxwkhW3UaUQVuRK_482yG8yVzrINJBHilokY!1a"><div class="thumb-fallback thumb-arch"><span class="thumb-fallback-tag">Walkthrough Edit</span><span class="thumb-fallback-title">Architectural Walkthrough Edit</span></div><div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="16"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="16"></span></div></div>
+                <div class="aspect-video relative cloudinary-hover-wrap thumb-arch" data-cld-pid="Meraki_Showreel_2024">
+                    <video id="cld-arch" playsinline preload="none" muted class="cld-video" poster="https://res.cloudinary.com/dxb4equz/image/upload/Meraki_Showreel_2024_poster.jpg"><source src="https://res.cloudinary.com/dxb4equz/video/upload/f_auto,q_auto/Meraki_Showreel_2024.mp4" type="video/mp4"></video>
+                    <img src="https://res.cloudinary.com/dxb4equz/image/upload/Meraki_Showreel_2024_poster.jpg" alt="Architectural Walkthrough Edit" class="poster-img absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy">
+                </div>
                 <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Walkthrough Edit</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Architectural walkthrough Edit Showreel</h3><p class="text-sm text-slate-500 font-light">Full architectural walkthrough edited and finalized in Premiere Pro.</p></div>
             </div>
             <div class="proj-card reveal delay-100 rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
-                <div class="aspect-video yt-facade" data-embeds='["https://mega.nz/embed/prhA0TwD#zMwzhG_wxRwPTsjLEsPUvmxJ3-7KmdsD8doGx7z6uvc","https://mega.nz/embed/szJWSSTB#bPKT_u_d9q-1oidvedGcvhuI4E_eXBDwcsouKGOBJOo","https://mega.nz/embed/wqwnlTaJ#10-7ArtVAlJks8Hhimi4ovyRs_G6q-uxycgnJINgcwU","https://mega.nz/embed/UrBXDLAa#HSanwYx8fuNrWy9OQm6BeFzeZD-dFK9qYWN7F4RaAwU","https://mega.nz/embed/p6AnkaQA#c4aAecjRWysdvi39zVqt9gLPeBxWrcJvsUFXr0NqPoU","https://mega.nz/embed/tiwnHRiJ#UFoT6cGH8S9sw56jiUOJSWU9t1Q0RSi9q95s6Vyhykc"]' data-title="Logo Animations"><div class="thumb-fallback thumb-logo"><span class="thumb-fallback-tag">Commercial</span><span class="thumb-fallback-title">Logo Animations</span></div><div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="16"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="16"></span></div></div>
+                <div class="aspect-video relative cloudinary-hover-wrap thumb-logo" data-cld-pids='["reident_logo_4b","griham_logo_anim_v2_HQ","imi_logo_anim_V3_S2","Squaremark_Logo-anim"]' data-title="Logo Animations">
+                    <video id="cld-logos" playsinline preload="none" muted class="cld-video" poster="https://res.cloudinary.com/dxb4equz/image/upload/reident_logo_4b_poster.jpg"><source src="https://res.cloudinary.com/dxb4equz/video/upload/f_auto,q_auto/reident_logo_4b.mp4" type="video/mp4"></video>
+                    <img src="https://res.cloudinary.com/dxb4equz/video/upload/reident_logo_4b.jpg" alt="Logo Animations" class="poster-img absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy">
+                    <div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="16"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="16"></span></div>
+                </div>
                 <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Commercial</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Logo Animations</h3><p class="text-sm text-slate-500 font-light">Animated Logos.</p></div>
             </div>
         </div>
         <div class="reveal text-center mt-12"><a href="https://www.youtube.com/@KINOKS" target="_blank" class="group inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-300 border-b border-white/[0.1] hover:border-white/[0.3] pb-1">See more on YouTube<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="14"></span></a></div>
         <div class="reveal mt-20 max-w-3xl mx-auto">
-            <div class="text-center mb-6"><span class="text-xs font-mono text-red-500 tracking-wider uppercase mb-2 block">// Color Grading </span><h3 class="text-xl md:text-2xl font-semibold tracking-tight text-white">Raw Footage vs. Color Graded</h3><p class="text-xs text-slate-500 mt-2">Drag the handle.</p></div>
+            <div class="text-center mb-6"><span class="text-xs font-mono text-red-500 tracking-wider uppercase mb-2 block">// Drag to Compare</span><h3 class="text-xl md:text-2xl font-semibold tracking-tight text-white">Raw Footage vs. Color Graded</h3><p class="text-xs text-slate-500 mt-2">Drag the handle — replace these placeholder frames with your own before/after stills.</p></div>
             <div class="compare-wrap aspect-video border border-white/[0.06]" id="compareSlider">
                 <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/before.jpg" alt="Raw footage">
                 <div class="compare-after" style="clip-path:inset(0 50% 0 0)"><img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/after.JPG" alt="Color graded footage"></div>
@@ -638,20 +656,65 @@
             pWrap.appendChild(s);
         }
     }
-    document.querySelectorAll('.yt-facade').forEach(function(f){
-        f.addEventListener('click',function(){
-            if(f.classList.contains('playing'))return;
-            f.classList.add('playing');
-            var fr=document.createElement('iframe');
-            fr.className='yt-frame';
+    // ── Init playlist data ──
+    document.querySelectorAll('.cloudinary-hover-wrap[data-cld-pids]').forEach(function(w){
+        try{w._cldList=JSON.parse(w.getAttribute('data-cld-pids'));}catch(e){}
+        var vid=w.querySelector('video');
+        if(vid){
+            vid.addEventListener('ended',function(){
+                var ci=parseInt(w.getAttribute('data-cld-idx')||'0');
+                var ni=(ci+1)%w._cldList.length;
+                w.setAttribute('data-cld-idx',ni);
+                switchCldSource(vid,w._cldList[ni]);
+                vid.play().then(function(){vid.muted=false;}).catch(function(){});
+                var cnt=w.querySelector('.yt-nav-count');
+                if(cnt)cnt.textContent=(ni+1)+' / '+w._cldList.length;
+            });
+        }
+    });
+    // ── Video hover: native HTML5 video ──
+    var activeCard=null;
+    function stopCard(){
+        if(!activeCard)return;
+        var c=activeCard;activeCard=null;
+        c.classList.remove('playing');
+        if(c.classList.contains('yt-facade')){
+            var fr=c.querySelector('.yt-frame');if(fr)fr.remove();
+            var nav=c.querySelector('.yt-nav');if(nav)nav.remove();
+        }
+        if(c.classList.contains('cloudinary-hover-wrap')){
+            var vid=c.querySelector('video');
+            if(vid){vid.pause();vid.currentTime=0;vid.muted=true;}
+            var pi=c.querySelector('.poster-img');if(pi)pi.style.opacity='1';
+        }
+    }
+    function switchCldSource(vid,publicId){
+        vid.innerHTML='';
+        var src=document.createElement('source');
+        src.src='https://res.cloudinary.com/dxb4equz/video/upload/f_auto,q_auto/'+publicId+'.mp4';
+        src.type='video/mp4';
+        vid.appendChild(src);
+        vid.poster='https://res.cloudinary.com/dxb4equz/image/upload/'+publicId+'_poster.jpg';
+        vid.load();
+    }
+    document.addEventListener('mousemove',function(e){
+        var el=document.elementFromPoint(e.clientX,e.clientY);
+        var found=el?el.closest('.yt-facade,.cloudinary-hover-wrap'):null;
+        if(!found){stopCard();return;}
+        if(found===activeCard)return;
+        stopCard();
+        activeCard=found;
+        found.classList.add('playing');
+        if(found.classList.contains('yt-facade')){
+            var f=found;
+            var fr=document.createElement('iframe');fr.className='yt-frame';
             var embedsAttr=f.getAttribute('data-embeds');
             var list=null;
             if(embedsAttr){try{list=JSON.parse(embedsAttr);}catch(e){list=null;}}
-            var idx=0;
             var emb=f.getAttribute('data-embed');
-            if(list&&list.length){fr.src=list[0];}
-            else if(emb){fr.src=emb;}
-            else{fr.src='https://www.youtube.com/embed/videoseries?list='+f.getAttribute('data-list')+'&autoplay=1&controls=0&rel=0&disablekeys=1&playsinline=1';}
+            if(list&&list.length){fr.src=list[0].indexOf('?')>-1?list[0]+'&player%5Bautoplay%5D=true&player%5Bmuted%5D=false':list[0]+'?autoplay=1&mute=0';}
+            else if(emb){fr.src=emb+'?autoplay=1';}
+            else{fr.src='https://www.youtube.com/embed/videoseries?list='+f.getAttribute('data-list')+'&autoplay=1&mute=0&enablejsapi=1&controls=0&rel=0&disablekeys=1&playsinline=1';}
             fr.setAttribute('frameborder','0');
             fr.setAttribute('allow','autoplay; encrypted-media; gyroscope; picture-in-picture; web-share');
             fr.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
@@ -659,31 +722,55 @@
             fr.title=f.getAttribute('data-title')||'Video';
             f.appendChild(fr);
             if(list&&list.length>1){
-                var nav=document.createElement('div');
-                nav.className='yt-nav';
-                var prevBtn=document.createElement('button');
-                prevBtn.type='button';
-                prevBtn.className='yt-nav-btn';
-                prevBtn.setAttribute('aria-label','Previous video');
-                prevBtn.textContent='\u2039';
-                var counter=document.createElement('span');
-                counter.className='yt-nav-count';
-                var nextBtn=document.createElement('button');
-                nextBtn.type='button';
-                nextBtn.className='yt-nav-btn';
-                nextBtn.setAttribute('aria-label','Next video');
-                nextBtn.textContent='\u203A';
+                var nav=document.createElement('div');nav.className='yt-nav';
+                var idx=0;
+                function playIdx(i){
+                    idx=i;var newFr=document.createElement('iframe');newFr.className='yt-frame';
+                    newFr.src=list[idx].indexOf('?')>-1?list[idx]+'&player%5Bautoplay%5D=true&player%5Bmuted%5D=false':list[idx]+'?autoplay=1&mute=0';
+                    newFr.setAttribute('frameborder','0');
+                    newFr.setAttribute('allow','autoplay; encrypted-media; gyroscope; picture-in-picture; web-share');
+                    newFr.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+                    newFr.setAttribute('allowfullscreen','');newFr.title=f.getAttribute('data-title')||'Video';
+                    fr.replaceWith(newFr);fr=newFr;
+                }
+                var prevBtn=document.createElement('button');prevBtn.type='button';prevBtn.className='yt-nav-btn';prevBtn.setAttribute('aria-label','Previous video');prevBtn.textContent='\u2039';
+                var counter=document.createElement('span');counter.className='yt-nav-count';
+                var nextBtn=document.createElement('button');nextBtn.type='button';nextBtn.className='yt-nav-btn';nextBtn.setAttribute('aria-label','Next video');nextBtn.textContent='\u203A';
                 function updateCounter(){counter.textContent=(idx+1)+' / '+list.length;}
                 updateCounter();
-                prevBtn.addEventListener('click',function(e){e.stopPropagation();idx=(idx-1+list.length)%list.length;fr.src=list[idx];updateCounter();});
-                nextBtn.addEventListener('click',function(e){e.stopPropagation();idx=(idx+1)%list.length;fr.src=list[idx];updateCounter();});
-                nav.appendChild(prevBtn);
-                nav.appendChild(counter);
-                nav.appendChild(nextBtn);
-                f.appendChild(nav);
+                prevBtn.addEventListener('click',function(e){e.stopPropagation();playIdx((idx-1+list.length)%list.length);updateCounter();});
+                nextBtn.addEventListener('click',function(e){e.stopPropagation();playIdx((idx+1)%list.length);updateCounter();});
+                nav.appendChild(prevBtn);nav.appendChild(counter);nav.appendChild(nextBtn);f.appendChild(nav);
             }
-        });
+        }
+        if(found.classList.contains('cloudinary-hover-wrap')){
+            var vid=found.querySelector('video');
+            var pi=found.querySelector('.poster-img');
+            if(vid){
+                if(pi)pi.style.opacity='0';
+                vid.muted=true;
+                vid.play().then(function(){
+                    vid.muted=false;
+                }).catch(function(){});
+                if(found._cldList){
+                    var ci=parseInt(found.getAttribute('data-cld-idx')||'0');
+                    var nav2=found.querySelector('.yt-nav');
+                    if(!nav2){
+                        nav2=document.createElement('div');nav2.className='yt-nav';
+                        var pb=document.createElement('button');pb.type='button';pb.setAttribute('aria-label','Previous');pb.textContent='\u2039';
+                        var ct=document.createElement('span');ct.className='yt-nav-count';
+                        var nb=document.createElement('button');nb.type='button';nb.setAttribute('aria-label','Next');nb.textContent='\u203A';
+                        ct.textContent=(ci+1)+' / '+found._cldList.length;
+                        pb.addEventListener('click',function(e){e.stopPropagation();var ni=(parseInt(found.getAttribute('data-cld-idx')||'0')-1+found._cldList.length)%found._cldList.length;found.setAttribute('data-cld-idx',ni);switchCldSource(vid,found._cldList[ni]);vid.play().then(function(){vid.muted=false;}).catch(function(){});ct.textContent=(ni+1)+' / '+found._cldList.length;});
+                        nb.addEventListener('click',function(e){e.stopPropagation();var ni=(parseInt(found.getAttribute('data-cld-idx')||'0')+1)%found._cldList.length;found.setAttribute('data-cld-idx',ni);switchCldSource(vid,found._cldList[ni]);vid.play().then(function(){vid.muted=false;}).catch(function(){});ct.textContent=(ni+1)+' / '+found._cldList.length;});
+                        nav2.appendChild(pb);nav2.appendChild(ct);nav2.appendChild(nb);found.appendChild(nav2);
+                    }
+                }
+            }
+        }
     });
+
+    // Scroll progress playhead bar
     var pb=document.getElementById('playhead-bar');
     if(pb){
         var up=function(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight||1);pb.style.width=(p*100).toFixed(2)+'%'};
@@ -825,6 +912,17 @@
         document.addEventListener('mouseout',function(e){
             if(e.target.closest(hoverEls)){dot.classList.remove('hovering');ring.classList.remove('hovering');}
         });
+        var hfc=document.querySelector('.hero-film-frame');
+        var hcg=document.querySelector('.hero-card-glow');
+        if(hfc&&hcg){
+            hfc.addEventListener('mousemove',function(e){
+                var r=hfc.getBoundingClientRect();
+                hcg.style.left=(e.clientX-r.left)+'px';
+                hcg.style.top=(e.clientY-r.top)+'px';
+                hcg.style.opacity='1';
+            },{passive:true});
+            hfc.addEventListener('mouseleave',function(){hcg.style.opacity='0';});
+        }
         document.addEventListener('mouseleave',function(){dot.style.opacity='0';ring.style.opacity='0';});
         document.addEventListener('mouseenter',function(){dot.style.opacity='1';ring.style.opacity='1';});
     }
