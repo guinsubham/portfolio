@@ -686,7 +686,7 @@
             tlDot.style.top=(p*100).toFixed(2)+'%';
             tlDot.style.opacity=(p<=0.01||p>=0.99)?'0':'1';
             var det=Math.round(p*24);
-            if(det!==lastDetent){lastDetent=det;if(!reduce&&p>0.01&&p<0.99)buzz(6);}
+            if(det!==lastDetent){lastDetent=det;if(!reduce&&p>0.01&&p<0.99&&(typeof navigator.userActivation==='undefined'||navigator.userActivation.isActive))buzz(6);}
         };
         window.addEventListener('scroll',mv,{passive:true});
         window.addEventListener('resize',mv);
