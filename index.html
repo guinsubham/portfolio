@@ -56,11 +56,8 @@
         .yt-facade{cursor:pointer}
         .yt-facade img{transition:transform .5s cubic-bezier(.16,1,.3,1)}
         .yt-facade:hover img{transform:scale(1.04)}
-        .yt-facade .play-ico{opacity:.85;transform:scale(1)}
-        .yt-facade:hover .play-ico{opacity:1;transform:scale(1.06)}
         .yt-facade.playing{cursor:default}
-        .yt-facade.playing .play-ico{opacity:0}
-        .yt-facade.playing:hover .play-ico{opacity:1}
+        .yt-facade.playing .play-ico{display:none}
         .play-ico .ico-pause{display:none}
         .yt-facade.playing:hover .play-ico .ico-play{display:none}
         .yt-facade.playing:hover .play-ico .ico-pause{display:inline-flex}
@@ -75,8 +72,10 @@
         .thumb-logo{background-color:#2b2410;background-image:linear-gradient(135deg,#3d3316 0%,#141005 100%),radial-gradient(circle at 30% 20%,rgba(255,255,255,.08),transparent 55%)}
         .proj-card .aspect-video::after{content:'';position:absolute;inset:0;background:rgba(5,5,5,.45);opacity:0;transition:opacity .3s ease;pointer-events:none;z-index:1}
         .proj-card:hover .aspect-video:not(.playing)::after{opacity:1}
-        .play-ico{position:absolute;bottom:12px;right:12px;transform:scale(.7);width:34px;height:34px;border-radius:9999px;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.45);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s cubic-bezier(.16,1,.3,1);z-index:2;pointer-events:none}
-        .proj-card:hover .play-ico{opacity:1;transform:scale(1)}
+        .play-ico{position:absolute;top:50%;left:50%;margin-left:-25.5px;margin-top:-25.5px;width:51px;height:51px;border-radius:9999px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.45);backdrop-filter:blur(2px);display:none;align-items:center;justify-content:center;z-index:5;pointer-events:none}
+        .play-ico .ico-pause{display:none}
+        .play-ico .iconify,.play-ico svg,.mute-ico .iconify,.mute-ico svg{transition:none!important;animation:none!important}
+        @media (pointer:coarse){.play-ico{display:flex}}
         .client-logo{opacity:0;transform:translateY(14px) scale(.97)}
         .client-logo.in{opacity:1;transform:translateY(0) scale(1)}
         .client-logo.in:hover{transform:translateY(-3px);border-color:rgba(0,0,0,.12);background:#FFFFFF}
@@ -115,7 +114,8 @@
         .compare-label{position:absolute;top:12px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.55);padding:4px 10px;border-radius:9999px;z-index:2;transition:opacity .2s ease}
         .compare-label.before{left:12px}
         .compare-label.after{right:12px}
-        @media (prefers-reduced-motion:reduce){#spotlight{display:none}.magnetic-inner{transition:none!important}.proj-card .tilt-inner{transition:none!important}}
+        @keyframes hintPulse{0%,100%{transform:translate(-50%,-50%) scale(1);box-shadow:0 4px 14px rgba(0,0,0,.4)}50%{transform:translate(-50%,-50%) scale(1.15);box-shadow:0 4px 20px rgba(239,68,68,.4)}}
+        @media (prefers-reduced-motion:reduce){#spotlight{display:none}.magnetic-inner{transition:none!important}}
         @media (max-width:768px){#spotlight{display:none}}
         /* ── Syne display font for headings ── */
         h1,h2,h3.font-syne{font-family:'Syne',sans-serif}
@@ -177,9 +177,41 @@
         .cloudinary-hover-wrap.playing .cld-video{opacity:1}
         .cloudinary-hover-wrap.playing .poster-img{opacity:0!important}
         .cloudinary-hover-wrap.playing{cursor:default}
-        .cloudinary-hover-wrap.playing:hover .play-ico .ico-play{display:none}
-        .cloudinary-hover-wrap.playing:hover .play-ico .ico-pause{display:inline-flex}
+        .cloudinary-hover-wrap.playing .play-ico{display:none}
         .cloudinary-hover-iframe{position:absolute;inset:0;border:0}
+        .mute-ico{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:9999px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s ease;z-index:3;pointer-events:none;cursor:pointer}
+        .proj-card:hover .mute-ico{opacity:1;pointer-events:auto}
+        .mute-ico .icon-mute{display:none}
+        .cloudinary-hover-wrap.muted .mute-ico .icon-unmute{display:none}
+        .cloudinary-hover-wrap.muted .mute-ico .icon-mute{display:inline-flex}
+        @media (pointer:coarse){.mute-ico{opacity:.8!important;pointer-events:auto!important}}
+        /* ── Mobile fixes ── */
+        section[id]{scroll-margin-top:80px}
+        @media (pointer:coarse){
+            .play-ico{pointer-events:auto!important}
+            .cloudinary-hover-wrap.playing .play-ico .ico-play{display:none}
+            .cloudinary-hover-wrap.playing .play-ico .ico-pause{display:inline-flex}
+            .proj-card .aspect-video::after{opacity:1!important}
+            .proj-card{transform:none!important;box-shadow:none!important}
+        }
+        @media (max-width:768px){
+            .hero-editorial{padding:0 1rem;gap:1.5rem}
+            .hero-visual{display:flex!important}
+            .hero-film-frame{max-width:280px;aspect-ratio:3/4}
+            section > .max-w-7xl{padding-left:0;padding-right:0}
+            #about .grid{gap:2rem!important}
+            .yt-nav-btn{width:36px;height:36px;font-size:18px}
+            .yt-nav-count{font-size:12px}
+            footer .flex.gap-6 a{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center}
+            .compare-wrap .compare-handle-btn{width:44px;height:44px}
+            .compare-label{font-size:12px}
+            .min-h-screen{min-height:100dvh}
+            footer{padding-bottom:6rem!important}
+        }
+        @media (max-width:640px){
+            section h2.text-3xl{font-size:1.5rem;line-height:1.3}
+        }
+        :focus-visible{outline:2px solid #f59e0b;outline-offset:2px;border-radius:4px}
     </style>
 </head>
 <body class="antialiased overflow-x-hidden">
@@ -205,16 +237,16 @@
             <a href="#skills" class="nav-link text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">Skills</a>
             <span class="magnetic"><a href="#" class="magnetic-inner wa-trigger sheen text-xs font-semibold wa-btn px-4 py-2 rounded-full transition-all duration-150 tracking-wide flex items-center gap-1.5" role="button"><span class="iconify" data-icon="mdi:whatsapp" data-width="14"></span>Hire Me</a></span>
         </div>
-        <button id="mobileMenuBtn" class="md:hidden text-white"><span class="iconify" data-icon="mdi:menu" data-width="24"></span></button>
+        <button id="mobileMenuBtn" class="md:hidden text-white w-11 h-11 flex items-center justify-center"><span class="iconify" data-icon="mdi:menu" data-width="24"></span></button>
     </div>
-    <div id="mobileMenu" class="md:hidden hidden bg-[#0A0A0A] border-t border-white/[0.06] px-6 py-4 space-y-3">
-        <a href="#about" class="block text-sm text-slate-400 hover:text-white transition-colors py-2">About</a>
-        <a href="#ai" class="block text-sm text-slate-400 hover:text-white transition-colors py-2">AI</a>
-        <a href="#clients" class="block text-sm text-slate-400 hover:text-white transition-colors py-2">Clients</a>
-        <a href="#work" class="block text-sm text-slate-400 hover:text-white transition-colors py-2">Experience</a>
-        <a href="#projects" class="block text-sm text-slate-400 hover:text-white transition-colors py-2">Projects</a>
-        <a href="#skills" class="block text-sm text-slate-400 hover:text-white transition-colors py-2">Skills</a>
-        <a href="#contact" class="block text-sm text-slate-400 hover:text-white transition-colors py-2">Contact</a>
+    <div id="mobileMenu" class="md:hidden hidden bg-[#0A0A0A] border-t border-white/[0.06] px-6 py-4 space-y-1">
+        <a href="#about" class="block text-sm text-slate-400 hover:text-white transition-colors py-3">About</a>
+        <a href="#ai" class="block text-sm text-slate-400 hover:text-white transition-colors py-3">AI</a>
+        <a href="#clients" class="block text-sm text-slate-400 hover:text-white transition-colors py-3">Clients</a>
+        <a href="#work" class="block text-sm text-slate-400 hover:text-white transition-colors py-3">Experience</a>
+        <a href="#projects" class="block text-sm text-slate-400 hover:text-white transition-colors py-3">Projects</a>
+        <a href="#skills" class="block text-sm text-slate-400 hover:text-white transition-colors py-3">Skills</a>
+        <a href="#contact" class="block text-sm text-slate-400 hover:text-white transition-colors py-3">Contact</a>
     </div>
 </nav>
 
@@ -233,7 +265,7 @@
             <p class="reveal delay-200 text-base md:text-lg font-light text-slate-300 tracking-wide mb-2">Video Editor & Motion Graphics Designer</p>
             <p class="reveal delay-300 text-xs md:text-sm font-light text-amber-500/80 tracking-wider uppercase mb-4 flex items-center gap-2"><span class="accent-dot"></span>AI-Assisted Creative — <span id="rotor">Films</span><span class="rotor-cursor"></span></p>
             <p class="reveal delay-300 text-sm font-light text-slate-500 max-w-lg leading-relaxed mb-10">Merging traditional filmmaking craft with generative AI to produce high-impact visual content at scale. From ideation to execution — faster, smarter, bolder.</p>
-            <div class="reveal delay-400 flex items-center gap-4"><span class="magnetic"><a href="#projects" class="magnetic-inner sheen sheen-dark group inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full text-sm font-semibold hover:bg-slate-200 transition-all duration-150">View My Work<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="16"></span></a></span><span class="magnetic"><a href="#contact" class="magnetic-inner group inline-flex items-center gap-2 border border-white/[0.12] text-white px-8 py-4 rounded-full text-sm font-medium hover:border-amber-500/40 hover:text-amber-500 transition-all duration-300">Get in Touch</a></span></div>
+            <div class="reveal delay-400 flex flex-wrap items-center gap-3 sm:gap-4"><span class="magnetic"><a href="#projects" class="magnetic-inner sheen sheen-dark group inline-flex items-center gap-2 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm font-semibold hover:bg-slate-200 transition-all duration-150">View My Work<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="16"></span></a></span><span class="magnetic"><a href="#contact" class="magnetic-inner group inline-flex items-center gap-2 border border-white/[0.12] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm font-medium hover:border-amber-500/40 hover:text-amber-500 transition-all duration-300">Get in Touch</a></span></div>
         </div>
         <!-- Right: Visual element -->
         <div class="reveal delay-200 hero-visual hidden md:flex">
@@ -337,34 +369,34 @@
         </div>
         <div class="reveal delay-100 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/ei-samay.png" alt="Ei Samay" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/ei-samay.png" loading="lazy" alt="Ei Samay" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/frontier-the-one.png" alt="Frontier The One" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/frontier-the-one.png" loading="lazy" alt="Frontier The One" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/nambiar.png" alt="Nambiar Builders" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/nambiar.png" loading="lazy" alt="Nambiar Builders" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/srijan.png" alt="Srijan" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/srijan.png" loading="lazy" alt="Srijan" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/haldia-petro.png" alt="Haldia Petro Chemicals" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/haldia-petro.png" loading="lazy" alt="Haldia Petro Chemicals" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/Bumchum-logo.png" alt="Bumchum" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/Bumchum-logo.png" loading="lazy" alt="Bumchum" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/himalaya-darpan.png" alt="Himalaya Darpan" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/himalaya-darpan.png" loading="lazy" alt="Himalaya Darpan" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/boroplus.png" alt="Boroplus" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/boroplus.png" loading="lazy" alt="Boroplus" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/bright.png" alt="Bright" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/bright.png" loading="lazy" alt="Bright" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/euro.png" alt="Euro" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/euro.png" loading="lazy" alt="Euro" class="max-h-14 w-auto object-contain">
             </div>
         </div>
     </div>
@@ -430,35 +462,45 @@
                 <div class="aspect-video relative cloudinary-hover-wrap thumb-ai" data-cld-pid="Primarc_Aahana_Cf_Hq">
                     <video id="cld-ai-ad" playsinline preload="none" muted class="cld-video" poster="https://res.cloudinary.com/dxb4equz/image/upload/Primarc_Aahana_Cf_Hq_poster.jpg"><source src="https://res.cloudinary.com/dxb4equz/video/upload/f_auto,q_auto/Primarc_Aahana_Cf_Hq.mp4" type="video/mp4"></video>
                     <img src="https://res.cloudinary.com/dxb4equz/image/upload/Primarc_Aahana_Cf_Hq_poster.jpg" alt="AI Ad with Consistent Character" class="poster-img absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy">
+                    <div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="20"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="20"></span></div>
+                    <div class="mute-ico" role="button" aria-label="Toggle mute"><span class="iconify text-white icon-unmute" data-icon="mdi:volume-high" data-width="16"></span><span class="iconify text-white icon-mute" data-icon="mdi:volume-mute" data-width="16"></span></div>
                 </div>
-                <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">AI Ad</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">AI Ad with Consistent Character</h3><p class="text-sm text-slate-500 font-light">Complete ad created with AI — same person and product in every shot.</p></div>
+                <div class="p-6 bg-[#0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">AI Ad</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">AI Ad with Consistent Character</h3><p class="text-sm text-slate-500 font-light">Complete ad created with AI — same person and product in every shot.</p></div>
             </div>
             <div class="proj-card reveal delay-100 rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
-                <div class="aspect-video yt-facade thumb-motion" data-embed="https://mega.nz/embed/s3xXTQBb#2uBdzL3OboErU7ySfr_nsQh9zh7u4fEVOqqnGuC07mI" data-title="Motion Graphics work" alt="Motion Graphics work"><div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="16"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="16"></span></div></div>
-                <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Motion Graphics</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Motion Graphics work</h3><p class="text-sm text-slate-500 font-light">Kinetic typography, logo animations, and AI-enhanced motion pieces.</p></div>
+                <div class="aspect-video relative cloudinary-hover-wrap thumb-motion" data-cld-pid="Jex_Route_2">
+                    <video id="cld-motion" playsinline preload="none" muted class="cld-video" poster="https://res.cloudinary.com/dxb4equz/video/upload/Jex_Route_2.jpg"><source src="https://res.cloudinary.com/dxb4equz/video/upload/f_auto,q_auto/Jex_Route_2.mp4" type="video/mp4"></video>
+                    <img src="https://res.cloudinary.com/dxb4equz/video/upload/Jex_Route_2.jpg" alt="Motion Graphics work" class="poster-img absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy">
+                    <div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="20"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="20"></span></div>
+                    <div class="mute-ico" role="button" aria-label="Toggle mute"><span class="iconify text-white icon-unmute" data-icon="mdi:volume-high" data-width="16"></span><span class="iconify text-white icon-mute" data-icon="mdi:volume-mute" data-width="16"></span></div>
+                </div>
+                <div class="p-6 bg-[#0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Motion Graphics</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Motion Graphics work</h3><p class="text-sm text-slate-500 font-light">Kinetic typography, logo animations, and AI-enhanced motion pieces.</p></div>
             </div>
             <div class="proj-card reveal rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
                 <div class="aspect-video relative cloudinary-hover-wrap thumb-arch" data-cld-pid="Meraki_Showreel_2024">
                     <video id="cld-arch" playsinline preload="none" muted class="cld-video" poster="https://res.cloudinary.com/dxb4equz/image/upload/Meraki_Showreel_2024_poster.jpg"><source src="https://res.cloudinary.com/dxb4equz/video/upload/f_auto,q_auto/Meraki_Showreel_2024.mp4" type="video/mp4"></video>
                     <img src="https://res.cloudinary.com/dxb4equz/image/upload/Meraki_Showreel_2024_poster.jpg" alt="Architectural Walkthrough Edit" class="poster-img absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy">
+                    <div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="20"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="20"></span></div>
+                    <div class="mute-ico" role="button" aria-label="Toggle mute"><span class="iconify text-white icon-unmute" data-icon="mdi:volume-high" data-width="16"></span><span class="iconify text-white icon-mute" data-icon="mdi:volume-mute" data-width="16"></span></div>
                 </div>
-                <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Walkthrough Edit</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Architectural walkthrough Edit Showreel</h3><p class="text-sm text-slate-500 font-light">Full architectural walkthrough edited and finalized in Premiere Pro.</p></div>
+                <div class="p-6 bg-[#0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Walkthrough Edit</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Architectural walkthrough Edit Showreel</h3><p class="text-sm text-slate-500 font-light">Full architectural walkthrough edited and finalized in Premiere Pro.</p></div>
             </div>
             <div class="proj-card reveal delay-100 rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
                 <div class="aspect-video relative cloudinary-hover-wrap thumb-logo" data-cld-pids='["reident_logo_4b","griham_logo_anim_v2_HQ","imi_logo_anim_V3_S2","Squaremark_Logo-anim"]' data-title="Logo Animations">
                     <video id="cld-logos" playsinline preload="none" muted class="cld-video" poster="https://res.cloudinary.com/dxb4equz/image/upload/reident_logo_4b_poster.jpg"><source src="https://res.cloudinary.com/dxb4equz/video/upload/f_auto,q_auto/reident_logo_4b.mp4" type="video/mp4"></video>
                     <img src="https://res.cloudinary.com/dxb4equz/video/upload/reident_logo_4b.jpg" alt="Logo Animations" class="poster-img absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy">
-                    <div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="16"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="16"></span></div>
+                    <div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="20"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="20"></span></div>
+                    <div class="mute-ico" role="button" aria-label="Toggle mute"><span class="iconify text-white icon-unmute" data-icon="mdi:volume-high" data-width="16"></span><span class="iconify text-white icon-mute" data-icon="mdi:volume-mute" data-width="16"></span></div>
                 </div>
-                <div class="p-6 bg-[#0A0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Commercial</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Logo Animations</h3><p class="text-sm text-slate-500 font-light">Animated Logos.</p></div>
+                <div class="p-6 bg-[#0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Commercial</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Logo Animations</h3><p class="text-sm text-slate-500 font-light">Animated Logos.</p></div>
             </div>
         </div>
         <div class="reveal text-center mt-12"><a href="https://www.youtube.com/@KINOKS" target="_blank" class="group inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-300 border-b border-white/[0.1] hover:border-white/[0.3] pb-1">See more on YouTube<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="14"></span></a></div>
         <div class="reveal mt-20 max-w-3xl mx-auto">
             <div class="text-center mb-6"><span class="text-xs font-mono text-red-500 tracking-wider uppercase mb-2 block">// Drag to Compare</span><h3 class="text-xl md:text-2xl font-semibold tracking-tight text-white">Raw Footage vs. Color Graded</h3><p class="text-xs text-slate-500 mt-2">Drag the handle — replace these placeholder frames with your own before/after stills.</p></div>
             <div class="compare-wrap aspect-video border border-white/[0.06]" id="compareSlider">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/before.jpg" alt="Raw footage">
-                <div class="compare-after" style="clip-path:inset(0 50% 0 0)"><img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/after.JPG" alt="Color graded footage"></div>
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/before.jpg" loading="lazy" alt="Raw footage">
+                <div class="compare-after" style="clip-path:inset(0 50% 0 0)"><img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/after.JPG" loading="lazy" alt="Color graded footage"></div>
                 <span class="compare-label before">Raw</span>
                 <span class="compare-label after">Graded</span>
                 <div class="compare-handle" style="left:50%"><div class="compare-handle-btn"><span class="arrow-l"></span><span class="arrow-r"></span></div></div>
@@ -526,7 +568,7 @@
         <div class="reveal"><span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-4 block font-syne">// Get In Touch</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight mb-6 font-syne"><span class="gradient-text">Let's Create</span><br><span class="text-white">Something <span class="accent-text">Amazing</span></span></h2><p class="text-slate-400 font-light leading-relaxed mb-10 max-w-lg mx-auto">Have a project in mind? Need AI-powered video content? I'd love to hear about your vision.</p></div>
         <div class="reveal delay-100 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             <a href="#" class="wa-trigger glass-card glass-card-amber group rounded-2xl p-6 hover:border-[#25D366]/60 hover:bg-[#25D366]/[0.05] transition-all duration-300 relative overflow-hidden" role="button"><div class="absolute top-0 right-0 w-16 h-16 bg-[#25D366]/10 blur-2xl rounded-full pointer-events-none"></div><span class="iconify text-[#25D366] mx-auto mb-3 block relative" data-icon="mdi:whatsapp" data-width="28"></span><span class="text-xs text-[#25D366]/70 block mb-1 relative">WhatsApp</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors relative">Chat with me</span></a>
-            <a href="mailto:guinsubham@gmail.com" class="glass-card group rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mx-auto mb-3 block" data-icon="mdi:email-outline" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Email</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors break-all">guinsubham@gmail.com</span></a>
+            <a href="mailto:guinsubham@gmail.com" class="glass-card group rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mx-auto mb-3 block" data-icon="mdi:email-outline" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Email</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors break-word">guinsubham@gmail.com</span></a>
             <a href="https://www.linkedin.com/in/subham-guin-160b9b242" target="_blank" class="glass-card group rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mx-auto mb-3 block" data-icon="mdi:linkedin" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">LinkedIn</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">Message me</span></a>
             <a href="https://www.instagram.com/subham_guin/" target="_blank" class="glass-card group rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mx-auto mb-3 block" data-icon="mdi:instagram" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Instagram</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">@subham_guin</span></a>
         </div>
@@ -567,6 +609,7 @@
     var btn=document.getElementById('mobileMenuBtn'),menu=document.getElementById('mobileMenu'),open=false;
     btn.addEventListener('click',function(){open=!open;menu.classList.toggle('hidden');btn.innerHTML=open?'<span class="iconify" data-icon="mdi:close" data-width="24"></span>':'<span class="iconify" data-icon="mdi:menu" data-width="24"></span>'});
     menu.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){menu.classList.add('hidden');open=false;btn.innerHTML='<span class="iconify" data-icon="mdi:menu" data-width="24"></span>'})});
+    document.addEventListener('click',function(e){if(open&&!menu.contains(e.target)&&!btn.contains(e.target)){menu.classList.add('hidden');open=false;btn.innerHTML='<span class="iconify" data-icon="mdi:menu" data-width="24"></span>'}});
     document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var h=this.getAttribute('href');if(h==='#')return;e.preventDefault();var t=document.querySelector(h);if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
 })();
 </script>
@@ -767,6 +810,34 @@
                     }
                 }
             }
+        }
+    });
+
+    // ── Click/touch handler for video cards (mobile) ──
+    document.addEventListener('click',function(e){
+        var muteBtn=e.target.closest('.mute-ico');
+        if(muteBtn){
+            var wrap=muteBtn.closest('.cloudinary-hover-wrap');
+            if(wrap){
+                var vid=wrap.querySelector('video');
+                if(vid){vid.muted=!vid.muted;wrap.classList.toggle('muted',vid.muted);}
+            }
+            return;
+        }
+        var wrap=e.target.closest('.cloudinary-hover-wrap');
+        if(!wrap)return;
+        var vid=wrap.querySelector('video');
+        if(!vid)return;
+        e.preventDefault();e.stopPropagation();
+        if(wrap.classList.contains('playing')){
+            vid.pause();vid.currentTime=0;vid.muted=true;
+            wrap.classList.remove('playing');wrap.classList.add('muted');
+            var pi=wrap.querySelector('.poster-img');if(pi)pi.style.opacity='1';
+        }else{
+            if(activeCard&&activeCard!==wrap)stopCard();
+            activeCard=wrap;wrap.classList.add('playing');
+            var pi=wrap.querySelector('.poster-img');if(pi)pi.style.opacity='0';
+            vid.muted=true;vid.play().then(function(){vid.muted=false;}).catch(function(){});
         }
     });
 
