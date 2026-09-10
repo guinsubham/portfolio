@@ -36,6 +36,7 @@
         .rec-dot{width:8px;height:8px;border-radius:9999px;background:#ef4444;box-shadow:0 0 10px rgba(239,68,68,.9);animation:blink 1.4s steps(2,start) infinite;flex-shrink:0}
         @keyframes blink{50%{opacity:.15}}
         .rotor-cursor{display:inline-block;width:.55em;height:1em;background:rgba(239,68,68,.8);margin-left:3px;vertical-align:-2px;animation:blink 1s steps(2,start) infinite}
+        #rotor{display:inline-block}
         .eq{display:inline-flex;align-items:flex-end;gap:2px;height:12px}
         .eq i{width:2px;height:4px;background:#22c55e;border-radius:1px;animation:eq 1s ease-in-out infinite}
         .eq i:nth-child(2){animation-delay:.15s;animation-duration:.8s}.eq i:nth-child(3){animation-delay:.3s;animation-duration:.65s}.eq i:nth-child(4){animation-delay:.45s;animation-duration:.9s}
@@ -254,8 +255,8 @@
 <section class="relative min-h-screen flex items-center pt-20 pb-20 md:pt-28 md:pb-28 px-6 grid-bg overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/[0.03] border-dashed rounded-full pointer-events-none spin-slow"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-white/[0.05] rounded-full pointer-events-none"></div>
-    <div class="absolute top-24 left-6 md:top-28 md:left-10 z-10 flex items-center gap-2"><span class="rec-dot"></span><span class="text-[10px] font-mono tracking-[.2em] text-red-400/80">REC</span></div>
-    <div class="absolute top-24 right-6 md:top-28 md:right-10 z-10"><span id="timecode" class="text-[10px] font-mono tracking-[.2em] text-slate-500">TC 00:00:00:00</span></div>
+    <div class="absolute top-24 left-6 md:top-28 md:left-10 z-10 hidden md:flex items-center gap-2"><span class="rec-dot"></span><span class="text-[10px] font-mono tracking-[.2em] text-red-400/80">REC</span></div>
+    <div class="absolute top-24 right-6 md:top-28 md:right-10 z-10 hidden md:block"><span id="timecode" class="text-[10px] font-mono tracking-[.2em] text-slate-500">TC 00:00:00:00</span></div>
     <div id="particles" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
     <div class="hero-editorial relative z-10 w-full">
         <!-- Left: Text -->
@@ -263,7 +264,7 @@
             <div class="reveal inline-flex items-center gap-2 border border-white/[0.1] rounded-full px-4 py-1.5 mb-8"><span class="w-2 h-2 bg-green-500 rounded-full relative"><span class="absolute inset-0 bg-green-500 rounded-full animate-ping"></span></span><span class="eq"><i></i><i></i><i></i><i></i></span><span class="text-xs font-medium text-slate-300 tracking-wide">Available for freelance work</span></div>
             <h1 class="reveal delay-100 text-5xl md:text-7xl font-bold tracking-tight leading-[1] mb-6 font-syne"><span class="gradient-text">Subham</span><br><span class="text-white">Guin</span><span class="accent-text">.</span></h1>
             <p class="reveal delay-200 text-base md:text-lg font-light text-slate-300 tracking-wide mb-2">Video Editor & Motion Graphics Designer</p>
-            <p class="reveal delay-300 text-xs md:text-sm font-light text-amber-500/80 tracking-wider uppercase mb-4 flex items-center gap-2"><span class="accent-dot"></span>AI-Assisted Creative — <span id="rotor">Films</span><span class="rotor-cursor"></span></p>
+            <p class="reveal delay-300 text-xs md:text-sm font-light text-amber-500/80 tracking-wider uppercase mb-4"><span class="accent-dot"></span><span style="white-space:nowrap">AI-Assisted Creative — <span id="rotor">Films</span><span class="rotor-cursor"></span></span></p>
             <p class="reveal delay-300 text-sm font-light text-slate-500 max-w-lg leading-relaxed mb-10">Merging traditional filmmaking craft with generative AI to produce high-impact visual content at scale. From ideation to execution — faster, smarter, bolder.</p>
             <div class="reveal delay-400 flex flex-wrap items-center gap-3 sm:gap-4"><span class="magnetic"><a href="#projects" class="magnetic-inner sheen sheen-dark group inline-flex items-center gap-2 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm font-semibold hover:bg-slate-200 transition-all duration-150">View My Work<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="16"></span></a></span><span class="magnetic"><a href="#contact" class="magnetic-inner group inline-flex items-center gap-2 border border-white/[0.12] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm font-medium hover:border-amber-500/40 hover:text-amber-500 transition-all duration-300">Get in Touch</a></span></div>
         </div>
