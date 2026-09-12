@@ -3,59 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Subham Guin — Video Editor & Motion Graphics Designer crafting AI-powered ads, motion graphics and cinematic edits.">
+    <meta name="description" content="Subham Guin is a video editor and motion graphics designer crafting AI-powered ads, motion graphics, and cinematic edits.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Subham Guin — Video Editor & Motion Graphics Designer">
+    <meta property="og:title" content="Subham Guin — Video Editor and Motion Graphics Designer">
     <meta property="og:description" content="AI-powered ads, motion graphics, and brand content for leading Indian brands.">
     <meta property="og:image" content="https://res.cloudinary.com/dxb4equz/image/upload/v1788464295/SG_photo.jpg">
+    <meta property="og:image:alt" content="Portrait of Subham Guin, a video editor and motion graphics designer">
+    <meta property="og:url" content="https://guinsubham.github.io/portfolio/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Subham Guin — Video Editor and Motion Graphics Designer">
+    <meta name="twitter:description" content="AI-powered ads, motion graphics, and brand content for leading Indian brands.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dxb4equz/image/upload/v1788464295/SG_photo.jpg">
+    <meta name="theme-color" content="#050505">
+    <link rel="canonical" href="https://guinsubham.github.io/portfolio/">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AC%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://res.cloudinary.com">
     <link rel="preconnect" href="https://www.youtube.com">
-    <title>Subham Guin — Video Editor & Motion Graphics Designer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <title>Subham Guin — Video Editor and Motion Graphics Designer</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>tailwind.config={theme:{extend:{fontFamily:{inter:['Inter','sans-serif'],syne:['Syne','sans-serif']},colors:{accent:'#f59e0b','accent-dim':'#92400e'}}}}</script>
     <style>
         *{font-family:'Inter',sans-serif;font-feature-settings:"cv02","cv03","cv04","cv11"}
-        body{background:#050505;color:#fff}
-        @media (pointer:fine){*{cursor:none!important}}
+        body{background:#050505;color:#fff;line-height:1.6}
         ::selection{background:rgba(239,68,68,.3);color:#fecaca}
-        .reveal{opacity:0;transform:translateY(30px) scale(.98);transition:all .8s cubic-bezier(.16,1,.3,1);filter:blur(10px)}
-        .reveal.active{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+        .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+        .reveal.active{opacity:1;transform:none}
         .delay-100{transition-delay:100ms}.delay-200{transition-delay:200ms}.delay-300{transition-delay:300ms}.delay-400{transition-delay:400ms}.delay-500{transition-delay:500ms}
         .gradient-text{background:linear-gradient(to bottom,#FFF,#FFF,rgba(255,255,255,.5));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .ambient-glow{position:fixed;width:800px;height:500px;background:rgba(127,29,29,.1);filter:blur(120px);opacity:.4;mix-blend-mode:screen;pointer-events:none;z-index:-1;top:20%;left:50%;transform:translateX(-50%)}
+        .ambient-glow{position:fixed;width:900px;height:500px;background:rgba(127,29,29,.08);filter:blur(150px);opacity:.22;pointer-events:none;z-index:-1;top:18%;left:50%;transform:translateX(-50%)}
         .film-strip{background:repeating-linear-gradient(to right,transparent,transparent 8px,rgba(255,255,255,.05) 8px,rgba(255,255,255,.05) 10px)}
         .timeline-line{background:linear-gradient(to bottom,transparent,rgba(239,68,68,.5),rgba(239,68,68,.3),transparent)}
         .skill-bar-fill{width:0;transition:width 1.5s cubic-bezier(.16,1,.3,1)}
         ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#050505}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:3px}
         .nav-blur{backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
-        #navBadge{opacity:0;transform:translateX(-6px);transition:opacity .3s ease,transform .3s ease;pointer-events:none;white-space:nowrap}
-        #navBadge.show{opacity:1;transform:none}
-        @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+        #navBadge{position:absolute;left:calc(100% + 12px);top:50%;visibility:hidden;opacity:0;transform:translate(-6px,-50%);transition:opacity .3s ease,transform .3s ease;pointer-events:none;white-space:nowrap}
+        #navBadge.show{visibility:visible;opacity:1;transform:translate(0,-50%)}
         .grid-bg{background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
         .client-logo{transition:all .3s ease}.client-logo:hover{border-color:rgba(0,0,0,.12);background:#FFFFFF}
         .role-item{position:relative;padding-left:20px}.role-item::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:rgba(239,68,68,.4);border:1px solid rgba(239,68,68,.6)}
         .wa-btn{background:#25D366;color:#fff;cursor:pointer}.wa-btn:hover{background:#20BD5A}
-        .ai-tool-card{border:1px solid rgba(239,68,68,.1);transition:all .3s ease}
-        .ai-tool-card:hover{border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.03);transform:translateY(-2px)}
-        .spin-slow{animation:spinSlow 90s linear infinite}
-        @keyframes spinSlow{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
-        .grain{position:fixed;inset:-120px;z-index:90;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");animation:grainShift 1.2s steps(6) infinite}
-        @keyframes grainShift{0%{transform:translate(0,0)}20%{transform:translate(-40px,30px)}40%{transform:translate(30px,-50px)}60%{transform:translate(-50px,-20px)}80%{transform:translate(40px,40px)}100%{transform:translate(0,0)}}
+        .grain{position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
         .rec-dot{width:8px;height:8px;border-radius:9999px;background:#ef4444;box-shadow:0 0 10px rgba(239,68,68,.9);animation:blink 1.4s steps(2,start) infinite;flex-shrink:0}
         @keyframes blink{50%{opacity:.15}}
         .rotor-cursor{display:inline-block;width:.55em;height:1em;background:rgba(239,68,68,.8);margin-left:3px;vertical-align:-2px;animation:blink 1s steps(2,start) infinite}
         .rotor-line{min-height:1.7em;line-height:1.7;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
         @media (max-width:400px){.rotor-line{font-size:10px;letter-spacing:.08em}}
         #rotor{display:inline-block}
-        .eq{display:inline-flex;align-items:flex-end;gap:2px;height:12px}
-        .eq i{width:2px;height:4px;background:#22c55e;border-radius:1px;animation:eq 1s ease-in-out infinite}
-        .eq i:nth-child(2){animation-delay:.15s;animation-duration:.8s}.eq i:nth-child(3){animation-delay:.3s;animation-duration:.65s}.eq i:nth-child(4){animation-delay:.45s;animation-duration:.9s}
-        @keyframes eq{0%,100%{height:4px}50%{height:12px}}
         .nav-link{position:relative}
         .nav-link::after{content:'';position:absolute;left:0;bottom:-6px;width:100%;height:1px;background:#ef4444;transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.16,1,.3,1)}
         .nav-link:hover::after{transform:scaleX(1)}
@@ -69,15 +65,7 @@
         .proj-card{transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s ease,box-shadow .35s ease}
         .proj-card:hover{transform:translateY(-5px);box-shadow:0 24px 48px -20px rgba(239,68,68,.25)}
         .proj-card .aspect-video{position:relative;overflow:hidden}
-        .yt-facade{cursor:pointer}
-        .yt-facade img{transition:transform .5s cubic-bezier(.16,1,.3,1)}
-        .yt-facade:hover img{transform:scale(1.04)}
-        .yt-facade.playing{cursor:default}
-        .yt-facade.playing .play-ico{display:none}
         .play-ico .ico-pause{display:none}
-        .yt-facade.playing:hover .play-ico .ico-play{display:none}
-        .yt-facade.playing:hover .play-ico .ico-pause{display:inline-flex}
-        .yt-frame{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
         .yt-nav{position:absolute;top:10px;right:10px;z-index:3;display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.18);border-radius:9999px;padding:3px 6px;backdrop-filter:blur(4px)}
         .yt-nav-btn{background:transparent;border:0;color:#fff;cursor:pointer;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1;padding:0;border-radius:9999px;transition:background .2s ease,color .2s ease}
         .yt-nav-btn:hover{background:rgba(239,68,68,.85)}
@@ -98,26 +86,11 @@
         .client-logo img{transition:transform .3s ease}
         .client-logo:hover img{transform:scale(1.08)}
         .wa-btn:active{transform:scale(.96)}
-        @keyframes iconFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-2.5px)}}
-        @keyframes iconWiggle{0%{transform:rotate(0) scale(1)}30%{transform:rotate(-9deg) scale(1.15)}60%{transform:rotate(7deg) scale(1.18)}100%{transform:rotate(0) scale(1)}}
-        .ico-idle{display:inline-block;animation:iconFloat var(--idur,3s) ease-in-out infinite;animation-delay:var(--idel,0s)}
-        .ai-tool-card:hover .iconify,.cap-card:hover .iconify,.interest-card:hover .iconify,.contact-card:hover .iconify,.skill-item:hover .iconify,.role-item:hover .iconify,.group:hover .iconify,footer a:hover .iconify{animation:iconWiggle .55s ease}
-        .glow-card{position:relative;isolation:isolate}
-        .glow-card::before{content:'';position:absolute;inset:-3px;border-radius:inherit;z-index:-1;background:linear-gradient(120deg,#ef4444,#f97316,#ec4899,#8b5cf6,#ef4444);background-size:300% 300%;filter:blur(22px);opacity:0;transition:opacity .45s ease}
-        .glow-card:hover::before{opacity:.4;animation:glowShift 4s linear infinite}
-        @keyframes glowShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
         .count-num{opacity:0;transform:translateY(12px) scale(.85);transition:opacity .5s ease,transform .6s cubic-bezier(.16,1,.3,1)}
         .count-num.counting{opacity:1;transform:none}
-        #particles{z-index:0}
-        .particle{position:absolute;bottom:-12px;border-radius:9999px;pointer-events:none;opacity:0;animation:floatUp linear infinite;will-change:transform}
-        @keyframes floatUp{0%{transform:translate(0,0);opacity:0}8%{opacity:var(--o,.4)}85%{opacity:var(--o,.4)}100%{transform:translate(var(--dx,0px),-105vh);opacity:0}}
-        @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.client-logo{opacity:1!important;transform:none!important}.grain{display:none}.count-num{opacity:1!important;transform:none!important}#particles{display:none}}
-        @media (max-width:768px){.grain{display:none}.spin-slow{animation:none}.mesh-bg::before{animation:none}}
-        #spotlight{position:fixed;top:0;left:0;width:500px;height:500px;border-radius:9999px;pointer-events:none;z-index:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(239,68,68,.10) 0%,rgba(239,68,68,.04) 40%,transparent 70%);mix-blend-mode:screen;opacity:0;transition:opacity .4s ease;will-change:transform}
-        #spotlight.active{opacity:1}
-        .magnetic{display:inline-flex;will-change:transform}
-        .magnetic-inner{transition:transform .25s cubic-bezier(.16,1,.3,1)}
-        .proj-card{transform-style:preserve-3d}
+        @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.client-logo{opacity:1!important;transform:none!important}.grain{display:none}.count-num{opacity:1!important;transform:none!important}}
+        @media (max-width:768px){.grain{display:none}}
+        .magnetic{display:inline-flex}
         .compare-wrap{position:relative;overflow:hidden;border-radius:1rem;cursor:ew-resize;user-select:none;touch-action:none}
         .compare-wrap img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none;user-select:none}
         .compare-after{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;clip-path:inset(0 50% 0 0)}
@@ -127,76 +100,77 @@
         .compare-handle-btn span{width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent}
         .compare-handle-btn .arrow-l{border-right:6px solid #111}
         .compare-handle-btn .arrow-r{border-left:6px solid #111}
+        .compare-handle-btn::after{content:'DRAG';position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);font:600 9px/1 monospace;letter-spacing:.16em;color:#fff;opacity:0;pointer-events:none}
+        .compare-wrap.hinting .compare-handle{animation:compareHandleHint 1.9s cubic-bezier(.65,0,.35,1) .2s 1 both}
+        .compare-wrap.hinting .compare-after{animation:compareClipHint 1.9s cubic-bezier(.65,0,.35,1) .2s 1 both}
+        .compare-wrap.hinting .compare-handle-btn::after{animation:compareLabelHint 1.9s ease .2s 1 both}
+        @keyframes compareHandleHint{0%,100%{left:50%}28%{left:62%}68%{left:38%}}
+        @keyframes compareClipHint{0%,100%{clip-path:inset(0 50% 0 0)}28%{clip-path:inset(0 38% 0 0)}68%{clip-path:inset(0 62% 0 0)}}
+        @keyframes compareLabelHint{0%,100%{opacity:0;transform:translateX(-50%) translateY(-3px)}15%,78%{opacity:.8;transform:translateX(-50%) translateY(0)}}
         .compare-label{position:absolute;top:12px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.55);padding:4px 10px;border-radius:9999px;z-index:2;transition:opacity .2s ease}
         .compare-label.before{left:12px}
         .compare-label.after{right:12px}
-        @keyframes hintPulse{0%,100%{transform:translate(-50%,-50%) scale(1);box-shadow:0 4px 14px rgba(0,0,0,.4)}50%{transform:translate(-50%,-50%) scale(1.15);box-shadow:0 4px 20px rgba(239,68,68,.4)}}
-        @media (prefers-reduced-motion:reduce){#spotlight{display:none}.magnetic-inner{transition:none!important}}
-        @media (max-width:768px){#spotlight{display:none}}
         /* ── Syne display font for headings ── */
         h1,h2,h3.font-syne{font-family:'Syne',sans-serif}
         .font-syne{font-family:'Syne',sans-serif}
         /* ── Secondary accent helpers ── */
         .accent-text{color:#f59e0b}
         .accent-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#f59e0b;margin-right:8px;vertical-align:middle}
-        .section-label-accent{color:#f59e0b}
-        /* ── Section diagonal clip-path dividers ── */
-        .diagonal-top{clip-path:polygon(0 0,100% 4%,100% 100%,0 100%)}
-        .diagonal-top-rev{clip-path:polygon(0 4%,100% 0,100% 100%,0 100%)}
-        .diagonal-bottom{clip-path:polygon(0 0,100% 0,100% 96%,0 100%)}
-        .section-divider{height:60px;position:relative;z-index:2;margin-top:-30px;margin-bottom:-30px;pointer-events:none}
-        .section-divider svg{width:100%;height:100%;display:block}
         /* ── Glass-morphism card upgrade ── */
-        .glass-card{background:rgba(255,255,255,.02);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden}
-        .glass-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.04) 0%,transparent 50%,rgba(239,68,68,.02) 100%);pointer-events:none}
-        .glass-card::after{content:'';position:absolute;top:-1px;left:-1px;right:-1px;bottom:-1px;border-radius:inherit;background:linear-gradient(135deg,rgba(245,158,11,.15),transparent 40%,transparent 60%,rgba(239,68,68,.15));z-index:-1;opacity:0;transition:opacity .4s ease}
-        .glass-card:hover::after{opacity:1}
+        .glass-card{background:#0a0a0a;border:1px solid rgba(255,255,255,.07);position:relative;overflow:hidden}
         .glass-card-amber{border-color:rgba(245,158,11,.15)}
-        .glass-card-amber::before{background:linear-gradient(135deg,rgba(245,158,11,.06) 0%,transparent 50%)}
-        /* ── Animated mesh section backgrounds ── */
+        /* ── Section backgrounds ── */
         .mesh-bg{position:relative;overflow:hidden}
-        .mesh-bg::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;filter:blur(120px);opacity:.07;pointer-events:none;animation:meshFloat 20s ease-in-out infinite alternate}
-        .mesh-bg.mesh-amber::before{background:#f59e0b;top:-10%;right:-5%}
-        .mesh-bg.mesh-red::before{background:#ef4444;bottom:-10%;left:-5%;animation-delay:-8s}
-        .mesh-bg.mesh-purple::before{background:#8b5cf6;top:20%;left:30%;animation-delay:-12s}
-        .mesh-bg.mesh-cyan::before{background:#06b6d4;bottom:10%;right:20%;animation-delay:-4s}
-        @keyframes meshFloat{0%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.1)}100%{transform:translate(-20px,20px) scale(.95)}}
-        /* ── Custom cursor ── */
-        .cursor-dot{position:fixed;width:8px;height:8px;background:#ef4444;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s ease,height .2s ease,background .2s ease;mix-blend-mode:difference}
-        .cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(239,68,68,.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s cubic-bezier(.16,1,.3,1),height .3s cubic-bezier(.16,1,.3,1),border-color .3s ease,background .3s ease}
-        .cursor-ring.hovering{width:52px;height:52px;border-color:#f59e0b;background:rgba(245,158,11,.06)}
-        .cursor-dot.hovering{width:12px;height:12px;background:#f59e0b}
-        @media (pointer:coarse){.cursor-dot,.cursor-ring{display:none!important}*{cursor:auto!important}}
         /* ── Hero editorial layout ── */
-        .hero-editorial{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;max-width:7xl;margin:0 auto;padding:0 1.5rem}
-        @media(min-width:768px){.hero-editorial{grid-template-columns:1fr 1fr;gap:4rem}}
+        .hero-editorial{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;max-width:80rem;margin:0 auto;padding:0 1.5rem}
+        @media(min-width:768px){.hero-editorial{grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:clamp(3rem,7vw,7rem)}}
+        .hero-title{font-size:clamp(4.5rem,9.5vw,9.5rem);line-height:.79;letter-spacing:-.075em;text-transform:uppercase}
+        .hero-copy{max-width:34rem;font-size:clamp(.95rem,1.25vw,1.08rem)}
         .hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
-        .hero-film-frame{width:100%;max-width:380px;aspect-ratio:3/4;border:1px solid rgba(255,255,255,.08);border-radius:1rem;overflow:hidden;position:relative;background:linear-gradient(135deg,#1a0505,#0a0505,#050a0a);box-shadow:0 40px 80px -20px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.04)}
+        .hero-film-frame{width:100%;max-width:520px;aspect-ratio:4/3;border:1px solid rgba(255,255,255,.1);overflow:hidden;position:relative;background:#0a0505;box-shadow:0 40px 90px -35px rgba(0,0,0,.9)}
         .hero-film-frame::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 4px,rgba(255,255,255,.015) 4px,rgba(255,255,255,.015) 5px);z-index:1;pointer-events:none}
-        .hero-film-frame::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,rgba(239,68,68,.08),transparent);z-index:2;pointer-events:none}
-        .hero-gradient-orb{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(239,68,68,.12),rgba(245,158,11,.06),transparent 70%);filter:blur(60px);animation:orbFloat 8s ease-in-out infinite alternate;pointer-events:none}
-        @keyframes orbFloat{0%{transform:translate(0,0) scale(1)}100%{transform:translate(20px,-30px) scale(1.15)}}
+        .hero-film-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,5,.78),transparent 58%),linear-gradient(120deg,rgba(239,68,68,.12),transparent 40%);z-index:2;pointer-events:none}
         /* ── Gradient border utility ── */
         .gradient-border{position:relative}
-        .gradient-border::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(245,158,11,.3),rgba(239,68,68,.1),rgba(139,92,246,.1));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:0;transition:opacity .4s ease}
+        .gradient-border::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(245,158,11,.28),rgba(239,68,68,.12),transparent 62%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:0;transition:opacity .4s ease}
         .gradient-border:hover::before{opacity:1}
         /* ── Upgraded stat card ── */
         .stat-card{background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden}
         .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(245,158,11,.4),rgba(239,68,68,.4),transparent)}
         .stat-card.stat-accent{border-color:rgba(245,158,11,.15);background:linear-gradient(135deg,rgba(245,158,11,.04),rgba(239,68,68,.02))}
-        /* ── Section wave divider ── */
-        .wave-divider{position:relative;height:80px;margin:-40px 0;pointer-events:none;z-index:2}
-        .wave-divider svg{position:absolute;bottom:0;width:100%}
+        main>section:not(:first-child){border-top:1px solid rgba(255,255,255,.055)}
+        .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+        .project-grid>.proj-card{display:flex;flex-direction:column}
+        .project-grid>.project-featured{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(280px,.7fr)}
+        .project-featured .project-media{min-height:460px;aspect-ratio:auto}
+        .project-grid>.project-reel{grid-column:1/-1;display:grid;grid-template-columns:minmax(280px,.65fr) minmax(0,1.35fr)}
+        .project-reel .project-media{order:2;min-height:330px;aspect-ratio:auto}
+        .project-body{display:flex;flex:1;flex-direction:column;justify-content:space-between;padding:clamp(1.5rem,3vw,2.5rem);background:#090909}
+        .project-index{font:500 10px/1 monospace;letter-spacing:.18em;color:#f59e0b}
+        .project-facts{display:grid;gap:.65rem;margin-top:2rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.08)}
+        .project-facts span{display:flex;justify-content:space-between;gap:1rem;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#64748b}
+        .project-facts strong{color:#cbd5e1;font-weight:500;text-align:right}
+        .ai-feature-grid{gap:0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+        .ai-feature-grid>.glass-card{border:0;border-right:1px solid rgba(255,255,255,.08);border-radius:0;background:transparent}
+        .ai-feature-grid>.glass-card:last-child{border-right:0}
+        .ai-tools-grid{gap:0;border-top:1px solid rgba(255,255,255,.07);border-left:1px solid rgba(255,255,255,.07)}
+        .ai-tools-grid>.glass-card{border:0;border-right:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);border-radius:0;background:transparent;transition:background .25s ease}
+        .ai-tools-grid>.glass-card:hover{background:rgba(245,158,11,.035)}
+        .client-logo{border-radius:0!important;filter:grayscale(1)}
+        .client-logo:hover{filter:none}
+        .interest-card{border-width:1px 0 0!important;border-radius:0!important;background:transparent!important}
         /* ── Cloudinary hover ── */
         .cloudinary-hover-wrap{cursor:pointer}
+        .card-play-toggle{position:absolute;inset:0;z-index:2;width:100%;height:100%;padding:0;border:0;background:transparent;color:transparent}
+        .card-play-toggle:focus-visible{outline:2px solid #f59e0b;outline-offset:-4px}
         .cld-video{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover;opacity:0;transition:opacity .4s ease;z-index:1}
         .cloudinary-hover-wrap.playing .cld-video{opacity:1}
         .cloudinary-hover-wrap.playing .poster-img{opacity:0!important}
         .cloudinary-hover-wrap.playing{cursor:default}
         .cloudinary-hover-wrap.playing .play-ico{display:none}
-        .cloudinary-hover-iframe{position:absolute;inset:0;border:0}
-        .mute-ico{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:9999px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s ease;z-index:3;pointer-events:none;cursor:pointer}
-        .proj-card:hover .mute-ico{opacity:1;pointer-events:auto}
+        .mute-ico{position:absolute;top:12px;right:12px;width:36px;height:36px;padding:0;border-radius:9999px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s ease;z-index:3;pointer-events:none;cursor:pointer;color:#fff}
+        .cloudinary-hover-wrap[data-cld-pids] .mute-ico{top:58px}
+        .proj-card:hover .mute-ico,.proj-card:focus-within .mute-ico{opacity:1;pointer-events:auto}
         .mute-ico .icon-mute{display:none}
         .cloudinary-hover-wrap.muted .mute-ico .icon-unmute{display:none}
         .cloudinary-hover-wrap.muted .mute-ico .icon-mute{display:inline-flex}
@@ -213,7 +187,11 @@
         @media (max-width:768px){
             .hero-editorial{padding:0 1rem;gap:1.5rem}
             .hero-visual{display:none!important}
-            .hero-film-frame{max-width:280px;aspect-ratio:3/4}
+            .hero-title{font-size:clamp(3.8rem,21vw,6.2rem)}
+            .project-grid{grid-template-columns:1fr}
+            .project-grid>.project-featured,.project-grid>.project-reel{grid-column:auto;display:block}
+            .project-featured .project-media,.project-reel .project-media{min-height:0;aspect-ratio:16/9}
+            .ai-feature-grid>.glass-card{border-right:0;border-bottom:1px solid rgba(255,255,255,.08)}
             section > .max-w-7xl{padding-left:0;padding-right:0}
             #about .grid{gap:2rem!important}
             .yt-nav-btn{width:36px;height:36px;font-size:18px}
@@ -228,24 +206,29 @@
             section h2.text-3xl{font-size:1.5rem;line-height:1.3}
         }
         :focus-visible{outline:2px solid #f59e0b;outline-offset:2px;border-radius:4px}
+        .skip-link{position:fixed;top:8px;left:8px;z-index:10000;padding:.65rem 1rem;border-radius:.5rem;background:#fff;color:#050505;transform:translateY(-150%);transition:transform .2s ease}
+        .skip-link:focus{transform:none}
     </style>
-    <noscript><style>.reveal,.client-logo,.count-num{opacity:1!important;transform:none!important;filter:none!important}#particles,.grain,.cursor-dot,.cursor-ring,#spotlight{display:none!important}</style></noscript>
+    <noscript><style>.reveal,.client-logo,.count-num{opacity:1!important;transform:none!important;filter:none!important}.grain{display:none!important}</style></noscript>
 </head>
 <body class="antialiased overflow-x-hidden">
 
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <div class="ambient-glow" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
-<div id="spotlight" aria-hidden="true"></div>
 <div id="playhead-bar" class="fixed top-0 left-0 h-[2px] bg-gradient-to-r from-red-500 via-amber-500 to-amber-400 z-[80] shadow-[0_0_10px_rgba(245,158,11,.6)]" style="width:0%"></div>
 
 <!-- NAV -->
 <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-[#050505]/70 border-b border-white/[0.06]">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" class="flex items-center gap-2 group">
-            <div class="relative"><span class="iconify text-white group-hover:text-red-500 transition-colors duration-500" data-icon="mdi:movie-open-outline" data-width="22"></span><div class="absolute inset-0 bg-red-500 blur-[10px] opacity-0 group-hover:opacity-60 transition-opacity duration-500"></div></div>
-            <span class="text-sm font-semibold tracking-tight">SUBHAM GUIN</span>
-        </a>
-        <span id="navBadge" class="flex items-center gap-1.5 border border-white/[0.1] rounded-full px-3 py-1 ml-2 mr-auto"><span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span><span class="text-[10px] font-medium text-slate-300 tracking-wide">Available</span></span>
+        <div class="relative flex items-center">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="relative"><span class="iconify text-white group-hover:text-red-500 transition-colors duration-500" data-icon="mdi:movie-open-outline" data-width="22"></span><div class="absolute inset-0 bg-red-500 blur-[10px] opacity-0 group-hover:opacity-60 transition-opacity duration-500"></div></div>
+                <span class="text-sm font-semibold tracking-tight">SUBHAM GUIN</span>
+            </a>
+            <span id="navBadge" aria-hidden="true" class="flex items-center gap-1.5 border border-white/[0.1] rounded-full px-3 py-1"><span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span><span class="text-[10px] font-medium text-slate-300 tracking-wide">Available</span></span>
+        </div>
         <div class="hidden md:flex items-center gap-8">
             <a href="#about" class="nav-link text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">About</a>
             <a href="#ai" class="nav-link text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">AI</a>
@@ -253,9 +236,9 @@
             <a href="#work" class="nav-link text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">Experience</a>
             <a href="#projects" class="nav-link text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">Projects</a>
             <a href="#skills" class="nav-link text-xs font-medium text-slate-400 hover:text-white transition-colors duration-300 tracking-wide uppercase">Skills</a>
-            <span class="magnetic"><a href="#" class="magnetic-inner wa-trigger sheen text-xs font-semibold wa-btn px-4 py-2 rounded-full transition-all duration-150 tracking-wide flex items-center gap-1.5" role="button"><span class="iconify" data-icon="mdi:whatsapp" data-width="14"></span>Hire Me</a></span>
+            <span class="magnetic"><button type="button" class="magnetic-inner wa-trigger sheen text-xs font-semibold wa-btn px-4 py-2 rounded-full transition-all duration-150 tracking-wide flex items-center gap-1.5"><span class="iconify" data-icon="mdi:whatsapp" data-width="14"></span>Hire me</button></span>
         </div>
-        <button id="mobileMenuBtn" class="md:hidden text-white w-11 h-11 flex items-center justify-center"><span class="iconify" data-icon="mdi:menu" data-width="24"></span></button>
+        <button id="mobileMenuBtn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu" class="md:hidden text-white w-11 h-11 flex items-center justify-center"><span class="iconify" data-icon="mdi:menu" data-width="24"></span></button>
     </div>
     <div id="mobileMenu" class="md:hidden hidden bg-[#0A0A0A] border-t border-white/[0.06] px-6 py-4 space-y-1">
         <a href="#about" class="block text-sm text-slate-400 hover:text-white transition-colors py-3">About</a>
@@ -269,69 +252,43 @@
 </nav>
 
 <!-- HERO -->
-<section class="relative min-h-screen flex items-center pt-20 pb-20 md:pt-28 md:pb-28 px-6 grid-bg overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/[0.03] border-dashed rounded-full pointer-events-none spin-slow"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-white/[0.05] rounded-full pointer-events-none"></div>
+<main id="main-content">
+<section class="relative min-h-screen flex items-center pt-24 pb-20 md:pt-32 md:pb-24 px-6 grid-bg overflow-hidden">
     <div class="absolute top-24 left-6 md:top-28 md:left-10 z-10 hidden md:flex items-center gap-2"><span class="rec-dot"></span><span class="text-[10px] font-mono tracking-[.2em] text-red-400/80">REC</span></div>
     <div class="absolute top-24 right-6 md:top-28 md:right-10 z-10 hidden md:block"><span id="timecode" class="text-[10px] font-mono tracking-[.2em] text-slate-500">TC 00:00:00:00</span></div>
-    <div id="particles" class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true"></div>
     <div class="hero-editorial relative z-10 w-full">
-        <!-- Left: Text -->
-        <div class="text-left md:text-left">
-            <div id="heroBadge" class="reveal inline-flex items-center gap-2 border border-white/[0.1] rounded-full px-4 py-1.5 mb-8"><span class="w-2 h-2 bg-green-500 rounded-full relative"><span class="absolute inset-0 bg-green-500 rounded-full animate-ping"></span></span><span class="eq"><i></i><i></i><i></i><i></i></span><span class="text-xs font-medium text-slate-300 tracking-wide">Available for freelance work</span></div>
-            <h1 class="reveal delay-100 text-5xl md:text-7xl font-bold tracking-tight leading-[1] mb-6 font-syne"><span class="gradient-text">Subham</span><br><span class="text-white">Guin</span><span class="accent-text">.</span></h1>
-            <p class="reveal delay-200 text-base md:text-lg font-light text-slate-300 tracking-wide mb-2">Video Editor & Motion Graphics Designer</p>
-            <p class="reveal delay-300 text-xs md:text-sm font-light text-amber-500/80 tracking-wider uppercase mb-4 rotor-line whitespace-nowrap"><span class="accent-dot"></span><span style="white-space:nowrap">AI-Assisted Creative — <span id="rotor">Films</span><span class="rotor-cursor"></span></span></p>
-            <p class="reveal delay-300 text-sm font-light text-slate-500 max-w-lg leading-relaxed mb-10">Merging traditional filmmaking craft with generative AI to produce high-impact visual content at scale. From ideation to execution — faster, smarter, bolder.</p>
-            <div class="reveal delay-400 flex flex-wrap items-center gap-3 sm:gap-4"><span class="magnetic"><a href="#projects" class="magnetic-inner sheen sheen-dark group inline-flex items-center gap-2 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm font-semibold hover:bg-slate-200 transition-all duration-150">View My Work<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="16"></span></a></span><span class="magnetic"><a href="#contact" class="magnetic-inner group inline-flex items-center gap-2 border border-white/[0.12] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm font-medium hover:border-amber-500/40 hover:text-amber-500 transition-all duration-300">Get in Touch</a></span></div>
+        <div class="text-left">
+            <div id="heroBadge" class="reveal inline-flex items-center gap-2 mb-8"><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="text-[10px] font-mono uppercase tracking-[.18em] text-slate-400">Available for select freelance projects</span></div>
+            <p class="reveal delay-100 text-xs font-mono text-amber-500 tracking-[.2em] uppercase mb-5">Video Editor / Motion Graphics Designer</p>
+            <h1 class="hero-title reveal delay-100 font-syne font-bold mb-9"><span class="text-white">Subham</span><br><span class="gradient-text">Guin.</span></h1>
+            <p class="hero-copy reveal delay-200 font-light text-slate-400 leading-relaxed mb-4">I shape films, commercials, and brand stories through editing, motion design, and AI-assisted production.</p>
+            <p class="reveal delay-200 text-xs font-mono text-slate-600 tracking-wider uppercase mb-10 rotor-line"><span class="accent-dot"></span>Currently creating <span id="rotor" class="text-slate-300">films</span><span class="rotor-cursor"></span></p>
+            <div class="reveal delay-300 flex flex-wrap items-center gap-6"><a href="#projects" class="sheen sheen-dark group inline-flex items-center gap-3 bg-white text-black px-7 py-3.5 text-sm font-semibold hover:bg-slate-200 transition-colors duration-200">View selected work<span class="iconify group-hover:translate-x-1 transition-transform" data-icon="mdi:arrow-right" data-width="16"></span></a><a href="#contact" class="text-sm text-slate-400 hover:text-white border-b border-white/20 hover:border-red-500 pb-1 transition-colors">Start a project</a></div>
         </div>
-        <!-- Right: Visual element -->
         <div class="reveal delay-200 hero-visual hidden md:flex">
-            <div class="hero-gradient-orb" aria-hidden="true"></div>
             <div class="hero-film-frame">
-                <div class="hero-card-glow absolute w-32 h-32 rounded-full pointer-events-none z-20 opacity-0 transition-opacity duration-300" style="background:radial-gradient(circle,rgba(239,68,68,.4) 0%,rgba(245,158,11,.2) 40%,transparent 70%);filter:blur(30px);transform:translate(-50%,-50%)"></div>
-                <video id="heroCosmos" loop muted playsinline disablepictureinpicture preload="none" class="absolute inset-0 w-full h-full object-cover opacity-[.15]"><source src="https://res.cloudinary.com/dxb4equz/video/upload/v1788465976/Element_1261166258_-_Cosmos.mp4" type="video/mp4"></video>
-                <div class="absolute inset-0 flex flex-col justify-end p-8 z-10">
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center"><span class="iconify text-red-400" data-icon="mdi:filmstrip" data-width="16"></span></div><div class="flex-1"><div class="h-1.5 bg-white/[0.06] rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-red-500 to-amber-500 rounded-full" style="width:92%"></div></div></div><span class="text-[10px] text-slate-500 font-mono">92%</span></div>
-                        <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center"><span class="iconify text-amber-500" data-icon="mdi:robot" data-width="16"></span></div><div class="flex-1"><div class="h-1.5 bg-white/[0.06] rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full" style="width:88%"></div></div></div><span class="text-[10px] text-slate-500 font-mono">88%</span></div>
-                        <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center"><span class="iconify text-purple-400" data-icon="mdi:palette" data-width="16"></span></div><div class="flex-1"><div class="h-1.5 bg-white/[0.06] rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-purple-500 to-red-500 rounded-full" style="width:85%"></div></div></div><span class="text-[10px] text-slate-500 font-mono">85%</span></div>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between">
-                        <div><span class="text-2xl font-bold text-white font-syne">6+</span><span class="text-[10px] text-slate-500 block uppercase tracking-wider">Years</span></div>
-                        <div><span class="text-2xl font-bold text-white font-syne">10+</span><span class="text-[10px] text-slate-500 block uppercase tracking-wider">Brands</span></div>
-                        <div><span class="text-2xl font-bold accent-text font-syne">AI</span><span class="text-[10px] text-amber-500/60 block uppercase tracking-wider">Assisted</span></div>
-                    </div>
-                </div>
-                <div class="absolute top-4 left-4 right-4 z-10 flex items-center justify-between">
-                    <span></span>
-                    <span class="flex items-center gap-1.5"><span class="rec-dot" style="width:5px;height:5px"></span><span class="text-[8px] font-mono tracking-[.2em] text-white/40">REC</span></span>
-                </div>
-                <div class="absolute top-0 left-0 w-6 h-full film-strip opacity-20" aria-hidden="true"></div>
-                <div class="absolute top-0 right-0 w-6 h-full film-strip opacity-20" aria-hidden="true"></div>
-                <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#050505] to-transparent z-5"></div>
+                <video id="heroCosmos" loop muted playsinline disablepictureinpicture preload="none" class="absolute inset-0 w-full h-full object-cover opacity-50"><source src="https://res.cloudinary.com/dxb4equz/video/upload/v1788465976/Element_1261166258_-_Cosmos.mp4" type="video/mp4"></video>
+                <div class="absolute top-5 left-5 right-5 z-10 flex items-center justify-between font-mono text-[9px] tracking-[.2em] text-white/60"><span>FRAME 001</span><span class="flex items-center gap-2"><span class="rec-dot w-1.5 h-1.5"></span>REC</span></div>
+                <div class="absolute bottom-6 left-6 right-6 z-10"><span class="text-[9px] font-mono tracking-[.2em] text-amber-500 uppercase">Editing / Motion / AI</span><p class="mt-2 text-2xl font-syne font-semibold tracking-tight text-white">Every frame should feel intentional.</p></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- WAVE DIVIDER: Hero → About -->
-<div class="wave-divider"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#080808" fill-opacity=".5"/></svg></div>
-
 <!-- ABOUT -->
 <section id="about" class="py-24 md:py-32 px-6 mesh-bg mesh-amber">
     <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div class="reveal"><div class="relative rounded-2xl overflow-hidden aspect-[4/5] border border-white/[0.06] gradient-border" style="background:linear-gradient(135deg,#1a0808,#0a0505,#050a0a,#080510)"><img src="https://res.cloudinary.com/dxb4equz/image/upload/v1788464295/SG_photo.jpg" alt="Subham Guin" class="absolute inset-0 w-full h-full object-cover" loading="lazy"><span aria-hidden="true" class="vf tl"></span><span aria-hidden="true" class="vf tr"></span><span aria-hidden="true" class="vf bl"></span><span aria-hidden="true" class="vf br"></span><span class="absolute top-4 right-5 flex items-center gap-1.5 z-10"><span class="rec-dot"></span><span class="text-[9px] font-mono tracking-[.2em] text-white/70">REC</span></span><span class="absolute bottom-4 left-5 text-[9px] font-mono tracking-[.2em] text-white/60 z-10">4K — 24FPS</span><div class="absolute top-0 left-0 w-8 h-full film-strip opacity-30"></div><div class="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-red-500/20 to-transparent"></div><div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent"></div></div></div>
+            <div class="reveal"><div class="relative rounded-2xl overflow-hidden aspect-[4/5] border border-white/[0.06] gradient-border" style="background:linear-gradient(135deg,#1a0808,#0a0505,#050a0a,#080510)"><img src="https://res.cloudinary.com/dxb4equz/image/upload/v1788464295/SG_photo.jpg" alt="Portrait of Subham Guin" class="absolute inset-0 w-full h-full object-cover" loading="lazy"><span aria-hidden="true" class="vf tl"></span><span aria-hidden="true" class="vf tr"></span><span aria-hidden="true" class="vf bl"></span><span aria-hidden="true" class="vf br"></span><span class="absolute top-4 right-5 flex items-center gap-1.5 z-10"><span class="rec-dot"></span><span class="text-[9px] font-mono tracking-[.2em] text-white/70">REC</span></span><span class="absolute bottom-4 left-5 text-[9px] font-mono tracking-[.2em] text-white/60 z-10">4K — 24 FPS</span><div class="absolute top-0 left-0 w-8 h-full film-strip opacity-30"></div><div class="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-red-500/20 to-transparent"></div><div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent"></div></div></div>
             <div>
                 <div class="reveal"><span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-4 block font-syne">// About Me</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight leading-tight mb-6 font-syne"><span class="gradient-text">Where filmmaking</span><br><span class="text-white">meets <span class="accent-text">AI</span></span></h2></div>
                 <div class="reveal delay-100">
-                    <p class="text-slate-400 font-light leading-relaxed mb-6">I'm a Video Editor and Motion Graphics Designer with 6+ years of experience spanning film, television, advertising, and digital content. What sets me apart is my deep integration of <span class="text-amber-500 font-normal">Generative AI</span> into every stage of production.</p>
-                    <p class="text-slate-400 font-light leading-relaxed mb-6">I don't just edit videos — I build AI-powered workflows that take a project from idea to final video. Whether it's creating ads with consistent characters and products using AI, generating content at scale, or building custom GPTs and Claude skills to automate creative tasks, I operate at the intersection of traditional craft and cutting-edge technology.</p>
-                    <p class="text-slate-400 font-light leading-relaxed mb-8">Currently at <span class="text-white font-normal">Meraaquii D&C</span>, I lead video editing and motion graphics while driving AI adoption across the production pipeline for major Indian brands.</p>
+                    <p class="text-slate-400 font-light leading-relaxed mb-6">I'm a video editor and motion graphics designer with more than six years of experience across film, television, advertising, and digital content. What sets me apart is how deeply I integrate <span class="text-amber-500 font-normal">generative AI</span> throughout the production process.</p>
+                    <p class="text-slate-400 font-light leading-relaxed mb-6">I don't just edit videos; I build AI-powered workflows that take projects from initial ideas to final delivery. Whether I'm using AI to create ads with consistent characters and products, generating content at scale, or building custom GPTs and Claude skills to automate creative tasks, I work at the intersection of traditional craft and emerging technology.</p>
+                    <p class="text-slate-400 font-light leading-relaxed mb-8">At <span class="text-white font-normal">Meraaquii D&amp;C</span>, I lead video editing and motion graphics while driving AI adoption throughout the production pipeline for major Indian brands.</p>
                 </div>
                 <div class="reveal delay-200 grid grid-cols-3 gap-4">
-                    <div class="stat-card rounded-xl p-4 text-center"><div class="count-num text-2xl md:text-3xl font-bold text-white mb-1 font-syne" data-count="6">0+</div><div class="text-[10px] uppercase tracking-widest text-slate-500">Years Exp.</div></div>
+                    <div class="stat-card rounded-xl p-4 text-center"><div class="count-num text-2xl md:text-3xl font-bold text-white mb-1 font-syne" data-count="6">0+</div><div class="text-[10px] uppercase tracking-widest text-slate-500">Years' Experience</div></div>
                     <div class="stat-card rounded-xl p-4 text-center"><div class="count-num text-2xl md:text-3xl font-bold text-white mb-1 font-syne" data-count="10">0+</div><div class="text-[10px] uppercase tracking-widest text-slate-500">Brands</div></div>
                     <div class="stat-card stat-accent rounded-xl p-4 text-center"><div class="text-2xl md:text-3xl font-bold accent-text mb-1 font-syne">AI</div><div class="text-[10px] uppercase tracking-widest text-amber-500/60">Assisted</div></div>
                 </div>
@@ -340,8 +297,6 @@
     </div>
 </section>
 
-<!-- WAVE DIVIDER: About → AI -->
-<div class="wave-divider"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none"><path d="M0,40 C480,0 960,80 1440,40 L1440,80 L0,80 Z" fill="#050505"/></svg></div>
 
 <!-- AI CAPABILITIES -->
 <section id="ai" class="py-24 md:py-32 px-6 relative mesh-bg mesh-red">
@@ -350,36 +305,34 @@
         <div class="reveal text-center mb-16 md:mb-20">
             <span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-4 block font-syne">// AI-Powered Workflow</span>
             <h2 class="text-3xl md:text-5xl font-semibold tracking-tight mb-4 font-syne"><span class="gradient-text">What I Can Do</span><br><span class="text-white">With <span class="accent-text">AI</span></span></h2>
-            <p class="text-slate-500 font-light max-w-2xl mx-auto">I use AI to create complete video ads — same person, same product, same place in every shot — in a fraction of traditional time and cost.</p>
+            <p class="text-slate-500 font-light max-w-2xl mx-auto">I use AI to create complete video ads while keeping the same person, product, and location consistent across every shot, at a fraction of the time and cost of traditional production.</p>
         </div>
-        <div class="reveal delay-100 grid md:grid-cols-3 gap-6 mb-16">
-            <div class="glass-card rounded-2xl p-8 gradient-border hover:border-red-500/30 transition-all duration-300"><span class="iconify text-amber-500 mb-4 block" data-icon="mdi:movie-filter-outline" data-width="32"></span><h3 class="text-lg font-medium text-white mb-3 font-syne">AI Video Ads</h3><p class="text-sm text-slate-500 font-light leading-relaxed">I create full video ads using AI — from writing the script with ChatGPT to generating visuals with Flux, Seedance, and Kling, then polishing everything in Premiere Pro.</p></div>
-            <div class="glass-card glass-card-amber rounded-2xl p-8 gradient-border hover:border-amber-500/30 transition-all duration-300"><span class="iconify text-amber-500 mb-4 block" data-icon="mdi:account-check-outline" data-width="32"></span><h3 class="text-lg font-medium text-white mb-3 font-syne">Consistent Look</h3><p class="text-sm text-slate-500 font-light leading-relaxed">The same person, product, and location stays consistent across every frame — something that used to require expensive shoots, now done with AI and Comfy UI.</p></div>
-            <div class="glass-card rounded-2xl p-8 gradient-border hover:border-red-500/30 transition-all duration-300"><span class="iconify text-amber-500 mb-4 block" data-icon="mdi:lightning-bolt-outline" data-width="32"></span><h3 class="text-lg font-medium text-white mb-3 font-syne">10x Faster</h3><p class="text-sm text-slate-500 font-light leading-relaxed">What used to take a full production crew days now takes me hours. I use custom GPTs, Claude skills, and Higgsfield to automate repetitive creative work.</p></div>
+        <div class="ai-feature-grid reveal delay-100 grid md:grid-cols-3 mb-16">
+            <div class="glass-card rounded-2xl p-8 gradient-border hover:border-red-500/30 transition-all duration-300"><span class="iconify text-amber-500 mb-4 block" data-icon="mdi:movie-filter-outline" data-width="32"></span><h3 class="text-lg font-medium text-white mb-3 font-syne">AI Video Ads</h3><p class="text-sm text-slate-500 font-light leading-relaxed">I create complete video ads using AI, from scripting with ChatGPT and generating visuals with Flux, Seedance, and Kling to polishing the final edit in Premiere Pro.</p></div>
+            <div class="glass-card glass-card-amber rounded-2xl p-8 gradient-border hover:border-amber-500/30 transition-all duration-300"><span class="iconify text-amber-500 mb-4 block" data-icon="mdi:account-check-outline" data-width="32"></span><h3 class="text-lg font-medium text-white mb-3 font-syne">Visual Consistency</h3><p class="text-sm text-slate-500 font-light leading-relaxed">The same person, product, and location remain consistent across every shot. This level of continuity once required expensive shoots but can now be achieved with AI and ComfyUI.</p></div>
+            <div class="glass-card rounded-2xl p-8 gradient-border hover:border-red-500/30 transition-all duration-300"><span class="iconify text-amber-500 mb-4 block" data-icon="mdi:lightning-bolt-outline" data-width="32"></span><h3 class="text-lg font-medium text-white mb-3 font-syne">10× Faster</h3><p class="text-sm text-slate-500 font-light leading-relaxed">Work that once took a full production crew days to complete can now take me hours. I use custom GPTs, Claude skills, and Higgsfield to automate repetitive creative work.</p></div>
         </div>
         <div class="reveal delay-200">
             <h3 class="text-sm font-medium text-slate-300 uppercase tracking-wider mb-8 text-center font-syne">AI Tools I Use</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
-                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:robot-happy-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">ChatGPT</span><span class="text-[10px] text-slate-600">Ideation & Scripts</span></div>
-                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:brain" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Claude</span><span class="text-[10px] text-slate-600">Analysis & Skills</span></div>
+            <div class="ai-tools-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
+                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:robot-happy-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">ChatGPT</span><span class="text-[10px] text-slate-600">Ideation &amp; Scriptwriting</span></div>
+                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:brain" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Claude</span><span class="text-[10px] text-slate-600">Analysis &amp; Skill Creation</span></div>
                 <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:video-vintage" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Higgsfield</span><span class="text-[10px] text-slate-600">AI Video Ads</span></div>
-                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:creation" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Seedance</span><span class="text-[10px] text-slate-600">AI Video Gen</span></div>
-                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:movie-star-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Kling</span><span class="text-[10px] text-slate-600">AI Video Gen</span></div>
+                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:creation" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Seedance</span><span class="text-[10px] text-slate-600">AI Video Generation</span></div>
+                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:movie-star-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Kling</span><span class="text-[10px] text-slate-600">AI Video Generation</span></div>
                 <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:flash-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Flux</span><span class="text-[10px] text-slate-600">Image Generation</span></div>
-                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:graph-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Comfy UI</span><span class="text-[10px] text-slate-600">Custom Pipelines</span></div>
-                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:cog-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Custom GPTs</span><span class="text-[10px] text-slate-600">Build & Deploy</span></div>
-                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:puzzle-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Claude Skills</span><span class="text-[10px] text-slate-600">Create & Use</span></div>
-                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:waveform" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">ElevenLabs</span><span class="text-[10px] text-slate-600">AI Voice & Audio</span></div>
+                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:graph-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">ComfyUI</span><span class="text-[10px] text-slate-600">Custom Pipelines</span></div>
+                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:cog-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Custom GPTs</span><span class="text-[10px] text-slate-600">Building &amp; Deployment</span></div>
+                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:puzzle-outline" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">Claude Skills</span><span class="text-[10px] text-slate-600">Creation &amp; Use</span></div>
+                <div class="glass-card rounded-xl p-5 text-center"><span class="iconify text-amber-500 mx-auto mb-2 block" data-icon="mdi:waveform" data-width="24"></span><span class="text-sm text-slate-300 font-medium block">ElevenLabs</span><span class="text-[10px] text-slate-600">AI Voice &amp; Audio Generation</span></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- WAVE DIVIDER: AI → Clients -->
-<div class="wave-divider"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none"><path d="M0,60 C240,20 720,80 1440,30 L1440,80 L0,80 Z" fill="#050505"/></svg></div>
 
 <!-- CLIENTS -->
-<section id="clients" class="py-20 md:py-24 px-6 relative mesh-bg mesh-purple">
+<section id="clients" class="py-20 md:py-24 px-6 relative mesh-bg">
     <div class="max-w-7xl mx-auto">
         <div class="reveal text-center mb-12 md:mb-16">
             <span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-4 block font-syne">// Trusted By</span>
@@ -387,44 +340,42 @@
         </div>
         <div class="reveal delay-100 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/ei-samay.png" loading="lazy" alt="Ei Samay" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/ei-samay.png" loading="lazy" alt="Ei Samay logo" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/frontier-the-one.png" loading="lazy" alt="Frontier The One" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/frontier-the-one.png" loading="lazy" alt="Frontier The One logo" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/nambiar.png" loading="lazy" alt="Nambiar Builders" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/nambiar.png" loading="lazy" alt="Nambiar Builders logo" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/srijan.png" loading="lazy" alt="Srijan" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/srijan.png" loading="lazy" alt="Srijan logo" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/haldia-petro.png" loading="lazy" alt="Haldia Petro Chemicals" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/haldia-petro.png" loading="lazy" alt="Haldia Petro Chemicals logo" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/Bumchum-logo.png" loading="lazy" alt="Bumchum" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/Bumchum-logo.png" loading="lazy" alt="Bumchum logo" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/himalaya-darpan.png" loading="lazy" alt="Himalaya Darpan" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/himalaya-darpan.png" loading="lazy" alt="Himalaya Darpan logo" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/boroplus.png" loading="lazy" alt="Boroplus" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/boroplus.png" loading="lazy" alt="Boroplus logo" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/bright.png" loading="lazy" alt="Bright" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/bright.png" loading="lazy" alt="Bright logo" class="max-h-14 w-auto object-contain">
             </div>
             <div class="client-logo border border-gray-200 rounded-xl p-4 flex items-center justify-center h-20 md:h-24 bg-[#F7F7F7]">
-                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/euro.png" loading="lazy" alt="Euro" class="max-h-14 w-auto object-contain">
+                <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/euro.png" loading="lazy" alt="Euro logo" class="max-h-14 w-auto object-contain">
             </div>
         </div>
     </div>
 </section>
 
-<!-- WAVE DIVIDER: Clients → Experience -->
-<div class="wave-divider"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none"><path d="M0,30 C360,70 1080,10 1440,50 L1440,80 L0,80 Z" fill="#050505"/></svg></div>
 
 <!-- EXPERIENCE -->
-<section id="work" class="py-24 md:py-32 px-6 relative mesh-bg mesh-cyan">
+<section id="work" class="py-24 md:py-32 px-6 relative mesh-bg">
     <div class="absolute inset-0 bg-[#080808]/70"></div>
     <div class="relative z-10 max-w-7xl mx-auto">
         <div class="reveal text-center mb-16 md:mb-20"><span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-4 block font-syne">// Experience</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight font-syne"><span class="gradient-text">Work</span> Experience</h2></div>
@@ -433,92 +384,90 @@
             <div class="reveal relative pl-12 md:pl-20 pb-16">
                 <div class="absolute left-2.5 md:left-[1.65rem] top-1.5 w-3 h-3 rounded-full bg-red-500 border-2 border-[#080808] shadow-[0_0_15px_rgba(239,68,68,.3)]"></div>
                 <div class="glass-card rounded-2xl p-6 md:p-8 hover:border-white/[0.12] transition-colors duration-300 gradient-border">
-                    <div class="flex flex-wrap items-center gap-3 mb-4"><span class="text-xs font-mono text-amber-500 bg-amber-500/10 px-3 py-1 rounded-full">2022 — Present</span><span class="text-[10px] uppercase tracking-widest text-green-400 bg-green-500/10 px-2 py-0.5 rounded-full">Current</span></div>
-                    <h3 class="text-xl font-medium tracking-tight text-white mb-1 font-syne">Video Editor & Motion Graphics Designer</h3>
-                    <p class="text-sm font-medium text-amber-500/80 mb-4">Meraaquii D&C</p>
-                    <p class="text-sm text-slate-500 font-light leading-relaxed mb-4">Leading video editing, motion graphics, and AI-driven content creation for diverse brand clients. Building AI ad workflows that maintain consistent characters, products, and locations across campaigns — from concept to final delivery.</p>
+                    <div class="flex flex-wrap items-center gap-3 mb-4"><span class="text-xs font-mono text-amber-500 bg-amber-500/10 px-3 py-1 rounded-full">2022–Present</span><span class="text-[10px] uppercase tracking-widest text-green-400 bg-green-500/10 px-2 py-0.5 rounded-full">Current</span></div>
+                    <h3 class="text-xl font-medium tracking-tight text-white mb-1 font-syne">Video Editor and Motion Graphics Designer</h3>
+                    <p class="text-sm font-medium text-amber-500/80 mb-4">Meraaquii D&amp;C</p>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed mb-4">I lead video editing, motion graphics, and AI-driven content creation for a range of brand clients. I also build AI advertising workflows that maintain consistent characters, products, and locations across campaigns, from concept through final delivery.</p>
                     <div class="flex flex-wrap gap-2"><span class="text-[10px] uppercase tracking-wider text-red-400/70 bg-red-500/[0.06] border border-red-500/10 rounded-full px-3 py-1">AI Ads</span><span class="text-[10px] uppercase tracking-wider text-slate-600 bg-white/[0.03] border border-white/[0.06] rounded-full px-3 py-1">Ads</span><span class="text-[10px] uppercase tracking-wider text-slate-600 bg-white/[0.03] border border-white/[0.06] rounded-full px-3 py-1">Short-Form</span><span class="text-[10px] uppercase tracking-wider text-slate-600 bg-white/[0.03] border border-white/[0.06] rounded-full px-3 py-1">Motion Graphics</span></div>
                 </div>
             </div>
             <div class="reveal delay-100 relative pl-12 md:pl-20 pb-16">
                 <div class="absolute left-2.5 md:left-[1.65rem] top-1.5 w-3 h-3 rounded-full bg-slate-600 border-2 border-[#080808]"></div>
                 <div class="glass-card rounded-2xl p-6 md:p-8 hover:border-white/[0.12] transition-colors duration-300">
-                    <div class="flex flex-wrap items-center gap-3 mb-6"><span class="text-xs font-mono text-slate-400 bg-white/[0.05] px-3 py-1 rounded-full">2018 — 2022</span></div>
-                    <h3 class="text-xl font-medium tracking-tight text-white mb-1 font-syne">Film & Production — Multiple Roles</h3>
-                    <p class="text-sm font-medium text-slate-400 mb-6">Freelance / Various Productions</p>
+                    <div class="flex flex-wrap items-center gap-3 mb-6"><span class="text-xs font-mono text-slate-400 bg-white/[0.05] px-3 py-1 rounded-full">2018–2022</span></div>
+                    <h3 class="text-xl font-medium tracking-tight text-white mb-1 font-syne">Film and Production: Multiple Roles</h3>
+                    <p class="text-sm font-medium text-slate-400 mb-6">Freelance • Various Productions</p>
                     <div class="space-y-4">
-                        <div class="role-item"><div class="flex items-start gap-3"><span class="iconify text-red-400/60 mt-0.5 flex-shrink-0" data-icon="mdi:camera-outline" data-width="16"></span><div><p class="text-sm text-slate-300 font-medium">Second Unit Camera Person & Colorist</p><p class="text-xs text-slate-500 mt-0.5">Docu-fiction film</p></div></div></div>
+                        <div class="role-item"><div class="flex items-start gap-3"><span class="iconify text-red-400/60 mt-0.5 flex-shrink-0" data-icon="mdi:camera-outline" data-width="16"></span><div><p class="text-sm text-slate-300 font-medium">Second Unit Camera Person and Colorist</p><p class="text-xs text-slate-500 mt-0.5">Docufiction film</p></div></div></div>
                         <div class="role-item"><div class="flex items-start gap-3"><span class="iconify text-red-400/60 mt-0.5 flex-shrink-0" data-icon="mdi:videocam-outline" data-width="16"></span><div><p class="text-sm text-slate-300 font-medium">Videographer</p><p class="text-xs text-slate-500 mt-0.5">Various music videos</p></div></div></div>
                         <div class="role-item"><div class="flex items-start gap-3"><span class="iconify text-red-400/60 mt-0.5 flex-shrink-0" data-icon="mdi:movie-open-outline" data-width="16"></span><div><p class="text-sm text-slate-300 font-medium">Camera Person</p><p class="text-xs text-slate-500 mt-0.5">Short film</p></div></div></div>
-                        <div class="role-item"><div class="flex items-start gap-3"><span class="iconify text-red-400/60 mt-0.5 flex-shrink-0" data-icon="mdi:movie-filter-outline" data-width="16"></span><div><p class="text-sm text-slate-300 font-medium">Assistant Editor & Assistant Director</p><p class="text-xs text-slate-500 mt-0.5">Documentary</p></div></div></div>
+                        <div class="role-item"><div class="flex items-start gap-3"><span class="iconify text-red-400/60 mt-0.5 flex-shrink-0" data-icon="mdi:movie-filter-outline" data-width="16"></span><div><p class="text-sm text-slate-300 font-medium">Assistant Editor and Assistant Director</p><p class="text-xs text-slate-500 mt-0.5">Documentary</p></div></div></div>
                     </div>
                 </div>
             </div>
             <div class="reveal delay-200 relative pl-12 md:pl-20">
                 <div class="absolute left-2.5 md:left-[1.65rem] top-1.5 w-3 h-3 rounded-full bg-slate-700 border-2 border-[#080808]"></div>
                 <div class="glass-card rounded-2xl p-6 md:p-8 hover:border-white/[0.12] transition-colors duration-300">
-                    <div class="flex flex-wrap items-center gap-3 mb-4"><span class="text-xs font-mono text-slate-400 bg-white/[0.05] px-3 py-1 rounded-full">2016 — 2018</span></div>
+                    <div class="flex flex-wrap items-center gap-3 mb-4"><span class="text-xs font-mono text-slate-400 bg-white/[0.05] px-3 py-1 rounded-full">2016–2018</span></div>
                     <h3 class="text-xl font-medium tracking-tight text-white mb-1 font-syne">Layout Designer</h3>
-                    <p class="text-sm font-medium text-slate-400 mb-4">Books & Magazines</p>
-                    <p class="text-sm text-slate-500 font-light leading-relaxed">Designed book interiors and magazine layouts for organizations of various shapes and sizes.</p>
+                    <p class="text-sm font-medium text-slate-400 mb-4">Books and Magazines</p>
+                    <p class="text-sm text-slate-500 font-light leading-relaxed">Designed book interiors and magazine layouts for organizations of various types and sizes.</p>
                 </div>
             </div>
         </div>
-        <div class="reveal max-w-3xl mx-auto mt-16 glass-card rounded-2xl p-6 md:p-8"><div class="flex items-start gap-4"><div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-1"><span class="iconify text-amber-500" data-icon="mdi:school-outline" data-width="20"></span></div><div><span class="text-xs font-mono text-slate-500 tracking-wider uppercase block mb-1">Education</span><h3 class="text-lg font-medium text-white mb-1 font-syne">Bachelor's Degree</h3><p class="text-sm text-slate-400">University of Burdwan — 2016</p></div></div></div>
+        <div class="reveal max-w-3xl mx-auto mt-16 glass-card rounded-2xl p-6 md:p-8"><div class="flex items-start gap-4"><div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-1"><span class="iconify text-amber-500" data-icon="mdi:school-outline" data-width="20"></span></div><div><span class="text-xs font-mono text-slate-500 tracking-wider uppercase block mb-1">Education</span><h3 class="text-lg font-medium text-white mb-1 font-syne">Bachelor's degree</h3><p class="text-sm text-slate-400">University of Burdwan, 2016</p></div></div></div>
     </div>
 </section>
 
-<!-- WAVE DIVIDER: Experience → Projects -->
-<div class="wave-divider"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none"><path d="M0,50 C480,10 960,70 1440,30 L1440,80 L0,80 Z" fill="#080808"/></svg></div>
 
 <!-- PROJECTS -->
 <section id="projects" class="py-24 md:py-32 px-6">
     <div class="max-w-7xl mx-auto">
-        <div class="reveal text-center mb-16 md:mb-20"><span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-4 block font-syne">// Selected Work</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight mb-4 font-syne"><span class="gradient-text">Featured</span> Projects</h2><p class="text-slate-500 font-light max-w-lg mx-auto">AI-powered ads, motion graphics, and brand content for leading Indian brands.</p></div>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="proj-card reveal rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
-                <div class="aspect-video relative cloudinary-hover-wrap thumb-ai" data-cld-pid="Primarc_Aahana_Cf_Hq">
+        <div class="reveal mb-14 md:mb-20 grid md:grid-cols-2 gap-6 items-end"><div><span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-4 block">// Selected Work</span><h2 class="text-4xl md:text-6xl font-semibold tracking-tight font-syne"><span class="gradient-text">Stories shaped</span><br>frame by frame.</h2></div><p class="text-slate-500 font-light max-w-md md:justify-self-end">A focused selection of AI-assisted commercials, motion design, architectural films, and identity animation.</p></div>
+        <div class="project-grid">
+            <article class="proj-card project-featured reveal overflow-hidden border border-white/[0.08] hover:border-red-500/30">
+                <div class="project-media aspect-video relative cloudinary-hover-wrap thumb-ai" data-cld-pid="Primarc_Aahana_Cf_Hq" data-title="AI Ad with Consistent Character">
                     <video id="cld-ai-ad" playsinline preload="none" muted class="cld-video" poster="https://res.cloudinary.com/dxb4equz/image/upload/Primarc_Aahana_Cf_Hq_poster.jpg"><source src="https://res.cloudinary.com/dxb4equz/video/upload/f_auto,q_auto/Primarc_Aahana_Cf_Hq.mp4" type="video/mp4"></video>
                     <img src="https://res.cloudinary.com/dxb4equz/image/upload/Primarc_Aahana_Cf_Hq_poster.jpg" alt="AI Ad with Consistent Character" class="poster-img absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy">
                     <div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="20"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="20"></span></div>
-                    <div class="mute-ico" role="button" tabindex="0" aria-label="Toggle mute"><span class="iconify text-white icon-unmute" data-icon="mdi:volume-high" data-width="16"></span><span class="iconify text-white icon-mute" data-icon="mdi:volume-mute" data-width="16"></span></div>
+                    <button type="button" class="mute-ico" aria-label="Unmute AI Ad with Consistent Character" aria-pressed="true"><span class="iconify text-white icon-unmute" data-icon="mdi:volume-high" data-width="16"></span><span class="iconify text-white icon-mute" data-icon="mdi:volume-mute" data-width="16"></span></button>
                 </div>
-                <div class="p-6 bg-[#0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">AI Ad</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">AI Ad with Consistent Character</h3><p class="text-sm text-slate-500 font-light">Complete ad created with AI — same person and product in every shot.</p></div>
-            </div>
-            <div class="proj-card reveal delay-100 rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
-                <div class="aspect-video relative cloudinary-hover-wrap thumb-motion" data-cld-pid="Jex_Route_2">
+                <div class="project-body"><div><span class="project-index">01 / FEATURED FILM</span><h3 class="text-2xl md:text-3xl font-syne font-semibold tracking-tight text-white mt-5 mb-4">AI Ad with Consistent Character</h3><p class="text-sm text-slate-500 font-light leading-relaxed">A complete commercial created through an AI-assisted workflow that maintains the same person and product across every shot.</p></div><div class="project-facts"><span>Role <strong>Asset creator, Editor</strong></span><span>Pipeline <strong>Generative AI + Post-Production</strong></span><span>Deliverable <strong>Commercial Film</strong></span></div></div>
+            </article>
+            <article class="proj-card reveal delay-100 overflow-hidden border border-white/[0.08] hover:border-red-500/30">
+                <div class="project-media aspect-video relative cloudinary-hover-wrap thumb-motion" data-cld-pid="Jex_Route_2" data-title="Motion Graphics Reel">
                     <video id="cld-motion" playsinline preload="none" muted class="cld-video" poster="https://res.cloudinary.com/dxb4equz/video/upload/Jex_Route_2.jpg"><source src="https://res.cloudinary.com/dxb4equz/video/upload/f_auto,q_auto/Jex_Route_2.mp4" type="video/mp4"></video>
-                    <img src="https://res.cloudinary.com/dxb4equz/video/upload/Jex_Route_2.jpg" alt="Motion Graphics work" class="poster-img absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy">
+                    <img src="https://res.cloudinary.com/dxb4equz/video/upload/Jex_Route_2.jpg" alt="Motion graphics reel" class="poster-img absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy">
                     <div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="20"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="20"></span></div>
-                    <div class="mute-ico" role="button" tabindex="0" aria-label="Toggle mute"><span class="iconify text-white icon-unmute" data-icon="mdi:volume-high" data-width="16"></span><span class="iconify text-white icon-mute" data-icon="mdi:volume-mute" data-width="16"></span></div>
+                    <button type="button" class="mute-ico" aria-label="Unmute Motion Graphics Reel" aria-pressed="true"><span class="iconify text-white icon-unmute" data-icon="mdi:volume-high" data-width="16"></span><span class="iconify text-white icon-mute" data-icon="mdi:volume-mute" data-width="16"></span></button>
                 </div>
-                <div class="p-6 bg-[#0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Motion Graphics</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Motion Graphics work</h3><p class="text-sm text-slate-500 font-light">Kinetic typography, logo animations, and AI-enhanced motion pieces.</p></div>
-            </div>
-            <div class="proj-card reveal rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
-                <div class="aspect-video relative cloudinary-hover-wrap thumb-arch" data-cld-pid="Meraki_Showreel_2024">
+                <div class="project-body"><div><span class="project-index">02 / MOTION</span><h3 class="text-xl font-syne font-medium tracking-tight text-white mt-4 mb-3">Motion Graphics Reel</h3><p class="text-sm text-slate-500 font-light">Kinetic typography and motion-led brand content.</p></div><div class="project-facts"><span>Role <strong>Motion Design</strong></span><span>Tools <strong>After Effects</strong></span></div></div>
+            </article>
+            <article class="proj-card reveal overflow-hidden border border-white/[0.08] hover:border-red-500/30">
+                <div class="project-media aspect-video relative cloudinary-hover-wrap thumb-arch" data-cld-pid="Meraki_Showreel_2024" data-title="Architectural Walkthrough Showreel">
                     <video id="cld-arch" playsinline preload="none" muted class="cld-video" poster="https://res.cloudinary.com/dxb4equz/image/upload/Meraki_Showreel_2024_poster.jpg"><source src="https://res.cloudinary.com/dxb4equz/video/upload/f_auto,q_auto/Meraki_Showreel_2024.mp4" type="video/mp4"></video>
-                    <img src="https://res.cloudinary.com/dxb4equz/image/upload/Meraki_Showreel_2024_poster.jpg" alt="Architectural Walkthrough Edit" class="poster-img absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy">
+                    <img src="https://res.cloudinary.com/dxb4equz/image/upload/Meraki_Showreel_2024_poster.jpg" alt="Architectural walkthrough showreel" class="poster-img absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy">
                     <div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="20"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="20"></span></div>
-                    <div class="mute-ico" role="button" tabindex="0" aria-label="Toggle mute"><span class="iconify text-white icon-unmute" data-icon="mdi:volume-high" data-width="16"></span><span class="iconify text-white icon-mute" data-icon="mdi:volume-mute" data-width="16"></span></div>
+                    <button type="button" class="mute-ico" aria-label="Unmute Architectural Walkthrough Showreel" aria-pressed="true"><span class="iconify text-white icon-unmute" data-icon="mdi:volume-high" data-width="16"></span><span class="iconify text-white icon-mute" data-icon="mdi:volume-mute" data-width="16"></span></button>
                 </div>
-                <div class="p-6 bg-[#0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Walkthrough Edit</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Architectural walkthrough Edit Showreel</h3><p class="text-sm text-slate-500 font-light">Full architectural walkthrough edited and finalized in Premiere Pro.</p></div>
-            </div>
-            <div class="proj-card reveal delay-100 rounded-2xl overflow-hidden border border-white/[0.06] hover:border-red-500/30">
-                <div class="aspect-video relative cloudinary-hover-wrap thumb-logo" data-cld-pids='["reident_logo_4b","griham_logo_anim_v2_HQ","imi_logo_anim_V3_S2","Squaremark_Logo-anim"]' data-title="Logo Animations">
+                <div class="project-body"><div><span class="project-index">03 / ARCHITECTURE</span><h3 class="text-xl font-syne font-medium tracking-tight text-white mt-4 mb-3">Architectural Walkthrough Showreel</h3><p class="text-sm text-slate-500 font-light">A polished, well-paced property film finished in Premiere Pro.</p></div><div class="project-facts"><span>Role <strong>Editor</strong></span><span>Format <strong>Showreel</strong></span></div></div>
+            </article>
+            <article class="proj-card project-reel reveal delay-100 overflow-hidden border border-white/[0.08] hover:border-red-500/30">
+                <div class="project-media aspect-video relative cloudinary-hover-wrap thumb-logo" data-cld-pids='["reident_logo_4b","griham_logo_anim_v2_HQ","imi_logo_anim_V3_S2","Squaremark_Logo-anim"]' data-title="Logo Animation Reel">
                     <video id="cld-logos" playsinline preload="none" muted class="cld-video" poster="https://res.cloudinary.com/dxb4equz/image/upload/reident_logo_4b_poster.jpg"><source src="https://res.cloudinary.com/dxb4equz/video/upload/f_auto,q_auto/reident_logo_4b.mp4" type="video/mp4"></video>
-                    <img src="https://res.cloudinary.com/dxb4equz/video/upload/reident_logo_4b.jpg" alt="Logo Animations" class="poster-img absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy">
+                    <img src="https://res.cloudinary.com/dxb4equz/video/upload/reident_logo_4b.jpg" alt="Logo animation reel" class="poster-img absolute inset-0 w-full h-full object-cover pointer-events-none" loading="lazy">
                     <div class="play-ico"><span class="iconify text-white ico-play" data-icon="mdi:play" data-width="20"></span><span class="iconify text-white ico-pause" data-icon="mdi:pause" data-width="20"></span></div>
-                    <div class="mute-ico" role="button" tabindex="0" aria-label="Toggle mute"><span class="iconify text-white icon-unmute" data-icon="mdi:volume-high" data-width="16"></span><span class="iconify text-white icon-mute" data-icon="mdi:volume-mute" data-width="16"></span></div>
+                    <button type="button" class="mute-ico" aria-label="Unmute Logo Animation Reel" aria-pressed="true"><span class="iconify text-white icon-unmute" data-icon="mdi:volume-high" data-width="16"></span><span class="iconify text-white icon-mute" data-icon="mdi:volume-mute" data-width="16"></span></button>
                 </div>
-                <div class="p-6 bg-[#0A0A0A]"><span class="text-[10px] uppercase tracking-widest text-red-400 block mb-2">Commercial</span><h3 class="text-xl font-medium tracking-tight text-white mb-2">Logo Animations</h3><p class="text-sm text-slate-500 font-light">Animated Logos.</p></div>
-            </div>
+                <div class="project-body"><div><span class="project-index">04 / IDENTITY ANIMATION</span><h3 class="text-2xl font-syne font-semibold tracking-tight text-white mt-5 mb-4">Logo Animation Reel</h3><p class="text-sm text-slate-500 font-light leading-relaxed">Four compact identity-animation studies built around timing, rhythm, and recognizable brand motion.</p></div><div class="project-facts"><span>Role <strong>Logo Animation</strong></span><span>Playlist <strong>4 Animations</strong></span><span>Format <strong>Brand Motion</strong></span></div></div>
+            </article>
         </div>
-        <div class="reveal text-center mt-12"><a href="https://www.youtube.com/@KINOKS" target="_blank" rel="noopener" class="group inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-300 border-b border-white/[0.1] hover:border-white/[0.3] pb-1">See more on YouTube<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="14"></span></a></div>
-        <div class="reveal mt-20 max-w-3xl mx-auto">
-            <div class="text-center mb-6"><span class="text-xs font-mono text-red-500 tracking-wider uppercase mb-2 block">// Drag to Compare</span><h3 class="text-xl md:text-2xl font-semibold tracking-tight text-white">Raw Footage vs. Color Graded</h3><p class="text-xs text-slate-500 mt-2">Drag the handle to compare raw vs graded.</p></div>
-            <div class="compare-wrap aspect-video border border-white/[0.06]" id="compareSlider">
+        <div class="reveal text-right mt-10"><a href="https://www.youtube.com/@KINOKS" target="_blank" rel="noopener" class="group inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-300 border-b border-white/[0.1] hover:border-red-500 pb-1">View the full archive<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="14"></span></a></div>
+        <div class="reveal mt-24 max-w-5xl mx-auto grid md:grid-cols-[.55fr_1.45fr] gap-8 md:gap-12 items-start">
+            <div><span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-3 block">// Color Study</span><h3 class="text-2xl md:text-3xl font-syne font-semibold tracking-tight text-white">Raw footage,<br>finished mood.</h3><p class="text-sm text-slate-500 mt-4">Drag or use the arrow keys to compare the original frame with the final grade.</p></div>
+            <div class="compare-wrap aspect-video border border-white/[0.06]" id="compareSlider" role="slider" tabindex="0" aria-label="Compare raw and color-graded footage" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
                 <img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/before.jpg" loading="lazy" alt="Raw footage">
-                <div class="compare-after" style="clip-path:inset(0 50% 0 0)"><img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/after.JPG" loading="lazy" alt="Color graded footage"></div>
+                <div class="compare-after" style="clip-path:inset(0 50% 0 0)"><img src="https://raw.githubusercontent.com/guinsubham/portfolio/main/LOGO/after.JPG" loading="lazy" alt="Color-graded footage"></div>
                 <span class="compare-label before">Raw</span>
                 <span class="compare-label after">Graded</span>
                 <div class="compare-handle" style="left:50%"><div class="compare-handle-btn"><span class="arrow-l"></span><span class="arrow-r"></span></div></div>
@@ -527,14 +476,12 @@
     </div>
 </section>
 
-<!-- WAVE DIVIDER: Projects → Skills -->
-<div class="wave-divider"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none"><path d="M0,40 C360,70 1080,10 1440,40 L1440,80 L0,80 Z" fill="#050505"/></svg></div>
 
 <!-- SKILLS -->
 <section id="skills" class="py-24 md:py-32 px-6 relative mesh-bg mesh-amber">
     <div class="absolute inset-0 bg-[#080808]/80"></div>
     <div class="relative z-10 max-w-7xl mx-auto">
-        <div class="reveal text-center mb-16 md:mb-20"><span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-4 block font-syne">// Toolkit</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight font-syne"><span class="gradient-text">Skills</span> & Software</h2></div>
+        <div class="reveal text-center mb-16 md:mb-20"><span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-4 block font-syne">// Toolkit</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight font-syne"><span class="gradient-text">Skills</span> and Software</h2></div>
         <div class="grid md:grid-cols-2 gap-12 md:gap-20">
             <div class="reveal space-y-5">
                 <h3 class="text-sm font-medium text-slate-300 uppercase tracking-wider mb-6">Software Proficiency</h3>
@@ -547,12 +494,12 @@
             <div class="reveal delay-200">
                 <h3 class="text-sm font-medium text-slate-300 uppercase tracking-wider mb-6">Core Capabilities</h3>
                 <div class="grid grid-cols-2 gap-3">
-                    <div class="glass-card glass-card-amber rounded-xl p-4 hover:border-amber-500/40 transition-all duration-300"><span class="iconify text-amber-500 mb-3 block" data-icon="mdi:robot-outline" data-width="22"></span><span class="text-sm text-white font-medium block">AI-Powered Content</span><span class="text-xs text-slate-500 mt-1 block">AI Ads • Idea to Video</span></div>
-                    <div class="glass-card glass-card-amber rounded-xl p-4 hover:border-amber-500/40 transition-all duration-300"><span class="iconify text-amber-500 mb-3 block" data-icon="mdi:account-check-outline" data-width="22"></span><span class="text-sm text-white font-medium block">AI Consistency</span><span class="text-xs text-slate-500 mt-1 block">Character • Product • Place</span></div>
-                    <div class="glass-card rounded-xl p-4 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mb-3 block" data-icon="mdi:movie-edit-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Video Editing</span><span class="text-xs text-slate-600 mt-1 block">Narrative & Commercial</span></div>
-                    <div class="glass-card rounded-xl p-4 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mb-3 block" data-icon="mdi:animation-play-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Motion Graphics</span><span class="text-xs text-slate-600 mt-1 block">2D & 3D Animation</span></div>
-                    <div class="glass-card rounded-xl p-4 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mb-3 block" data-icon="mdi:palette-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Color Grading</span><span class="text-xs text-slate-600 mt-1 block">Cinematic Look</span></div>
-                    <div class="glass-card rounded-xl p-4 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mb-3 block" data-icon="mdi:camera-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Camera Work</span><span class="text-xs text-slate-600 mt-1 block">Film & Music Videos</span></div>
+                    <div class="glass-card glass-card-amber rounded-xl p-4 hover:border-amber-500/40 transition-all duration-300"><span class="iconify text-amber-500 mb-3 block" data-icon="mdi:robot-outline" data-width="22"></span><span class="text-sm text-white font-medium block">AI-Powered Content Creation</span><span class="text-xs text-slate-500 mt-1 block">AI Ads • Idea-to-Video Workflows</span></div>
+                    <div class="glass-card glass-card-amber rounded-xl p-4 hover:border-amber-500/40 transition-all duration-300"><span class="iconify text-amber-500 mb-3 block" data-icon="mdi:account-check-outline" data-width="22"></span><span class="text-sm text-white font-medium block">Visual Consistency with AI</span><span class="text-xs text-slate-500 mt-1 block">Characters • Products • Locations</span></div>
+                    <div class="glass-card rounded-xl p-4 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mb-3 block" data-icon="mdi:movie-edit-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Video Editing</span><span class="text-xs text-slate-600 mt-1 block">Narrative &amp; Commercial Editing</span></div>
+                    <div class="glass-card rounded-xl p-4 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mb-3 block" data-icon="mdi:animation-play-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Motion Graphics</span><span class="text-xs text-slate-600 mt-1 block">2D &amp; 3D Animation</span></div>
+                    <div class="glass-card rounded-xl p-4 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mb-3 block" data-icon="mdi:palette-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Color Grading</span><span class="text-xs text-slate-600 mt-1 block">Cinematic Looks</span></div>
+                    <div class="glass-card rounded-xl p-4 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mb-3 block" data-icon="mdi:camera-outline" data-width="22"></span><span class="text-sm text-slate-300 font-medium block">Camera Operation</span><span class="text-xs text-slate-600 mt-1 block">Film &amp; Music Video Production</span></div>
                 </div>
                 <div class="mt-8"><h3 class="text-sm font-medium text-slate-300 uppercase tracking-wider mb-4">Languages</h3><div class="flex flex-wrap gap-3"><span class="text-xs border border-white/[0.1] rounded-full px-4 py-1.5 text-slate-400">English</span><span class="text-xs border border-white/[0.1] rounded-full px-4 py-1.5 text-slate-400">Bengali</span><span class="text-xs border border-white/[0.1] rounded-full px-4 py-1.5 text-slate-400">Hindi</span></div></div>
             </div>
@@ -560,8 +507,6 @@
     </div>
 </section>
 
-<!-- WAVE DIVIDER: Skills → Interests -->
-<div class="wave-divider"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none"><path d="M0,60 C360,20 1080,80 1440,40 L1440,80 L0,80 Z" fill="#050505"/></svg></div>
 
 <!-- INTERESTS -->
 <section class="py-20 px-6 relative">
@@ -569,57 +514,54 @@
     <div class="relative z-10 max-w-7xl mx-auto">
         <div class="reveal text-center mb-12"><span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-4 block font-syne">// Beyond Work</span><h2 class="text-2xl md:text-3xl font-semibold tracking-tight font-syne"><span class="gradient-text">When I'm Not</span> Editing</h2></div>
         <div class="reveal delay-100 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            <div class="interest-card glass-card text-center rounded-2xl p-6 hover:border-white/[0.12] transition-colors duration-300 gradient-border"><span class="iconify text-amber-500 mx-auto mb-3" data-icon="mdi:camera-outline" data-width="28"></span><h4 class="text-sm font-medium text-white mb-1">Still Photography</h4><p class="text-xs text-slate-500">Capturing moments & frames</p></div>
-            <div class="interest-card glass-card text-center rounded-2xl p-6 hover:border-white/[0.12] transition-colors duration-300 gradient-border"><span class="iconify text-amber-500 mx-auto mb-3" data-icon="mdi:book-open-page-variant-outline" data-width="28"></span><h4 class="text-sm font-medium text-white mb-1">Reading</h4><p class="text-xs text-slate-500">Books, stories & knowledge</p></div>
+            <div class="interest-card glass-card text-center rounded-2xl p-6 hover:border-white/[0.12] transition-colors duration-300 gradient-border"><span class="iconify text-amber-500 mx-auto mb-3" data-icon="mdi:camera-outline" data-width="28"></span><h4 class="text-sm font-medium text-white mb-1">Still Photography</h4><p class="text-xs text-slate-500">Capturing moments and composing frames</p></div>
+            <div class="interest-card glass-card text-center rounded-2xl p-6 hover:border-white/[0.12] transition-colors duration-300 gradient-border"><span class="iconify text-amber-500 mx-auto mb-3" data-icon="mdi:book-open-page-variant-outline" data-width="28"></span><h4 class="text-sm font-medium text-white mb-1">Reading</h4><p class="text-xs text-slate-500">Books, stories, and new ideas</p></div>
             <div class="interest-card glass-card text-center rounded-2xl p-6 hover:border-white/[0.12] transition-colors duration-300 gradient-border"><span class="iconify text-amber-500 mx-auto mb-3" data-icon="mdi:gamepad-variant-outline" data-width="28"></span><h4 class="text-sm font-medium text-white mb-1">Gaming</h4><p class="text-xs text-slate-500">Interactive storytelling</p></div>
         </div>
     </div>
 </section>
 
-<!-- WAVE DIVIDER: Interests → Contact -->
-<div class="wave-divider"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none"><path d="M0,30 C480,70 960,10 1440,50 L1440,80 L0,80 Z" fill="#050505"/></svg></div>
 
 <!-- CONTACT -->
 <section id="contact" class="py-24 md:py-32 px-6 relative mesh-bg mesh-red">
     <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-900/10 blur-[120px] opacity-40 mix-blend-screen pointer-events-none"></div>
     <div class="relative z-10 max-w-4xl mx-auto text-center">
-        <div class="reveal"><span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-4 block font-syne">// Get In Touch</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight mb-6 font-syne"><span class="gradient-text">Let's Create</span><br><span class="text-white">Something <span class="accent-text">Amazing</span></span></h2><p class="text-slate-400 font-light leading-relaxed mb-10 max-w-lg mx-auto">Have a project in mind? Need AI-powered video content? I'd love to hear about your vision.</p></div>
+        <div class="reveal"><span class="text-xs font-mono text-amber-500 tracking-wider uppercase mb-4 block font-syne">// Get In Touch</span><h2 class="text-3xl md:text-5xl font-semibold tracking-tight mb-6 font-syne"><span class="gradient-text">Let's Create</span><br><span class="text-white">Something <span class="accent-text">Meaningful</span></span></h2><p class="text-slate-400 font-light leading-relaxed mb-10 max-w-lg mx-auto">Have a project in mind or need AI-powered video content? I'd love to hear about your vision.</p></div>
         <div class="reveal delay-100 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            <a href="#" class="wa-trigger glass-card glass-card-amber group rounded-2xl p-6 hover:border-[#25D366]/60 hover:bg-[#25D366]/[0.05] transition-all duration-300 relative overflow-hidden" role="button"><div class="absolute top-0 right-0 w-16 h-16 bg-[#25D366]/10 blur-2xl rounded-full pointer-events-none"></div><span class="iconify text-[#25D366] mx-auto mb-3 block relative" data-icon="mdi:whatsapp" data-width="28"></span><span class="text-xs text-[#25D366]/70 block mb-1 relative">WhatsApp</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors relative">Chat with me</span></a>
+            <button type="button" class="wa-trigger glass-card glass-card-amber group rounded-2xl p-6 hover:border-[#25D366]/60 hover:bg-[#25D366]/[0.05] transition-all duration-300 relative overflow-hidden"><span class="absolute top-0 right-0 w-16 h-16 bg-[#25D366]/10 blur-2xl rounded-full pointer-events-none"></span><span class="iconify text-[#25D366] mx-auto mb-3 block relative" data-icon="mdi:whatsapp" data-width="28"></span><span class="text-xs text-[#25D366]/70 block mb-1 relative">WhatsApp</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors relative">Start a chat</span></button>
             <a href="mailto:guinsubham@gmail.com" class="glass-card group rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mx-auto mb-3 block" data-icon="mdi:email-outline" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Email</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors break-all">guinsubham@gmail.com</span></a>
-            <a href="https://www.linkedin.com/in/subham-guin-160b9b242" target="_blank" rel="noopener" class="glass-card group rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mx-auto mb-3 block" data-icon="mdi:linkedin" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">LinkedIn</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">Message me</span></a>
+            <a href="https://www.linkedin.com/in/subham-guin-160b9b242" target="_blank" rel="noopener" class="glass-card group rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mx-auto mb-3 block" data-icon="mdi:linkedin" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">LinkedIn</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">Connect with me</span></a>
             <a href="https://www.instagram.com/subham_guin/" target="_blank" rel="noopener" class="glass-card group rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-300"><span class="iconify text-amber-500 mx-auto mb-3 block" data-icon="mdi:instagram" data-width="24"></span><span class="text-xs text-slate-500 block mb-1">Instagram</span><span class="text-sm text-slate-300 group-hover:text-white transition-colors">@subham_guin</span></a>
         </div>
-        <div class="reveal delay-200"><a href="#" class="wa-trigger sheen group inline-flex items-center gap-2 wa-btn px-8 py-4 rounded-full text-sm font-semibold transition-all duration-150 shadow-[0_0_30px_rgba(37,211,102,.2)] hover:shadow-[0_0_40px_rgba(37,211,102,.3)]" role="button"><span class="iconify" data-icon="mdi:whatsapp" data-width="18"></span>Chat on WhatsApp<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="16"></span></a></div>
+        <div class="reveal delay-200"><button type="button" class="wa-trigger sheen group inline-flex items-center gap-2 wa-btn px-8 py-4 rounded-full text-sm font-semibold transition-all duration-150 shadow-[0_0_30px_rgba(37,211,102,.2)] hover:shadow-[0_0_40px_rgba(37,211,102,.3)]"><span class="iconify" data-icon="mdi:whatsapp" data-width="18"></span>Chat on WhatsApp<span class="iconify group-hover:translate-x-0.5 transition-transform" data-icon="mdi:arrow-right" data-width="16"></span></button></div>
     </div>
 </section>
+</main>
 
 <!-- FLOATING WHATSAPP -->
-<a href="#" class="wa-trigger fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full wa-btn flex items-center justify-center shadow-[0_0_30px_rgba(37,211,102,.3)] hover:shadow-[0_0_40px_rgba(37,211,102,.5)] hover:scale-110 transition-all duration-300" aria-label="Chat on WhatsApp" role="button"><span class="iconify" data-icon="mdi:whatsapp" data-width="26"></span></a>
+<button type="button" class="wa-trigger fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full wa-btn flex items-center justify-center shadow-[0_0_30px_rgba(37,211,102,.3)] hover:shadow-[0_0_40px_rgba(37,211,102,.5)] hover:scale-110 transition-all duration-300" aria-label="Chat on WhatsApp"><span class="iconify" data-icon="mdi:whatsapp" data-width="26"></span></button>
 
 <!-- FOOTER -->
 <footer class="border-t border-white/[0.06] pt-10 pb-24 px-6">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-2"><span class="iconify text-amber-500" data-icon="mdi:movie-open-outline" data-width="18"></span><span class="text-xs text-slate-500">&copy; 2026 Subham Guin. All rights reserved.</span></div>
         <div class="flex items-center gap-6">
-            <a href="https://www.instagram.com/subham_guin/" target="_blank" rel="noopener" class="text-slate-500 hover:text-white transition-colors duration-300" aria-label="Instagram"><span class="iconify" data-icon="mdi:instagram" data-width="18"></span></a>
-            <a href="https://www.linkedin.com/in/subham-guin-160b9b242" target="_blank" rel="noopener" class="text-slate-500 hover:text-white transition-colors duration-300" aria-label="LinkedIn"><span class="iconify" data-icon="mdi:linkedin" data-width="18"></span></a>
-            <a href="https://www.youtube.com/@KINOKS" target="_blank" rel="noopener" class="text-slate-500 hover:text-white transition-colors duration-300" aria-label="YouTube"><span class="iconify" data-icon="mdi:youtube" data-width="18"></span></a>
+            <a href="https://www.instagram.com/subham_guin/" target="_blank" rel="noopener" class="text-slate-500 hover:text-white transition-colors duration-300" aria-label="Subham Guin on Instagram"><span class="iconify" data-icon="mdi:instagram" data-width="18"></span></a>
+            <a href="https://www.linkedin.com/in/subham-guin-160b9b242" target="_blank" rel="noopener" class="text-slate-500 hover:text-white transition-colors duration-300" aria-label="Subham Guin on LinkedIn"><span class="iconify" data-icon="mdi:linkedin" data-width="18"></span></a>
+            <a href="https://www.youtube.com/@KINOKS" target="_blank" rel="noopener" class="text-slate-500 hover:text-white transition-colors duration-300" aria-label="Subham Guin on YouTube"><span class="iconify" data-icon="mdi:youtube" data-width="18"></span></a>
         </div>
     </div>
 </footer>
 
 <!-- CUSTOM CURSOR -->
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 
 <script>
 (function(){
     var a=[26,18,25,18],b=[18,23,22,23],c=[17,19,25,19];
     var p=a.concat(b,c).map(function(v){return String.fromCharCode(v+31)}).join('');
-    var msg="Hi Subham, I came across your portfolio and would like to discuss a Project";
-    function go(){window.open('https://wa.me/'+p+'?text='+encodeURIComponent(msg),'_blank')}
-    document.querySelectorAll('.wa-trigger').forEach(function(el){el.removeAttribute('href');el.addEventListener('click',function(e){e.preventDefault();go()})});
+    var msg="Hi Subham, I came across your portfolio and would like to discuss a project.";
+    function go(){var w=window.open('https://wa.me/'+p+'?text='+encodeURIComponent(msg),'_blank','noopener');if(w)w.opener=null;}
+    document.querySelectorAll('.wa-trigger').forEach(function(el){el.addEventListener('click',function(){go()})});
     var rObs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting)e.target.classList.add('active')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
     document.querySelectorAll('.reveal').forEach(function(el){rObs.observe(el)});
     var sObs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting)e.target.style.width=e.target.getAttribute('data-width')})},{threshold:0.5});
@@ -627,22 +569,30 @@
     var btn=document.getElementById('mobileMenuBtn'),menu=document.getElementById('mobileMenu'),open=false;
     var ICON_OPEN='<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>';
     var ICON_CLOSE='<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>';
-    function setMenu(o){open=o;if(!menu||!btn)return;menu.classList.toggle('hidden',!o);menu.style.display=o?'block':'none';btn.innerHTML=o?ICON_CLOSE:ICON_OPEN;btn.setAttribute('aria-expanded',o?'true':'false');}
+    function setMenu(o,restoreFocus){open=o;if(!menu||!btn)return;menu.classList.toggle('hidden',!o);menu.style.display=o?'block':'none';btn.innerHTML=o?ICON_CLOSE:ICON_OPEN;btn.setAttribute('aria-expanded',o?'true':'false');btn.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu');if(o){var first=menu.querySelector('a');if(first)first.focus();}else if(restoreFocus){btn.focus();}}
     function buzz(p){try{if(navigator.vibrate&&window.matchMedia&&window.matchMedia('(pointer:coarse)').matches){navigator.vibrate(p);}}catch(e){}}
-    if(btn&&menu){btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Toggle menu');btn.innerHTML=ICON_OPEN;btn.addEventListener('click',function(e){e.stopPropagation();buzz(10);setMenu(!open);});}
-    if(menu){menu.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){setMenu(false)})});}
+    if(btn&&menu){btn.setAttribute('aria-expanded','false');btn.innerHTML=ICON_OPEN;btn.addEventListener('click',function(e){e.stopPropagation();buzz(10);setMenu(!open);});}
+    if(menu){menu.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){setMenu(false,false)})});}
     document.addEventListener('click',function(e){if(open&&menu&&!menu.contains(e.target)&&btn&&!btn.contains(e.target)){setMenu(false)}});
+    window.addEventListener('resize',function(){if(open&&window.matchMedia('(min-width:768px)').matches)setMenu(false,false);});
+    document.addEventListener('keydown',function(e){
+        if(e.key==='Escape'&&open){e.preventDefault();setMenu(false,true);return;}
+        if(e.key==='Tab'&&open&&menu&&btn){var focusable=[btn].concat(Array.from(menu.querySelectorAll('a,button'))),first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}
+    });
     var heroBadge=document.getElementById('heroBadge'),navBadge=document.getElementById('navBadge');
-    function syncNavBadge(){if(!heroBadge||!navBadge)return;var r=heroBadge.getBoundingClientRect();navBadge.classList.toggle('show',r.bottom<72);}
-    window.addEventListener('scroll',syncNavBadge,{passive:true});
-    window.addEventListener('resize',syncNavBadge);
+    function syncNavBadge(){if(!heroBadge||!navBadge)return;var show=heroBadge.getBoundingClientRect().bottom<72;navBadge.classList.toggle('show',show);navBadge.setAttribute('aria-hidden',show?'false':'true');}
+    var badgeFrame=0;function queueNavBadge(){if(badgeFrame)return;badgeFrame=requestAnimationFrame(function(){badgeFrame=0;syncNavBadge();});}
+    window.addEventListener('scroll',queueNavBadge,{passive:true});
+    window.addEventListener('resize',queueNavBadge);
     syncNavBadge();
-    document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var h=this.getAttribute('href');if(h==='#')return;e.preventDefault();var t=document.querySelector(h);if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var h=this.getAttribute('href');if(h==='#')return;e.preventDefault();var t=document.querySelector(h);if(t)t.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})})});
 })();
 </script>
 <script>
 (function(){
     var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var hapticsArmed=false;
+    document.addEventListener('pointerdown',function(){hapticsArmed=true;},{once:true,passive:true});
     var tc=document.getElementById('timecode');
     if(tc&&!reduce){
         var t0=Date.now();
@@ -655,7 +605,7 @@
     }
     var rotor=document.getElementById('rotor');
     if(rotor&&!reduce){
-        var words=['Films','Ads','Short-Form Content','Motion Graphics','AI Ads'],wi=0,ci=words[0].length,del=true;
+        var words=['films','ads','short-form content','motion graphics','AI ads'],wi=0,ci=words[0].length,del=true;
         (function tick(){
             var w=words[wi];
             if(del){ci--;rotor.textContent=w.slice(0,ci);if(ci===0){del=false;wi=(wi+1)%words.length;setTimeout(tick,350);return}setTimeout(tick,35)}
@@ -664,18 +614,13 @@
     }
     var logos=document.querySelectorAll('.client-logo');
     if(logos.length){
-        var show=function(){logos.forEach(function(el,i){setTimeout(function(){el.classList.add('in')},i*70)})};
+        var show=function(){logos.forEach(function(el,i){if(reduce)el.classList.add('in');else setTimeout(function(){el.classList.add('in')},i*70)})};
         if('IntersectionObserver' in window){
             var cg=document.querySelector('#clients .grid');
             if(cg){var o=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){show();o.disconnect()}})},{threshold:.12});o.observe(cg)}
             else{show()}
         }else{show()}
     }
-    document.querySelectorAll('.iconify').forEach(function(el,i){
-        el.classList.add('ico-idle');
-        el.style.setProperty('--idel',((i%7)*0.22).toFixed(2)+'s');
-        el.style.setProperty('--idur',(2.6+(i%5)*0.3).toFixed(2)+'s');
-    });
     var tlLine=document.querySelector('.timeline-line'),tlDot=document.querySelector('.tl-playhead');
     if(tlLine&&tlDot){
         var lastDetent=-1;
@@ -686,10 +631,11 @@
             tlDot.style.top=(p*100).toFixed(2)+'%';
             tlDot.style.opacity=(p<=0.01||p>=0.99)?'0':'1';
             var det=Math.round(p*24);
-            if(det!==lastDetent){lastDetent=det;if(!reduce&&p>0.01&&p<0.99&&(typeof navigator.userActivation==='undefined'||navigator.userActivation.isActive))buzz(6);}
+            if(det!==lastDetent){lastDetent=det;if(!reduce&&hapticsArmed&&p>0.01&&p<0.99)buzz(6);}
         };
-        window.addEventListener('scroll',mv,{passive:true});
-        window.addEventListener('resize',mv);
+        var timelineFrame=0;function queueTimeline(){if(timelineFrame)return;timelineFrame=requestAnimationFrame(function(){timelineFrame=0;mv();});}
+        window.addEventListener('scroll',queueTimeline,{passive:true});
+        window.addEventListener('resize',queueTimeline);
         mv();
     }
     var bars=document.querySelectorAll('[data-count]');
@@ -705,233 +651,134 @@
                 if(pr<1)requestAnimationFrame(st);
             })(performance.now());
         };
-        if('IntersectionObserver' in window&&!reduce){
+        if(reduce){
+            bars.forEach(function(b){b.textContent=b.getAttribute('data-count')+'+';b.classList.add('counting');});
+        }else if('IntersectionObserver' in window){
             var co=new IntersectionObserver(function(en){
                 en.forEach(function(e){if(e.isIntersecting){runCount(e.target);co.unobserve(e.target)}});
             },{threshold:.6});
             bars.forEach(function(b){co.observe(b)});
         }else{bars.forEach(function(b){runCount(b)})}
     }
-    var pWrap=document.getElementById('particles');
     var heroV=document.getElementById('heroCosmos');
     if(heroV&&!reduce&&window.matchMedia&&window.matchMedia('(min-width:768px)').matches){try{heroV.load();var hpr=heroV.play();if(hpr&&hpr.catch)hpr.catch(function(){});}catch(e){}}
-    if(pWrap&&!reduce){
-        var N=window.innerWidth<768?9:18;
-        for(var i=0;i<N;i++){
-            var s=document.createElement('span');
-            var sz=(2+Math.random()*3).toFixed(1);
-            s.className='particle';
-            s.style.width=sz+'px';
-            s.style.height=sz+'px';
-            s.style.left=(Math.random()*100).toFixed(2)+'%';
-            s.style.setProperty('--o',(0.15+Math.random()*0.4).toFixed(2));
-            s.style.setProperty('--dx',Math.round(Math.random()*120-60)+'px');
-            s.style.animationDuration=(9+Math.random()*11).toFixed(1)+'s';
-            s.style.animationDelay=(-Math.random()*18).toFixed(1)+'s';
-            s.style.background=i%3===0?'rgba(255,255,255,.7)':(i%3===1?'#ef4444':'rgba(239,68,68,.45)');
-            pWrap.appendChild(s);
-        }
+    // ── Native video cards ──
+    var previewCard=null,lockedCard=null;
+    function buzz(p){try{if(navigator.vibrate&&window.matchMedia('(pointer:coarse)').matches)navigator.vibrate(p);}catch(e){}}
+    function cardTitle(card){return card.getAttribute('data-title')||'project video';}
+    function updateCardA11y(card,playing){
+        var toggle=card.querySelector('.card-play-toggle');if(!toggle)return;
+        toggle.setAttribute('aria-pressed',playing?'true':'false');
+        toggle.setAttribute('aria-label',(playing?'Pause ':'Play ')+cardTitle(card));
     }
-    // ── Init playlist data ──
-    document.querySelectorAll('.cloudinary-hover-wrap[data-cld-pids]').forEach(function(w){
-        try{w._cldList=JSON.parse(w.getAttribute('data-cld-pids'));}catch(e){}
-        var vid=w.querySelector('video');
-        if(vid){
-            vid.addEventListener('ended',function(){
-                var ci=parseInt(w.getAttribute('data-cld-idx')||'0');
-                var ni=(ci+1)%w._cldList.length;
-                w.setAttribute('data-cld-idx',ni);
-                switchCldSource(vid,w._cldList[ni]);
-                if(w===lockedCard){vid.play().then(function(){vid.muted=false;}).catch(function(){});}
-                var cnt=w.querySelector('.yt-nav-count');
-                if(cnt)cnt.textContent=(ni+1)+' / '+w._cldList.length;
-            });
-        }
-    });
-    // ── Video hover: native HTML5 video ──
-    // Hover = muted preview (stops when mouse leaves). Click = locked playback
-    // with sound that keeps playing even when the mouse leaves the card.
-    var activeCard=null,lockedCard=null;
-    function stopCard(c,force){
-        c=c||activeCard;if(!c)return;
-        if(c===lockedCard&&!force)return;
-        if(c===activeCard)activeCard=null;
-        if(c===lockedCard)lockedCard=null;
-        c.classList.remove('playing');
-        if(c.classList.contains('yt-facade')){
-            var fr=c.querySelector('.yt-frame');if(fr)fr.remove();
-            var nav=c.querySelector('.yt-nav');if(nav)nav.remove();
-        }
-        if(c.classList.contains('cloudinary-hover-wrap')){
-            var vid=c.querySelector('video');
-            if(vid){vid.pause();vid.currentTime=0;vid.muted=true;}
-            var pi=c.querySelector('.poster-img');if(pi)pi.style.opacity='1';
-        }
+    function updateMuteA11y(card,muted){
+        var button=card.querySelector('.mute-ico');if(!button)return;
+        button.setAttribute('aria-pressed',muted?'true':'false');
+        button.setAttribute('aria-label',(muted?'Unmute ':'Mute ')+cardTitle(card));
     }
-    function switchCldSource(vid,publicId){
+    function showVideo(card){
+        card.classList.add('playing');
+        var poster=card.querySelector('.poster-img');if(poster)poster.style.opacity='0';
+    }
+    function stopCard(card){
+        if(!card)return;
+        var vid=card.querySelector('video');
+        if(vid){vid.pause();vid.currentTime=0;vid.muted=true;}
+        card.classList.remove('playing');card.classList.add('muted');
+        var poster=card.querySelector('.poster-img');if(poster)poster.style.opacity='1';
+        updateCardA11y(card,false);
+        updateMuteA11y(card,true);
+        if(previewCard===card)previewCard=null;
+        if(lockedCard===card)lockedCard=null;
+    }
+    function startPreview(card){
+        if(lockedCard||previewCard===card)return;
+        if(previewCard)stopCard(previewCard);
+        var vid=card.querySelector('video');if(!vid)return;
+        previewCard=card;showVideo(card);vid.muted=true;card.classList.add('muted');
+        updateMuteA11y(card,true);
+        vid.play().catch(function(){stopCard(card);});
+    }
+    function lockCard(card){
+        if(lockedCard&&lockedCard!==card)stopCard(lockedCard);
+        if(previewCard&&previewCard!==card)stopCard(previewCard);
+        previewCard=null;lockedCard=card;showVideo(card);card.classList.remove('muted');
+        updateCardA11y(card,true);
+        var vid=card.querySelector('video');if(!vid)return;
+        vid.muted=false;
+        updateMuteA11y(card,false);
+        vid.play().catch(function(){vid.muted=true;card.classList.add('muted');updateMuteA11y(card,true);vid.play().catch(function(){stopCard(card);});});
+    }
+    function switchCldSource(card,vid,publicId){
         vid.innerHTML='';
         var src=document.createElement('source');
-        src.src='https://res.cloudinary.com/dxb4equz/video/upload/f_auto,q_auto/'+publicId+'.mp4';
-        src.type='video/mp4';
-        vid.appendChild(src);
-        vid.poster='https://res.cloudinary.com/dxb4equz/image/upload/'+publicId+'_poster.jpg';
-        vid.load();
+        src.src='https://res.cloudinary.com/dxb4equz/video/upload/f_auto,q_auto/'+publicId+'.mp4';src.type='video/mp4';
+        var posterUrl='https://res.cloudinary.com/dxb4equz/video/upload/'+publicId+'.jpg';
+        var poster=card.querySelector('.poster-img');if(poster)poster.src=posterUrl;
+        vid.appendChild(src);vid.poster=posterUrl;vid.load();
     }
-    document.addEventListener('mousemove',function(e){
-        var el=document.elementFromPoint(e.clientX,e.clientY);
-        var found=el?el.closest('.yt-facade,.cloudinary-hover-wrap'):null;
-        if(!found){if(activeCard&&activeCard!==lockedCard)stopCard();return;}
-        if(found===activeCard)return;
-        if(found===lockedCard){activeCard=found;return;}
-        if(activeCard&&activeCard!==lockedCard)stopCard();
-        activeCard=found;
-        found.classList.add('playing');
-        if(found.classList.contains('yt-facade')){
-            var f=found;
-            var fr=document.createElement('iframe');fr.className='yt-frame';
-            var embedsAttr=f.getAttribute('data-embeds');
-            var list=null;
-            if(embedsAttr){try{list=JSON.parse(embedsAttr);}catch(e){list=null;}}
-            var emb=f.getAttribute('data-embed');
-            if(list&&list.length){fr.src=list[0].indexOf('?')>-1?list[0]+'&player%5Bautoplay%5D=true&player%5Bmuted%5D=false':list[0]+'?autoplay=1&mute=0';}
-            else if(emb){fr.src=emb+'?autoplay=1';}
-            else{fr.src='https://www.youtube.com/embed/videoseries?list='+f.getAttribute('data-list')+'&autoplay=1&mute=0&enablejsapi=1&controls=0&rel=0&disablekeys=1&playsinline=1';}
-            fr.setAttribute('frameborder','0');
-            fr.setAttribute('allow','autoplay; encrypted-media; gyroscope; picture-in-picture; web-share');
-            fr.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
-            fr.setAttribute('allowfullscreen','');
-            fr.title=f.getAttribute('data-title')||'Video';
-            f.appendChild(fr);
-            if(list&&list.length>1){
-                var nav=document.createElement('div');nav.className='yt-nav';
-                var idx=0;
-                function playIdx(i){
-                    idx=i;var newFr=document.createElement('iframe');newFr.className='yt-frame';
-                    newFr.src=list[idx].indexOf('?')>-1?list[idx]+'&player%5Bautoplay%5D=true&player%5Bmuted%5D=false':list[idx]+'?autoplay=1&mute=0';
-                    newFr.setAttribute('frameborder','0');
-                    newFr.setAttribute('allow','autoplay; encrypted-media; gyroscope; picture-in-picture; web-share');
-                    newFr.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
-                    newFr.setAttribute('allowfullscreen','');newFr.title=f.getAttribute('data-title')||'Video';
-                    fr.replaceWith(newFr);fr=newFr;
-                }
-                var prevBtn=document.createElement('button');prevBtn.type='button';prevBtn.className='yt-nav-btn';prevBtn.setAttribute('aria-label','Previous video');prevBtn.textContent='\u2039';
-                var counter=document.createElement('span');counter.className='yt-nav-count';
-                var nextBtn=document.createElement('button');nextBtn.type='button';nextBtn.className='yt-nav-btn';nextBtn.setAttribute('aria-label','Next video');nextBtn.textContent='\u203A';
-                function updateCounter(){counter.textContent=(idx+1)+' / '+list.length;}
-                updateCounter();
-                prevBtn.addEventListener('click',function(e){e.stopPropagation();playIdx((idx-1+list.length)%list.length);updateCounter();});
-                nextBtn.addEventListener('click',function(e){e.stopPropagation();playIdx((idx+1)%list.length);updateCounter();});
-                nav.appendChild(prevBtn);nav.appendChild(counter);nav.appendChild(nextBtn);f.appendChild(nav);
-            }
+    function changePlaylist(card,step){
+        var vid=card.querySelector('video'),list=card._cldList;if(!vid||!list||!list.length)return;
+        var index=(parseInt(card.getAttribute('data-cld-idx')||'0')+step+list.length)%list.length;
+        card.setAttribute('data-cld-idx',index);switchCldSource(card,vid,list[index]);
+        var count=card.querySelector('.yt-nav-count');if(count)count.textContent=(index+1)+' / '+list.length;
+        lockCard(card);
+    }
+    document.querySelectorAll('.cloudinary-hover-wrap').forEach(function(card){
+        var playToggle=document.createElement('button');playToggle.type='button';playToggle.className='card-play-toggle';card.appendChild(playToggle);updateCardA11y(card,false);
+        try{card._cldList=JSON.parse(card.getAttribute('data-cld-pids')||'null');}catch(e){card._cldList=null;}
+        var vid=card.querySelector('video');
+        if(vid){card.classList.toggle('muted',vid.muted);updateMuteA11y(card,vid.muted);}
+        if(card._cldList&&card._cldList.length>1){
+            var nav=document.createElement('div');nav.className='yt-nav';nav.setAttribute('aria-label','Playlist controls');
+            var prev=document.createElement('button');prev.type='button';prev.className='yt-nav-btn';prev.setAttribute('aria-label','Previous video');prev.textContent='\u2039';
+            var count=document.createElement('span');count.className='yt-nav-count';count.textContent='1 / '+card._cldList.length;
+            var next=document.createElement('button');next.type='button';next.className='yt-nav-btn';next.setAttribute('aria-label','Next video');next.textContent='\u203A';
+            prev.addEventListener('click',function(e){e.stopPropagation();changePlaylist(card,-1);});
+            next.addEventListener('click',function(e){e.stopPropagation();changePlaylist(card,1);});
+            nav.appendChild(prev);nav.appendChild(count);nav.appendChild(next);card.appendChild(nav);
         }
-        if(found.classList.contains('cloudinary-hover-wrap')){
-            var vid=found.querySelector('video');
-            var pi=found.querySelector('.poster-img');
-            if(vid){
-                if(pi)pi.style.opacity='0';
-                vid.muted=true;
-                vid.play().catch(function(){});
-                if(found._cldList){
-                    var ci=parseInt(found.getAttribute('data-cld-idx')||'0');
-                    var nav2=found.querySelector('.yt-nav');
-                    if(!nav2){
-                        nav2=document.createElement('div');nav2.className='yt-nav';
-                        var pb=document.createElement('button');pb.type='button';pb.setAttribute('aria-label','Previous');pb.textContent='\u2039';
-                        var ct=document.createElement('span');ct.className='yt-nav-count';
-                        var nb=document.createElement('button');nb.type='button';nb.setAttribute('aria-label','Next');nb.textContent='\u203A';
-                        ct.textContent=(ci+1)+' / '+found._cldList.length;
-                        pb.addEventListener('click',function(e){e.stopPropagation();var ni=(parseInt(found.getAttribute('data-cld-idx')||'0')-1+found._cldList.length)%found._cldList.length;found.setAttribute('data-cld-idx',ni);switchCldSource(vid,found._cldList[ni]);lockedCard=found;vid.play().then(function(){vid.muted=false;}).catch(function(){});ct.textContent=(ni+1)+' / '+found._cldList.length;});
-                        nb.addEventListener('click',function(e){e.stopPropagation();var ni=(parseInt(found.getAttribute('data-cld-idx')||'0')+1)%found._cldList.length;found.setAttribute('data-cld-idx',ni);switchCldSource(vid,found._cldList[ni]);lockedCard=found;vid.play().then(function(){vid.muted=false;}).catch(function(){});ct.textContent=(ni+1)+' / '+found._cldList.length;});
-                        nav2.appendChild(pb);nav2.appendChild(ct);nav2.appendChild(nb);found.appendChild(nav2);
-                    }
-                }
-            }
-        }
+        if(vid)vid.addEventListener('ended',function(){
+            if(card._cldList&&card._cldList.length){changePlaylist(card,1);}
+            else if(lockedCard===card){stopCard(card);}
+        });
     });
-
-    // ── Click/touch handler for video cards (mobile) ──
-    function buzz(p){try{if(navigator.vibrate&&window.matchMedia&&window.matchMedia('(pointer:coarse)').matches){navigator.vibrate(p);}}catch(e){}}
-    function toggleMute(muteBtn){var wrap=muteBtn.closest('.cloudinary-hover-wrap');if(!wrap)return;var vid=wrap.querySelector('video');if(vid){vid.muted=!vid.muted;wrap.classList.toggle('muted',vid.muted);buzz(10);}}
-    document.addEventListener('keydown',function(e){
-        if(e.key!==' '&&e.key!=='Enter')return;
-        var t=e.target&&e.target.closest?e.target.closest('[role="button"]'):null;
-        if(!t)return;
-        if(t.classList.contains('mute-ico')){e.preventDefault();toggleMute(t);return;}
-        if(t.tagName==='A'){e.preventDefault();t.click();}
+    document.addEventListener('mouseover',function(e){
+        var card=e.target.closest('.cloudinary-hover-wrap');
+        if(!card||card.contains(e.relatedTarget)||lockedCard)return;
+        startPreview(card);
     });
+    document.addEventListener('mouseout',function(e){
+        var card=e.target.closest('.cloudinary-hover-wrap');
+        if(!card||card.contains(e.relatedTarget)||card===lockedCard)return;
+        stopCard(card);
+    });
+    function toggleMute(button){
+        var card=button.closest('.cloudinary-hover-wrap'),vid=card&&card.querySelector('video');if(!vid)return;
+        vid.muted=!vid.muted;card.classList.toggle('muted',vid.muted);
+        updateMuteA11y(card,vid.muted);buzz(10);
+    }
     document.addEventListener('click',function(e){
-        var muteBtn=e.target.closest('.mute-ico');
-        if(muteBtn){toggleMute(muteBtn);return;}
-        var wrap=e.target.closest('.cloudinary-hover-wrap');
-        if(!wrap)return;
-        var vid=wrap.querySelector('video');
-        if(!vid)return;
-        e.preventDefault();e.stopPropagation();
-        if(lockedCard===wrap){
-            lockedCard=null;stopCard(wrap,true);buzz(10);
-            wrap.classList.add('muted');
-            var pi0=wrap.querySelector('.poster-img');if(pi0)pi0.style.opacity='1';
-        }else{
-            if(activeCard&&activeCard!==wrap)stopCard(activeCard,true);
-            lockedCard=wrap;activeCard=wrap;wrap.classList.add('playing');wrap.classList.remove('muted');buzz(20);
-            var pi=wrap.querySelector('.poster-img');if(pi)pi.style.opacity='0';
-            vid.muted=false;vid.play().catch(function(){vid.muted=true;vid.play().catch(function(){});});
-        }
+        var mute=e.target.closest('.mute-ico');if(mute){e.stopPropagation();toggleMute(mute);return;}
+        var card=e.target.closest('.cloudinary-hover-wrap');if(!card||e.target.closest('.yt-nav'))return;
+        e.preventDefault();
+        if(lockedCard===card){stopCard(card);buzz(10);}else{lockCard(card);buzz(20);}
     });
 
     // Scroll progress playhead bar
     var pb=document.getElementById('playhead-bar');
     if(pb){
         var up=function(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight||1);pb.style.width=(p*100).toFixed(2)+'%'};
-        window.addEventListener('scroll',up,{passive:true});
-        window.addEventListener('resize',up);
+        var progressFrame=0;function queueProgress(){if(progressFrame)return;progressFrame=requestAnimationFrame(function(){progressFrame=0;up();});}
+        window.addEventListener('scroll',queueProgress,{passive:true});
+        window.addEventListener('resize',queueProgress);
         up();
     }
 
-    // Cursor spotlight
     var reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var spot=document.getElementById('spotlight');
-    if(spot&&!reduceMotion&&window.matchMedia('(hover:hover)').matches){
-        var spotShown=false;
-        window.addEventListener('mousemove',function(e){
-            spot.style.transform='translate('+e.clientX+'px,'+e.clientY+'px) translate(-50%,-50%)';
-            if(!spotShown){spot.classList.add('active');spotShown=true;}
-        },{passive:true});
-        document.addEventListener('mouseleave',function(){spot.classList.remove('active');spotShown=false;});
-    }
-
-    // Magnetic buttons
-    if(!reduceMotion&&window.matchMedia('(hover:hover)').matches){
-        document.querySelectorAll('.magnetic').forEach(function(m){
-            var inner=m.querySelector('.magnetic-inner');
-            if(!inner)return;
-            m.addEventListener('mousemove',function(e){
-                var r=m.getBoundingClientRect();
-                var x=(e.clientX-r.left-r.width/2)*0.35;
-                var y=(e.clientY-r.top-r.height/2)*0.35;
-                inner.style.transform='translate('+x+'px,'+y+'px)';
-            });
-            m.addEventListener('mouseleave',function(){inner.style.transform='translate(0,0)';});
-        });
-    }
-
-    // 3D tilt on project cards
-    if(!reduceMotion&&window.matchMedia('(hover:hover)').matches){
-        document.querySelectorAll('.proj-card').forEach(function(card){
-            card.addEventListener('mousemove',function(e){
-                var r=card.getBoundingClientRect();
-                var px=(e.clientX-r.left)/r.width-0.5;
-                var py=(e.clientY-r.top)/r.height-0.5;
-                var rx=(py*-6).toFixed(2);
-                var ry=(px*8).toFixed(2);
-                card.style.transform='translateY(-5px) rotateX('+rx+'deg) rotateY('+ry+'deg)';
-            });
-            card.addEventListener('mouseleave',function(){card.style.transform='translateY(0) rotateX(0) rotateY(0)';});
-        });
-    }
 
     // Skill bar replay on hover
-    document.querySelectorAll('.skill-item').forEach(function(item){
+    if(!reduceMotion)document.querySelectorAll('.skill-item').forEach(function(item){
         var fill=item.querySelector('.skill-bar-fill');
         if(!fill)return;
         item.addEventListener('mouseenter',function(){
@@ -955,21 +802,37 @@
         var handle=cmp.querySelector('.compare-handle');
         var labelBefore=cmp.querySelector('.compare-label.before');
         var labelAfter=cmp.querySelector('.compare-label.after');
-        var dragging=false;
-        function setPos(clientX){
-            var r=cmp.getBoundingClientRect();
-            var pct=Math.min(100,Math.max(0,((clientX-r.left)/r.width)*100));
+        var dragging=false,compareFrame=0,compareX=0;
+        function stopCompareHint(){cmp.classList.remove('hinting');}
+        if(!reduceMotion){
+            if('IntersectionObserver' in window){
+                var hintObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){cmp.classList.add('hinting');hintObserver.disconnect();}});},{threshold:.55});
+                hintObserver.observe(cmp);
+            }else{cmp.classList.add('hinting');}
+        }
+        function setPct(value){
+            var pct=Math.min(100,Math.max(0,value));
             after.style.clipPath='inset(0 '+(100-pct)+'% 0 0)';
             handle.style.left=pct+'%';
+            cmp.setAttribute('aria-valuenow',Math.round(pct));
             if(labelBefore)labelBefore.style.opacity=pct>96?'0':'1';
             if(labelAfter)labelAfter.style.opacity=pct<4?'0':'1';
         }
-        cmp.addEventListener('mousedown',function(e){dragging=true;setPos(e.clientX);});
-        window.addEventListener('mousemove',function(e){if(dragging)setPos(e.clientX);});
-        window.addEventListener('mouseup',function(){dragging=false;});
-        cmp.addEventListener('touchstart',function(e){dragging=true;buzz(8);setPos(e.touches[0].clientX);},{passive:true});
-        cmp.addEventListener('touchmove',function(e){if(dragging)setPos(e.touches[0].clientX);},{passive:true});
-        cmp.addEventListener('touchend',function(){dragging=false;});
+        function setPos(clientX){var r=cmp.getBoundingClientRect();setPct(((clientX-r.left)/r.width)*100);}
+        function queueCompare(clientX){compareX=clientX;if(!compareFrame)compareFrame=requestAnimationFrame(function(){compareFrame=0;setPos(compareX);});}
+        cmp.addEventListener('pointerdown',function(e){stopCompareHint();dragging=true;cmp.setPointerCapture(e.pointerId);buzz(8);queueCompare(e.clientX);});
+        cmp.addEventListener('pointermove',function(e){if(dragging)queueCompare(e.clientX);});
+        cmp.addEventListener('pointerup',function(e){dragging=false;if(cmp.hasPointerCapture(e.pointerId))cmp.releasePointerCapture(e.pointerId);});
+        cmp.addEventListener('pointercancel',function(){dragging=false;});
+        cmp.addEventListener('keydown',function(e){
+            var value=parseInt(cmp.getAttribute('aria-valuenow')||'50'),next=value;
+            if(e.key==='ArrowLeft'||e.key==='ArrowDown')next=value-2;
+            else if(e.key==='ArrowRight'||e.key==='ArrowUp')next=value+2;
+            else if(e.key==='Home')next=0;
+            else if(e.key==='End')next=100;
+            else return;
+            e.preventDefault();stopCompareHint();setPct(next);buzz(6);
+        });
     }
 
     // Konami code easter egg
@@ -989,7 +852,7 @@
     });
     function triggerEasterEgg(){
         var banner=document.createElement('div');
-        banner.textContent='\ud83c\udfac Director\'s Cut Unlocked! Thanks for exploring the code, not just the reel.';
+        banner.textContent='\ud83c\udfac Director\'s cut unlocked! Thanks for exploring the code, not just the reel.';
         banner.style.cssText='position:fixed;left:50%;top:24px;transform:translateX(-50%) translateY(-20px);z-index:200;background:#ef4444;color:#fff;font-size:13px;font-weight:600;padding:12px 22px;border-radius:9999px;box-shadow:0 10px 30px rgba(239,68,68,.5);opacity:0;transition:all .4s cubic-bezier(.16,1,.3,1);pointer-events:none;text-align:center';
         document.body.appendChild(banner);
         requestAnimationFrame(function(){banner.style.opacity='1';banner.style.transform='translateX(-50%) translateY(0)';});
@@ -1003,38 +866,6 @@
         },3200);
     }
 
-    // Custom cursor
-    var dot=document.getElementById('cursorDot');
-    var ring=document.getElementById('cursorRing');
-    if(dot&&ring&&!reduceMotion&&window.matchMedia('(hover:hover)').matches){
-        var mx=0,my=0,rx=0,ry=0;
-        document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';},{passive:true});
-        (function animRing(){
-            rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;
-            ring.style.left=rx+'px';ring.style.top=ry+'px';
-            requestAnimationFrame(animRing);
-        })();
-        var hoverEls='a,button,.wa-trigger,.magnetic,.proj-card,.interest-card,.glass-card,.yt-facade';
-        document.addEventListener('mouseover',function(e){
-            if(e.target.closest(hoverEls)){dot.classList.add('hovering');ring.classList.add('hovering');}
-        });
-        document.addEventListener('mouseout',function(e){
-            if(e.target.closest(hoverEls)){dot.classList.remove('hovering');ring.classList.remove('hovering');}
-        });
-        var hfc=document.querySelector('.hero-film-frame');
-        var hcg=document.querySelector('.hero-card-glow');
-        if(hfc&&hcg){
-            hfc.addEventListener('mousemove',function(e){
-                var r=hfc.getBoundingClientRect();
-                hcg.style.left=(e.clientX-r.left)+'px';
-                hcg.style.top=(e.clientY-r.top)+'px';
-                hcg.style.opacity='1';
-            },{passive:true});
-            hfc.addEventListener('mouseleave',function(){hcg.style.opacity='0';});
-        }
-        document.addEventListener('mouseleave',function(){dot.style.opacity='0';ring.style.opacity='0';});
-        document.addEventListener('mouseenter',function(){dot.style.opacity='1';ring.style.opacity='1';});
-    }
 })();
 </script>
 </body>
